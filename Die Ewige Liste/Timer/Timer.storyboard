@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0rL-5s-dyl">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Timer View Controller-->
+        <scene sceneID="Vls-V3-Rpd">
+            <objects>
+                <viewController id="0rL-5s-dyl" customClass="TimerViewController" customModule="Die_Ewige_Liste" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZQI-pn-wSb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f1O-Kj-jh5" userLabel="White Tap Area">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="410.66666666666669"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to end turn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D08-yA-Aof" customClass="RotatingLabel" customModule="Die_Ewige_Liste" customModuleProvider="target">
+                                        <rect key="frame" x="127" y="43.666666666666657" width="121" height="20.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rotation">
+                                                <real key="value" value="180"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q3i-zq-kiL" userLabel="Time White Label" customClass="RotatingLabel" customModule="Die_Ewige_Liste" customModuleProvider="target">
+                                        <rect key="frame" x="131.66666666666669" y="292.66666666666669" width="111.66666666666666" height="58"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="49"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rotation">
+                                                <real key="value" value="180"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="D08-yA-Aof" firstAttribute="centerX" secondItem="f1O-Kj-jh5" secondAttribute="centerX" id="NIi-A2-Klh"/>
+                                    <constraint firstAttribute="bottom" secondItem="q3i-zq-kiL" secondAttribute="bottom" constant="60" id="cuE-ab-cDd"/>
+                                    <constraint firstItem="q3i-zq-kiL" firstAttribute="centerX" secondItem="f1O-Kj-jh5" secondAttribute="centerX" id="u7g-R8-y0v"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Aek-vG-ftE" appends="YES" id="dQU-g8-MTX"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sPe-tE-xde" userLabel="Mid Seperator">
+                                <rect key="frame" x="0.0" y="410.66666666666669" width="375" height="1"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="t4l-La-BVO"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MOI-pa-s2l" userLabel="Black Tap Area">
+                                <rect key="frame" x="0.0" y="411.66666666666674" width="375" height="400.33333333333326"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to end turn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBs-4F-ypI">
+                                        <rect key="frame" x="127" y="346.33333333333331" width="121" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cMS-UW-cwA" userLabel="Time Black Label">
+                                        <rect key="frame" x="131.66666666666666" y="60" width="111.66666666666666" height="58"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="49"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstItem="cMS-UW-cwA" firstAttribute="centerX" secondItem="MOI-pa-s2l" secondAttribute="centerX" id="5MA-IT-p8y"/>
+                                    <constraint firstItem="fBs-4F-ypI" firstAttribute="centerX" secondItem="MOI-pa-s2l" secondAttribute="centerX" id="BrG-VK-lKw"/>
+                                    <constraint firstItem="cMS-UW-cwA" firstAttribute="top" secondItem="MOI-pa-s2l" secondAttribute="top" constant="60" id="Tqc-Zq-0fO"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="wdU-ng-SA3" appends="YES" id="iF9-uz-3e7"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pSF-Ub-qNf" userLabel="Mid Controls">
+                                <rect key="frame" x="87.666666666666686" y="361.33333333333331" width="200" height="100"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jin-Xq-4Ho" userLabel="Pause Button">
+                                        <rect key="frame" x="10" y="10" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="3MF-Ow-PZX"/>
+                                            <constraint firstAttribute="width" secondItem="Jin-Xq-4Ho" secondAttribute="height" multiplier="1:1" id="yiq-H5-rLE"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="pause.png">
+                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pauseTapped:" destination="0rL-5s-dyl" eventType="touchUpInside" id="mKz-1f-RWt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6rR-xW-SBd" userLabel="Refresh Button">
+                                        <rect key="frame" x="110" y="9.3333333333333712" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="6rR-xW-SBd" secondAttribute="height" multiplier="1:1" id="Lde-W7-beW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="7" minY="7" maxX="7" maxY="7"/>
+                                        <state key="normal" image="refresh.png">
+                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="refreshTapped:" destination="0rL-5s-dyl" eventType="touchUpInside" id="P6M-h6-TeG"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Jin-Xq-4Ho" firstAttribute="leading" secondItem="pSF-Ub-qNf" secondAttribute="leading" constant="10" id="0fs-FN-ppu"/>
+                                    <constraint firstItem="6rR-xW-SBd" firstAttribute="leading" secondItem="Jin-Xq-4Ho" secondAttribute="trailing" constant="20" id="9gt-Du-9sZ"/>
+                                    <constraint firstItem="6rR-xW-SBd" firstAttribute="centerY" secondItem="pSF-Ub-qNf" secondAttribute="centerY" id="EFe-DW-0lE"/>
+                                    <constraint firstItem="6rR-xW-SBd" firstAttribute="width" secondItem="Jin-Xq-4Ho" secondAttribute="width" id="VYl-JZ-8lr"/>
+                                    <constraint firstAttribute="trailing" secondItem="6rR-xW-SBd" secondAttribute="trailing" constant="10" id="an5-F0-g9V"/>
+                                    <constraint firstItem="Jin-Xq-4Ho" firstAttribute="top" secondItem="pSF-Ub-qNf" secondAttribute="top" constant="10" id="ce1-RS-PWZ"/>
+                                    <constraint firstAttribute="bottom" secondItem="Jin-Xq-4Ho" secondAttribute="bottom" constant="10" id="p6d-KK-aDd"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="FPg-Uq-9iy" firstAttribute="top" secondItem="D08-yA-Aof" secondAttribute="bottom" constant="-20" id="2G3-R3-50V"/>
+                            <constraint firstItem="fBs-4F-ypI" firstAttribute="top" secondItem="FPg-Uq-9iy" secondAttribute="bottom" constant="-20" id="AvN-Y8-rhM"/>
+                            <constraint firstItem="f1O-Kj-jh5" firstAttribute="top" secondItem="ZQI-pn-wSb" secondAttribute="top" id="G7k-o8-6QY"/>
+                            <constraint firstItem="sPe-tE-xde" firstAttribute="centerY" secondItem="FPg-Uq-9iy" secondAttribute="centerY" id="aKB-y4-nCC"/>
+                            <constraint firstItem="FPg-Uq-9iy" firstAttribute="trailing" secondItem="sPe-tE-xde" secondAttribute="trailing" id="eFQ-qT-rXC"/>
+                            <constraint firstItem="sPe-tE-xde" firstAttribute="leading" secondItem="FPg-Uq-9iy" secondAttribute="leading" id="fQ2-7B-QFq"/>
+                            <constraint firstItem="f1O-Kj-jh5" firstAttribute="leading" secondItem="ZQI-pn-wSb" secondAttribute="leading" id="g4Y-Na-ddd"/>
+                            <constraint firstItem="MOI-pa-s2l" firstAttribute="bottom" secondItem="ZQI-pn-wSb" secondAttribute="bottom" id="gD0-eG-NYG"/>
+                            <constraint firstItem="MOI-pa-s2l" firstAttribute="trailing" secondItem="ZQI-pn-wSb" secondAttribute="trailing" id="hLS-7l-Fir"/>
+                            <constraint firstItem="f1O-Kj-jh5" firstAttribute="trailing" secondItem="ZQI-pn-wSb" secondAttribute="trailing" id="jiu-QT-0rw"/>
+                            <constraint firstItem="sPe-tE-xde" firstAttribute="top" secondItem="f1O-Kj-jh5" secondAttribute="bottom" id="ohY-f9-jck"/>
+                            <constraint firstItem="pSF-Ub-qNf" firstAttribute="centerX" secondItem="FPg-Uq-9iy" secondAttribute="centerX" id="ovL-mR-5gC"/>
+                            <constraint firstItem="MOI-pa-s2l" firstAttribute="leading" secondItem="ZQI-pn-wSb" secondAttribute="leading" id="paT-t8-rsc"/>
+                            <constraint firstItem="MOI-pa-s2l" firstAttribute="top" secondItem="sPe-tE-xde" secondAttribute="bottom" id="wc3-Hz-GNF"/>
+                            <constraint firstItem="sPe-tE-xde" firstAttribute="centerY" secondItem="pSF-Ub-qNf" secondAttribute="centerY" id="yRJ-h7-Vfe"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="FPg-Uq-9iy"/>
+                    </view>
+                    <connections>
+                        <outlet property="midSeperatorYConstraint" destination="aKB-y4-nCC" id="VcM-df-XXK"/>
+                        <outlet property="tapGestureRecognizerBlack" destination="wdU-ng-SA3" id="MjS-7f-wbi"/>
+                        <outlet property="tapGestureRecognizerWhite" destination="Aek-vG-ftE" id="Vv7-XD-GHo"/>
+                        <outlet property="tapToEndLabelBlack" destination="fBs-4F-ypI" id="MJL-OK-iRZ"/>
+                        <outlet property="tapToEndLabelWhite" destination="D08-yA-Aof" id="J8X-x0-vwA"/>
+                        <outlet property="timeBlackLabel" destination="cMS-UW-cwA" id="MSr-cz-Udm"/>
+                        <outlet property="timeWhiteLabel" destination="q3i-zq-kiL" id="nf2-xD-WbX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4Wl-wu-h1Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Aek-vG-ftE" userLabel="Tap Gesture Recognizer White">
+                    <connections>
+                        <action selector="areaTapped:" destination="0rL-5s-dyl" id="RUf-j1-wOl"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="wdU-ng-SA3" userLabel="Tap Gesture Recognizer Black">
+                    <connections>
+                        <action selector="areaTapped:" destination="0rL-5s-dyl" id="FnZ-ZY-t9N"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-76" y="90.886699507389167"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="pause.png" width="100" height="100"/>
+        <image name="refresh.png" width="512" height="512"/>
+    </resources>
+</document>
