@@ -139,8 +139,8 @@ class TimerViewController: UIViewController {
             tapToEndLabelBlack.isHidden = true
             break
         case .black:
-            tapToEndLabelWhite.isHidden = false
-            tapToEndLabelBlack.isHidden = true
+            tapToEndLabelWhite.isHidden = true
+            tapToEndLabelBlack.isHidden = false
             break
         case .none:
             tapToEndLabelWhite.isHidden = true
