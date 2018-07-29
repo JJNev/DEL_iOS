@@ -19,6 +19,7 @@
 		19008EC820F3927700AADB15 /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 19008EC720F3927700AADB15 /* pause.png */; };
 		19008ECA20F393CA00AADB15 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 19008EC920F393CA00AADB15 /* refresh.png */; };
 		19008ECD20F3BA6500AADB15 /* RotatingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19008ECC20F3BA6400AADB15 /* RotatingLabel.swift */; };
+		1943BAB6210B89F40041ED8A /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 1943BAB5210B89F30041ED8A /* play.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		19008EC720F3927700AADB15 /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
 		19008EC920F393CA00AADB15 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
 		19008ECC20F3BA6400AADB15 /* RotatingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingLabel.swift; sourceTree = "<group>"; };
+		1943BAB5210B89F30041ED8A /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,8 +143,8 @@
 		19008EBF20F38F1800AADB15 /* Timer */ = {
 			isa = PBXGroup;
 			children = (
-				19008EC120F38F3D00AADB15 /* TimerViewController.swift */,
 				19008EC320F38F4C00AADB15 /* Timer.storyboard */,
+				19008EC120F38F3D00AADB15 /* TimerViewController.swift */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -166,6 +168,7 @@
 		19008EC620F3926500AADB15 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
+				1943BAB5210B89F30041ED8A /* play.png */,
 				19008EC920F393CA00AADB15 /* refresh.png */,
 				19008EC720F3927700AADB15 /* pause.png */,
 			);
@@ -284,6 +287,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1943BAB6210B89F40041ED8A /* play.png in Resources */,
 				19008EC420F38F4C00AADB15 /* Timer.storyboard in Resources */,
 				19008E9C20F38EA800AADB15 /* LaunchScreen.storyboard in Resources */,
 				19008ECA20F393CA00AADB15 /* refresh.png in Resources */,

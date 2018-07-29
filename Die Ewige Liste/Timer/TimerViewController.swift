@@ -17,6 +17,8 @@ class TimerViewController: UIViewController {
     @IBOutlet var tapGestureRecognizerBlack: UITapGestureRecognizer!
     @IBOutlet var tapToEndLabelWhite: RotatingLabel!
     @IBOutlet var tapToEndLabelBlack: UILabel!
+    @IBOutlet var pauseResumeButton: UIButton!
+    @IBOutlet var resetButton: UIButton!
     
     private lazy var timer = Timer()
     private var timeWhite = 0
@@ -24,19 +26,27 @@ class TimerViewController: UIViewController {
     private var currentPlayer: Player = .none
     private var gameState: GameState = .new
     
-    // MARK: Life Cycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        tapToEndLabelBlack.isHidden = true
-        tapToEndLabelWhite.isHidden = true
-    }
-    
     // MARK: Actions
     
-    @IBAction func pauseTapped(_ sender: Any) {
-        gameState = .paused
-        timer.invalidate()
+    @IBAction func pauseResumeTapped(_ sender: Any) {
+        switch gameState {
+        case .running:
+            timer.invalidate()
+            gameState = .paused
+            if let pauseButton = sender as? UIButton {
+                pauseButton.setImage(#imageLiteral(resourceName: "play.png"), for: .normal)
+            }
+            break
+        case .paused:
+            startTimer(reset: false)
+            gameState = .running
+            if let pauseButton = sender as? UIButton {
+                pauseButton.setImage(#imageLiteral(resourceName: "pause.png"), for: .normal)
+            }
+            break
+        default:
+            break
+        }
     }
     
     @IBAction func refreshTapped(_ sender: Any) {
@@ -49,13 +59,15 @@ class TimerViewController: UIViewController {
             currentPlayer = sender == tapGestureRecognizerWhite ? .black : .white
         }
         changeTurn()
+        updatePauseButton()
+        updateResetButton()
     }
     
     // MARK: Helper
     
-    private func startFreshTimer() {
+    private func startTimer(reset: Bool) {
         gameState = .running
-        timer.invalidate()
+        if reset {timer.invalidate()}
         timer = .scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
     }
     
@@ -70,9 +82,9 @@ class TimerViewController: UIViewController {
         case .none:
             break
         }
+        startTimer(reset: true)
         updateTapGestureRecognizers()
         updateMidSeperator()
-        startFreshTimer()
         updatePlayerLabels()
     }
     
@@ -80,10 +92,34 @@ class TimerViewController: UIViewController {
         timeWhite = 0
         timeBlack = 0
         currentPlayer = .none
+        gameState = .new
+        updateUi()
+    }
+    
+    
+    @objc private func updateTime() {
+        switch currentPlayer {
+        case .white:
+            timeWhite += 1
+            break
+        case .black:
+            timeBlack += 1
+            break
+        case .none:
+            break
+        }
+        updateTimeLabels()
+    }
+    
+    // MARK: Update UI
+    
+    private func updateUi() {
+        updateTapGestureRecognizers()
+        updatePauseButton()
+        updateResetButton()
         updateTimeLabels()
         updatePlayerLabels()
         updateMidSeperator()
-        updateTapGestureRecognizers()
     }
     
     private func updateTapGestureRecognizers() {
@@ -103,18 +139,42 @@ class TimerViewController: UIViewController {
         }
     }
     
-    @objc private func updateTime() {
-        switch currentPlayer {
-        case .white:
-            timeWhite += 1
+    private func updatePauseButton() {
+        switch gameState {
+        case .running:
+            pauseResumeButton.setImage(#imageLiteral(resourceName: "pause.png"), for: .normal)
+            pauseResumeButton.isHidden = false
             break
-        case .black:
-            timeBlack += 1
+        case .paused:
+            pauseResumeButton.setImage(#imageLiteral(resourceName: "play.png"), for: .normal)
+            pauseResumeButton.isHidden = false
             break
-        case .none:
+        case .new:
+            pauseResumeButton.isHidden = true
+        default:
             break
         }
-        updateTimeLabels()
+        
+        UIView.animate(
+            withDuration: 0.1,
+            delay: 0.0,
+            options: .curveLinear,
+            animations: {
+                self.pauseResumeButton.layoutIfNeeded()
+        }, completion: nil)
+    }
+    
+    private func updateResetButton() {
+        switch gameState {
+        case .new:
+            fallthrough
+        case .ended:
+            resetButton.isHidden = true
+            break
+        default:
+            resetButton.isHidden = false
+            break
+        }
     }
     
     private func updateTimeLabels() {
