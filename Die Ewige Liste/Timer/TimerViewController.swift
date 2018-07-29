@@ -8,6 +8,12 @@
 
 import UIKit
 
+fileprivate enum SeperatorConstraintConstants: CGFloat {
+    case neutral = 0
+    case whitePlaying = 100
+    case blackPlaying = -100
+}
+
 class TimerViewController: UIViewController {
     
     @IBOutlet var midSeperatorYConstraint: NSLayoutConstraint!
@@ -238,18 +244,4 @@ class TimerViewController: UIViewController {
                 self.view.layoutIfNeeded()
         }, completion: nil)
     }
-}
-
-enum Player {
-    case none, white, black
-}
-
-enum GameState {
-    case new, running, paused, ended
-}
-
-enum SeperatorConstraintConstants: CGFloat {
-    case neutral = 0
-    case whitePlaying = 100
-    case blackPlaying = -100
 }

@@ -20,6 +20,17 @@
 		19008ECA20F393CA00AADB15 /* refresh.png in Resources */ = {isa = PBXBuildFile; fileRef = 19008EC920F393CA00AADB15 /* refresh.png */; };
 		19008ECD20F3BA6500AADB15 /* RotatingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19008ECC20F3BA6400AADB15 /* RotatingLabel.swift */; };
 		1943BAB6210B89F40041ED8A /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 1943BAB5210B89F30041ED8A /* play.png */; };
+		1943BAB9210E1E810041ED8A /* GameHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943BAB8210E1E810041ED8A /* GameHistoryViewController.swift */; };
+		1943BABB210E1F570041ED8A /* GameHistory.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1943BABA210E1F570041ED8A /* GameHistory.storyboard */; };
+		1943BABD210E1FA80041ED8A /* GameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943BABC210E1FA80041ED8A /* GameCell.swift */; };
+		1943BAD2210E21B30041ED8A /* SecondLevelAccordionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943BACD210E21B30041ED8A /* SecondLevelAccordionCell.swift */; };
+		1943BAD3210E21B30041ED8A /* FirstLevelAccordionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943BACE210E21B30041ED8A /* FirstLevelAccordionCell.swift */; };
+		1943BAD4210E21B30041ED8A /* AccordionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943BACF210E21B30041ED8A /* AccordionViewController.swift */; };
+		1943BAD5210E21B30041ED8A /* AccordionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943BAD0210E21B30041ED8A /* AccordionData.swift */; };
+		1943BAD6210E21B30041ED8A /* AccordionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943BAD1210E21B30041ED8A /* AccordionCell.swift */; };
+		1943BAD9210E22960041ED8A /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943BAD8210E22960041ED8A /* Game.swift */; };
+		1943BADB210E238A0041ED8A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943BADA210E238A0041ED8A /* Player.swift */; };
+		1943BADD210E23B20041ED8A /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943BADC210E23B20041ED8A /* GameState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +70,17 @@
 		19008EC920F393CA00AADB15 /* refresh.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = refresh.png; sourceTree = "<group>"; };
 		19008ECC20F3BA6400AADB15 /* RotatingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingLabel.swift; sourceTree = "<group>"; };
 		1943BAB5210B89F30041ED8A /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		1943BAB8210E1E810041ED8A /* GameHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHistoryViewController.swift; sourceTree = "<group>"; };
+		1943BABA210E1F570041ED8A /* GameHistory.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GameHistory.storyboard; sourceTree = "<group>"; };
+		1943BABC210E1FA80041ED8A /* GameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCell.swift; sourceTree = "<group>"; };
+		1943BACD210E21B30041ED8A /* SecondLevelAccordionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondLevelAccordionCell.swift; sourceTree = "<group>"; };
+		1943BACE210E21B30041ED8A /* FirstLevelAccordionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstLevelAccordionCell.swift; sourceTree = "<group>"; };
+		1943BACF210E21B30041ED8A /* AccordionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccordionViewController.swift; sourceTree = "<group>"; };
+		1943BAD0210E21B30041ED8A /* AccordionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccordionData.swift; sourceTree = "<group>"; };
+		1943BAD1210E21B30041ED8A /* AccordionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccordionCell.swift; sourceTree = "<group>"; };
+		1943BAD8210E22960041ED8A /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		1943BADA210E238A0041ED8A /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		1943BADC210E23B20041ED8A /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,8 +137,8 @@
 				19008E9820F38EA800AADB15 /* Assets.xcassets */,
 				19008E9A20F38EA800AADB15 /* LaunchScreen.storyboard */,
 				19008EBF20F38F1800AADB15 /* Timer */,
+				1943BAB7210E1E4A0041ED8A /* Game History */,
 				19008EC020F38F2200AADB15 /* Supporting Files */,
-				19008ECB20F3BA2100AADB15 /* IBDesignables */,
 				19008EC520F3925A00AADB15 /* Assets */,
 			);
 			path = "Die Ewige Liste";
@@ -160,6 +182,9 @@
 		19008EC520F3925A00AADB15 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				19008ECB20F3BA2100AADB15 /* IBDesignables */,
+				1943BAD7210E227F0041ED8A /* Models */,
+				1943BACB210E21940041ED8A /* Libs */,
 				19008EC620F3926500AADB15 /* Icons */,
 			);
 			path = Assets;
@@ -181,6 +206,46 @@
 				19008ECC20F3BA6400AADB15 /* RotatingLabel.swift */,
 			);
 			path = IBDesignables;
+			sourceTree = "<group>";
+		};
+		1943BAB7210E1E4A0041ED8A /* Game History */ = {
+			isa = PBXGroup;
+			children = (
+				1943BABA210E1F570041ED8A /* GameHistory.storyboard */,
+				1943BAB8210E1E810041ED8A /* GameHistoryViewController.swift */,
+				1943BABC210E1FA80041ED8A /* GameCell.swift */,
+			);
+			path = "Game History";
+			sourceTree = "<group>";
+		};
+		1943BACB210E21940041ED8A /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				1943BACC210E21B30041ED8A /* Accordion */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		1943BACC210E21B30041ED8A /* Accordion */ = {
+			isa = PBXGroup;
+			children = (
+				1943BACF210E21B30041ED8A /* AccordionViewController.swift */,
+				1943BACE210E21B30041ED8A /* FirstLevelAccordionCell.swift */,
+				1943BACD210E21B30041ED8A /* SecondLevelAccordionCell.swift */,
+				1943BAD0210E21B30041ED8A /* AccordionData.swift */,
+				1943BAD1210E21B30041ED8A /* AccordionCell.swift */,
+			);
+			path = Accordion;
+			sourceTree = "<group>";
+		};
+		1943BAD7210E227F0041ED8A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1943BAD8210E22960041ED8A /* Game.swift */,
+				1943BADC210E23B20041ED8A /* GameState.swift */,
+				1943BADA210E238A0041ED8A /* Player.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,6 +353,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1943BAB6210B89F40041ED8A /* play.png in Resources */,
+				1943BABB210E1F570041ED8A /* GameHistory.storyboard in Resources */,
 				19008EC420F38F4C00AADB15 /* Timer.storyboard in Resources */,
 				19008E9C20F38EA800AADB15 /* LaunchScreen.storyboard in Resources */,
 				19008ECA20F393CA00AADB15 /* refresh.png in Resources */,
@@ -319,9 +385,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				19008ECD20F3BA6500AADB15 /* RotatingLabel.swift in Sources */,
+				1943BAB9210E1E810041ED8A /* GameHistoryViewController.swift in Sources */,
+				1943BAD6210E21B30041ED8A /* AccordionCell.swift in Sources */,
+				1943BAD3210E21B30041ED8A /* FirstLevelAccordionCell.swift in Sources */,
 				19008E9420F38E9800AADB15 /* ViewController.swift in Sources */,
+				1943BADB210E238A0041ED8A /* Player.swift in Sources */,
+				1943BAD2210E21B30041ED8A /* SecondLevelAccordionCell.swift in Sources */,
+				1943BADD210E23B20041ED8A /* GameState.swift in Sources */,
 				19008EC220F38F3D00AADB15 /* TimerViewController.swift in Sources */,
+				1943BAD9210E22960041ED8A /* Game.swift in Sources */,
 				19008E9220F38E9800AADB15 /* AppDelegate.swift in Sources */,
+				1943BAD4210E21B30041ED8A /* AccordionViewController.swift in Sources */,
+				1943BAD5210E21B30041ED8A /* AccordionData.swift in Sources */,
+				1943BABD210E1FA80041ED8A /* GameCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
