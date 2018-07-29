@@ -10,7 +10,7 @@ import UIKit
 
 class GameHistoryViewController: AccordionViewController, UITableViewDataSource {
     
-    let gameData: [Game]!
+    let gameData: [Game]?
     
     // MARK UITableViewDataSource
     
