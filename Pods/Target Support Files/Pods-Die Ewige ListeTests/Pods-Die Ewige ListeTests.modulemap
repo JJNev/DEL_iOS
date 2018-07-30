@@ -1,0 +1,6 @@
+framework module Pods_Die_Ewige_ListeTests {
+  umbrella header "Pods-Die Ewige ListeTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

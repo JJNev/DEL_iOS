@@ -31,6 +31,9 @@
 		1943BAD9210E22960041ED8A /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943BAD8210E22960041ED8A /* Game.swift */; };
 		1943BADB210E238A0041ED8A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943BADA210E238A0041ED8A /* Player.swift */; };
 		1943BADD210E23B20041ED8A /* GameState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943BADC210E23B20041ED8A /* GameState.swift */; };
+		AC9FDDEBB32828C65A1097F4 /* Pods_Die_Ewige_Liste.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25AD98E0BE9FB62091CBA9C3 /* Pods_Die_Ewige_Liste.framework */; };
+		E0948F9917EC631F6E712713 /* Pods_Die_Ewige_ListeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 626C055EEED1DB4DDBFE5BB2 /* Pods_Die_Ewige_ListeTests.framework */; };
+		FABB41B2D5D41434C64E8E01 /* Pods_Die_Ewige_ListeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7F43C546CC027286AF6146 /* Pods_Die_Ewige_ListeUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		17E66C9D478AFC7E70C8E4D3 /* Pods-Die Ewige ListeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Die Ewige ListeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Die Ewige ListeTests/Pods-Die Ewige ListeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		19008E8E20F38E9800AADB15 /* Die Ewige Liste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Die Ewige Liste.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		19008E9120F38E9800AADB15 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19008E9320F38E9800AADB15 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +85,14 @@
 		1943BAD8210E22960041ED8A /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		1943BADA210E238A0041ED8A /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		1943BADC210E23B20041ED8A /* GameState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameState.swift; sourceTree = "<group>"; };
+		1CCEA02E3F79C8F381E11BB3 /* Pods-Die Ewige Liste.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Die Ewige Liste.release.xcconfig"; path = "Pods/Target Support Files/Pods-Die Ewige Liste/Pods-Die Ewige Liste.release.xcconfig"; sourceTree = "<group>"; };
+		25AD98E0BE9FB62091CBA9C3 /* Pods_Die_Ewige_Liste.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Die_Ewige_Liste.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3E20D9DD47D540EBCFBBA3CD /* Pods-Die Ewige Liste.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Die Ewige Liste.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Die Ewige Liste/Pods-Die Ewige Liste.debug.xcconfig"; sourceTree = "<group>"; };
+		626C055EEED1DB4DDBFE5BB2 /* Pods_Die_Ewige_ListeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Die_Ewige_ListeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D593151A180158F2EF1E0AA /* Pods-Die Ewige ListeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Die Ewige ListeUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Die Ewige ListeUITests/Pods-Die Ewige ListeUITests.release.xcconfig"; sourceTree = "<group>"; };
+		6D7F43C546CC027286AF6146 /* Pods_Die_Ewige_ListeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Die_Ewige_ListeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8A6E2C78589F2A6AF5E0119D /* Pods-Die Ewige ListeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Die Ewige ListeUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Die Ewige ListeUITests/Pods-Die Ewige ListeUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F698E7D65560711AA338E3B9 /* Pods-Die Ewige ListeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Die Ewige ListeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Die Ewige ListeTests/Pods-Die Ewige ListeTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC9FDDEBB32828C65A1097F4 /* Pods_Die_Ewige_Liste.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0948F9917EC631F6E712713 /* Pods_Die_Ewige_ListeTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FABB41B2D5D41434C64E8E01 /* Pods_Die_Ewige_ListeUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +130,8 @@
 				19008EA520F38EAA00AADB15 /* Die Ewige ListeTests */,
 				19008EB020F38EAA00AADB15 /* Die Ewige ListeUITests */,
 				19008E8F20F38E9800AADB15 /* Products */,
+				88BC1B40912A034C861BBBAB /* Pods */,
+				E35DAF8F719CBC233BB249B2 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -182,8 +199,8 @@
 		19008EC520F3925A00AADB15 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				19008ECB20F3BA2100AADB15 /* IBDesignables */,
 				1943BAD7210E227F0041ED8A /* Models */,
+				19008ECB20F3BA2100AADB15 /* IBDesignables */,
 				1943BACB210E21940041ED8A /* Libs */,
 				19008EC620F3926500AADB15 /* Icons */,
 			);
@@ -248,6 +265,29 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		88BC1B40912A034C861BBBAB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3E20D9DD47D540EBCFBBA3CD /* Pods-Die Ewige Liste.debug.xcconfig */,
+				1CCEA02E3F79C8F381E11BB3 /* Pods-Die Ewige Liste.release.xcconfig */,
+				17E66C9D478AFC7E70C8E4D3 /* Pods-Die Ewige ListeTests.debug.xcconfig */,
+				F698E7D65560711AA338E3B9 /* Pods-Die Ewige ListeTests.release.xcconfig */,
+				8A6E2C78589F2A6AF5E0119D /* Pods-Die Ewige ListeUITests.debug.xcconfig */,
+				6D593151A180158F2EF1E0AA /* Pods-Die Ewige ListeUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E35DAF8F719CBC233BB249B2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				25AD98E0BE9FB62091CBA9C3 /* Pods_Die_Ewige_Liste.framework */,
+				626C055EEED1DB4DDBFE5BB2 /* Pods_Die_Ewige_ListeTests.framework */,
+				6D7F43C546CC027286AF6146 /* Pods_Die_Ewige_ListeUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -255,9 +295,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 19008EB620F38EAA00AADB15 /* Build configuration list for PBXNativeTarget "Die Ewige Liste" */;
 			buildPhases = (
+				2B6CA783F4774B8D93D476AB /* [CP] Check Pods Manifest.lock */,
 				19008E8A20F38E9800AADB15 /* Sources */,
 				19008E8B20F38E9800AADB15 /* Frameworks */,
 				19008E8C20F38E9800AADB15 /* Resources */,
+				162962427D146D346C174B0E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -272,6 +314,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 19008EB920F38EAA00AADB15 /* Build configuration list for PBXNativeTarget "Die Ewige ListeTests" */;
 			buildPhases = (
+				C8F6847BC1BC9C29198BC47B /* [CP] Check Pods Manifest.lock */,
 				19008E9E20F38EAA00AADB15 /* Sources */,
 				19008E9F20F38EAA00AADB15 /* Frameworks */,
 				19008EA020F38EAA00AADB15 /* Resources */,
@@ -290,6 +333,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 19008EBC20F38EAA00AADB15 /* Build configuration list for PBXNativeTarget "Die Ewige ListeUITests" */;
 			buildPhases = (
+				9C5583B188B6864E33BCF235 /* [CP] Check Pods Manifest.lock */,
 				19008EA920F38EAA00AADB15 /* Sources */,
 				19008EAA20F38EAA00AADB15 /* Frameworks */,
 				19008EAB20F38EAA00AADB15 /* Resources */,
@@ -378,6 +422,81 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		162962427D146D346C174B0E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Die Ewige Liste/Pods-Die Ewige Liste-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Die Ewige Liste/Pods-Die Ewige Liste-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2B6CA783F4774B8D93D476AB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Die Ewige Liste-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9C5583B188B6864E33BCF235 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Die Ewige ListeUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8F6847BC1BC9C29198BC47B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Die Ewige ListeTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		19008E8A20F38E9800AADB15 /* Sources */ = {
@@ -568,6 +687,7 @@
 		};
 		19008EB720F38EAA00AADB15 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E20D9DD47D540EBCFBBA3CD /* Pods-Die Ewige Liste.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -585,6 +705,7 @@
 		};
 		19008EB820F38EAA00AADB15 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1CCEA02E3F79C8F381E11BB3 /* Pods-Die Ewige Liste.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -602,6 +723,7 @@
 		};
 		19008EBA20F38EAA00AADB15 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 17E66C9D478AFC7E70C8E4D3 /* Pods-Die Ewige ListeTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -622,6 +744,7 @@
 		};
 		19008EBB20F38EAA00AADB15 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F698E7D65560711AA338E3B9 /* Pods-Die Ewige ListeTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -642,6 +765,7 @@
 		};
 		19008EBD20F38EAA00AADB15 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8A6E2C78589F2A6AF5E0119D /* Pods-Die Ewige ListeUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -661,6 +785,7 @@
 		};
 		19008EBE20F38EAA00AADB15 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D593151A180158F2EF1E0AA /* Pods-Die Ewige ListeUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
