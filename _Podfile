@@ -1,5 +1,0 @@
-target 'Die Ewige Liste' do
-	use_frameworks!
-
-	pod 'SwiftKeychainMapper'
-end

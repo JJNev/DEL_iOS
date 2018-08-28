@@ -29,7 +29,7 @@ class TimerViewController: UIViewController {
     private lazy var timer = Timer()
     private var timeWhite = 0
     private var timeBlack = 0
-    private var currentPlayer: Player = .none
+    private var currentPlayer: Player?
     private var gameState: GameState = .new
     
     // MARK: Actions
@@ -61,8 +61,9 @@ class TimerViewController: UIViewController {
     
     @IBAction func areaTapped(_ sender: UITapGestureRecognizer) {
         // Whoever taps first can start
-        if currentPlayer == .none {
-            currentPlayer = sender == tapGestureRecognizerWhite ? .black : .white
+        if currentPlayer == nil {
+            // TODO: Add player names from "List" element
+            currentPlayer = sender == tapGestureRecognizerWhite ? Player(color: .black, name: "") : .white
         }
         changeTurn()
         updatePauseButton()

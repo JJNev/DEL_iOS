@@ -8,17 +8,25 @@
 
 import UIKit
 
-class GameHistoryViewController: AccordionViewController, UITableViewDataSource {
+class GameHistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let gameData: [Game]?
+    let gameData: [Game]? = []
+    
+    // MARK: Life Cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+    }
     
     // MARK UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        // TODO: Fill
+        return UITableViewCell()
     }
 }

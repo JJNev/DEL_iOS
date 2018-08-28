@@ -10,7 +10,7 @@ import UIKit
 
 class FirstLevelAccordionCell: AccordionCell {
     @IBOutlet var headlineLabel: UILabel!
-    @IBOutlet var arrowImageView: NIVImage!
+    @IBOutlet var arrowImageView: UIImage!
     
     override var data: AccordionData? {
         didSet {
