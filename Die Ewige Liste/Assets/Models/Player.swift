@@ -6,6 +6,17 @@
 //  Copyright © 2018 jmb. All rights reserved.
 //
 
-enum Player {
-    case none, white, black
+
+class Player {
+    enum Color {
+        case white, black
+    }
+
+    var color: Color
+    var name: String
+    
+    init(color: Color, name: String) {
+        self.color = color
+        self.name = name
+    }
 }
