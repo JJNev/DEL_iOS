@@ -24,7 +24,6 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         listService.loadData()
     }
     
-    
     // MARK: UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -44,8 +43,10 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-        let list = listService.lists[indexPath.row]
-        // TODO Load something ..?
+        if let gameHistoryViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "gameHistoryViewController") as? GameHistoryViewController {
+            gameHistoryViewController.list = listService.lists[indexPath.row]
+            navigationController?.pushViewController(gameHistoryViewController, animated: true)
+        }
     }
     
     // MARK: Actions

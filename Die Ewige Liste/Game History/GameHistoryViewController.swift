@@ -10,7 +10,7 @@ import UIKit
 
 class GameHistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let gameData: [Game]? = []
+    var list: List!
     
     // MARK: Life Cycle
     
@@ -22,7 +22,7 @@ class GameHistoryViewController: UIViewController, UITableViewDelegate, UITableV
     // MARK UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return list.games.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
