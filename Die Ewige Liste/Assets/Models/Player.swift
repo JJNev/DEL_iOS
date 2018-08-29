@@ -6,6 +6,27 @@
 //  Copyright © 2018 jmb. All rights reserved.
 //
 
-enum Player {
-    case none, white, black
+
+class Player: Equatable {
+    enum Color {
+        case white, black
+    }
+    
+    // MARK: -
+    
+    var color: Color
+    var name: String
+    
+    // MARK: Life Cycle
+    
+    init(color: Color, name: String) {
+        self.color = color
+        self.name = name
+    }
+    
+    // MARK: Equatable protocol
+    
+    static func == (lhs: Player, rhs: Player) -> Bool {
+        return lhs.color == rhs.color && lhs.name == rhs.name
+    }
 }

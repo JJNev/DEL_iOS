@@ -15,7 +15,6 @@ fileprivate enum SeperatorConstraintConstants: CGFloat {
 }
 
 class TimerViewController: UIViewController {
-    
     @IBOutlet var midSeperatorYConstraint: NSLayoutConstraint!
     @IBOutlet var timeWhiteLabel: RotatingLabel!
     @IBOutlet var timeBlackLabel: UILabel!
@@ -29,8 +28,20 @@ class TimerViewController: UIViewController {
     private lazy var timer = Timer()
     private var timeWhite = 0
     private var timeBlack = 0
-    private var currentPlayer: Player = .none
-    private var gameState: GameState = .new
+    private lazy var playerOne: Player = Player(color: .black, name: list.playerOneName)
+    private lazy var playerTwo: Player = Player(color: .white, name: list.playerTwoName)
+    private var currentPlayer: Player?
+    private var gameState: Game.State = .new
+    
+    var list: List!
+    
+    // MARK: Life Cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // TODO: Create new game and add to list
+    }
     
     // MARK: Actions
     
@@ -61,8 +72,9 @@ class TimerViewController: UIViewController {
     
     @IBAction func areaTapped(_ sender: UITapGestureRecognizer) {
         // Whoever taps first can start
-        if currentPlayer == .none {
-            currentPlayer = sender == tapGestureRecognizerWhite ? .black : .white
+        if currentPlayer == nil {
+            // TODO: Who plays which color?
+            currentPlayer = sender == tapGestureRecognizerWhite ? playerOne : playerTwo
         }
         changeTurn()
         updatePauseButton()
@@ -78,16 +90,12 @@ class TimerViewController: UIViewController {
     }
     
     private func changeTurn() {
-        switch currentPlayer {
-        case .white:
-            currentPlayer = .black
-            break
-        case .black:
-            currentPlayer = .white
-            break
-        case .none:
-            break
+        guard let unwrappedCurrentPlayer = currentPlayer else {
+            return
         }
+        
+        currentPlayer = unwrappedCurrentPlayer == playerOne ? playerTwo : playerOne
+        
         startTimer(reset: true)
         updateTapGestureRecognizers()
         updateMidSeperator()
@@ -104,16 +112,16 @@ class TimerViewController: UIViewController {
     
     
     @objc private func updateTime() {
-        switch currentPlayer {
-        case .white:
-            timeWhite += 1
-            break
-        case .black:
-            timeBlack += 1
-            break
-        case .none:
-            break
+        guard let unwrappedCurrentPlayer = currentPlayer else {
+            return
         }
+        
+        if unwrappedCurrentPlayer.color == .white {
+            timeWhite += 1
+        } else if unwrappedCurrentPlayer.color == .black {
+            timeBlack += 1
+        }
+        
         updateTimeLabels()
     }
     
@@ -129,19 +137,17 @@ class TimerViewController: UIViewController {
     }
     
     private func updateTapGestureRecognizers() {
-        switch currentPlayer {
-        case .white:
+        if let unwrappedCurrentPlayer = currentPlayer {
+            if unwrappedCurrentPlayer.color == .white {
+                tapGestureRecognizerWhite.isEnabled = true
+                tapGestureRecognizerBlack.isEnabled = false
+            } else if unwrappedCurrentPlayer.color == .black {
+                tapGestureRecognizerWhite.isEnabled = false
+                tapGestureRecognizerBlack.isEnabled = true
+            }
+        } else {
             tapGestureRecognizerWhite.isEnabled = true
-            tapGestureRecognizerBlack.isEnabled = false
-            break
-        case .black:
-            tapGestureRecognizerWhite.isEnabled = false
             tapGestureRecognizerBlack.isEnabled = true
-            break
-        case .none:
-            tapGestureRecognizerWhite.isEnabled = true
-            tapGestureRecognizerBlack.isEnabled = true
-            break
         }
     }
     
@@ -184,34 +190,30 @@ class TimerViewController: UIViewController {
     }
     
     private func updateTimeLabels() {
-        switch currentPlayer {
-        case .white:
+        if let unwrappedCurrentPlayer = currentPlayer {
+            if unwrappedCurrentPlayer.color == .white {
+                timeWhiteLabel.text = String(format: "%02d:%02d", timeWhite / 60, timeWhite % 60)
+            } else if unwrappedCurrentPlayer.color == .black {
+                timeBlackLabel.text = String(format: "%02d:%02d", timeBlack / 60, timeBlack % 60)
+            }
+        } else {
             timeWhiteLabel.text = String(format: "%02d:%02d", timeWhite / 60, timeWhite % 60)
-            break
-        case .black:
             timeBlackLabel.text = String(format: "%02d:%02d", timeBlack / 60, timeBlack % 60)
-            break
-        case .none:
-            timeWhiteLabel.text = String(format: "%02d:%02d", timeWhite / 60, timeWhite % 60)
-            timeBlackLabel.text = String(format: "%02d:%02d", timeBlack / 60, timeBlack % 60)
-            break
         }
     }
     
     private func updatePlayerLabels() {
-        switch currentPlayer {
-        case .white:
-            tapToEndLabelWhite.isHidden = false
-            tapToEndLabelBlack.isHidden = true
-            break
-        case .black:
+        if let unwrappedCurrentPlayer = currentPlayer {
+            if unwrappedCurrentPlayer.color == .white {
+                tapToEndLabelWhite.isHidden = false
+                tapToEndLabelBlack.isHidden = true
+            } else if unwrappedCurrentPlayer.color == .black {
+                tapToEndLabelWhite.isHidden = true
+                tapToEndLabelBlack.isHidden = false
+            }
+        } else {
             tapToEndLabelWhite.isHidden = true
-            tapToEndLabelBlack.isHidden = false
-            break
-        case .none:
-            tapToEndLabelWhite.isHidden = true
             tapToEndLabelBlack.isHidden = true
-            break
         }
         
         UIView.animate(
@@ -224,16 +226,14 @@ class TimerViewController: UIViewController {
     }
     
     private func updateMidSeperator() {
-        switch currentPlayer {
-        case .white:
-            midSeperatorYConstraint.constant = SeperatorConstraintConstants.whitePlaying.rawValue
-            break
-        case .black:
-            midSeperatorYConstraint.constant = SeperatorConstraintConstants.blackPlaying.rawValue
-            break
-        case .none:
+        if let unwrappedCurrentPlayer = currentPlayer {
+            if unwrappedCurrentPlayer.color == .white {
+                midSeperatorYConstraint.constant = SeperatorConstraintConstants.whitePlaying.rawValue
+            } else if unwrappedCurrentPlayer.color == .black {
+                midSeperatorYConstraint.constant = SeperatorConstraintConstants.blackPlaying.rawValue
+            }
+        } else {
             midSeperatorYConstraint.constant = SeperatorConstraintConstants.neutral.rawValue
-            break
         }
         
         UIView.animate(

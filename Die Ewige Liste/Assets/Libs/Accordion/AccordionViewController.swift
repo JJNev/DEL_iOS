@@ -39,7 +39,8 @@ class AccordionViewController: UIViewController, UITableViewDelegate {
         
         // If the cell is currently allocated, change the arrow's state
         if let cell = tableView.cellForRow(at: indexPath), cell is FirstLevelAccordionCell {
-            (cell as! FirstLevelAccordionCell).arrowImageView.selected = false
+        // TODO: Replace
+//            (cell as! FirstLevelAccordionCell).arrowImageView.selected = false
         }
         selectedDataSet.isExpanded = false
         tableView.deleteRows(at: indexPaths, with: rowAnimation)
@@ -54,7 +55,8 @@ class AccordionViewController: UIViewController, UITableViewDelegate {
         
         // If the cell is currently allocated, change the arrow's state
         if let cell = tableView.cellForRow(at: indexPath), cell is FirstLevelAccordionCell {
-            (cell as! FirstLevelAccordionCell).arrowImageView.selected = true
+        // TODO: Replace
+//            (cell as! FirstLevelAccordionCell).arrowImageView.selected = true
         }
         selectedDataSet.isExpanded = true
         tableView.insertRows(at: indexPaths, with: rowAnimation)

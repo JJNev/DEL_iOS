@@ -9,11 +9,18 @@
 import Foundation
 
 struct Game {
-    let gameState: GameState?
+    enum State {
+        case new, running, paused, ended
+    }
+    
+    // MARK: -
+    
+    var state: State = .new
     let dateStarted: Date?
     let dateEnded: Date?
+    let totalTimeInSeconds: Int = 0
     let winner: Player?
     let loser: Player?
-    let winnerName: String?
-    let loserName: String?
+    let timeWinner: Player?
+    let settings: Dictionary<String, Any>?
 }

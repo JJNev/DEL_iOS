@@ -1,0 +1,6 @@
+framework module Pods_Die_Ewige_Liste {
+  umbrella header "Pods-Die Ewige Liste-umbrella.h"
+
+  export *
+  module * { export * }
+}
