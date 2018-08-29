@@ -17,6 +17,13 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     // MARK: Life Cycle
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(listDataLoaded), name: Notification.Name.init(listService.dataLoadedNotificationIdentifier), object: nil)
+        listService.loadData()
+    }
+    
     
     // MARK: UITableViewDataSource
     
@@ -26,7 +33,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "listCell") as? ListCell {
-            
+            cell.setList(listService.lists[indexPath.row])
             return cell
         } else {
             return UITableViewCell()
@@ -47,7 +54,12 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         guard playerOneTextField.text != "" && playerTwoTextField.text != "" else {
             return
         }
-        listService.lists.append(List(playerOneName: playerTwoTextField.text!, playerTwoName: playerTwoTextField.text!))
+        listService.addList(list: List(playerOneName: playerTwoTextField.text!, playerTwoName: playerTwoTextField.text!))
+    }
+    
+    // MARK: Helper
+    
+    @objc private func listDataLoaded() {
         listTableView.reloadData()
     }
 }

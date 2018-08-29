@@ -15,7 +15,7 @@ class ListCell: UITableViewCell {
     @IBOutlet weak var playerTwoPointsLabel: UILabel!
     @IBOutlet weak var gamesPlayedLabel: UILabel!
     
-    func setList(list: List) {
+    func setList(_ list: List) {
         playerOneNameLabel.text = list.playerOneName
         playerTwoNameLabel.text = list.playerTwoName
         gamesPlayedLabel.text = String(list.games.count)

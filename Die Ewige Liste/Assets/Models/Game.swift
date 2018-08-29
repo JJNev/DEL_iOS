@@ -9,11 +9,13 @@
 import Foundation
 
 struct Game {
-    var gameState: GameState?
+    var state: GameState = GameState.new
     
     let dateStarted: Date?
     let dateEnded: Date?
+    let totalTimeInSeconds: Int = 0
     let winner: Player?
     let loser: Player?
+    let timeWinner: Player?
     let settings: Dictionary<String, Any>?
 }

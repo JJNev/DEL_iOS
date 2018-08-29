@@ -32,6 +32,8 @@ class TimerViewController: UIViewController {
     private var currentPlayer: Player?
     private var gameState: GameState = .new
     
+    var list: List!
+    
     // MARK: Actions
     
     @IBAction func pauseResumeTapped(_ sender: Any) {
@@ -62,8 +64,8 @@ class TimerViewController: UIViewController {
     @IBAction func areaTapped(_ sender: UITapGestureRecognizer) {
         // Whoever taps first can start
         if currentPlayer == nil {
-            // TODO: Add player names from "List" element
-            currentPlayer = sender == tapGestureRecognizerWhite ? Player(color: .black, name: "") : .white
+            // TODO: Who plays which color?
+            currentPlayer = sender == tapGestureRecognizerWhite ? Player(color: .black, name: list.playerOneName) : Player(color: .white, name: list.playerTwoName)
         }
         changeTurn()
         updatePauseButton()
@@ -79,15 +81,15 @@ class TimerViewController: UIViewController {
     }
     
     private func changeTurn() {
-        switch currentPlayer {
-        case .white:
-            currentPlayer = .black
-            break
-        case .black:
-            currentPlayer = .white
-            break
-        case .none:
-            break
+        if let currentPlayer = currentPlayer {
+            switch currentPlayer.color {
+            case .white:
+                currentPlayer = .black
+                break
+            case .black:
+                currentPlayer = .white
+                break
+            }
         }
         startTimer(reset: true)
         updateTapGestureRecognizers()
