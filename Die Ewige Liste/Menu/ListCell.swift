@@ -13,11 +13,11 @@ class ListCell: UITableViewCell {
     @IBOutlet weak var playerTwoNameLabel: UILabel!
     @IBOutlet weak var playerOnePointsLabel: UILabel!
     @IBOutlet weak var playerTwoPointsLabel: UILabel!
-    @IBOutlet weak var gamesPlayedLabel: UILabel!
+    @IBOutlet weak var gamesPlayedContentLabel: UILabel!
     
     func setList(_ list: List) {
         playerOneNameLabel.text = list.playerOneName
         playerTwoNameLabel.text = list.playerTwoName
-        gamesPlayedLabel.text = String(list.games.count)
+        gamesPlayedContentLabel.text = String(list.games.count)
     }
 }
