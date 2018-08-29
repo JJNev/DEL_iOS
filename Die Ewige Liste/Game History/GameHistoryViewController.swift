@@ -9,14 +9,10 @@
 import UIKit
 
 class GameHistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
-    var list: List!
-    
-    // MARK: Life Cycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    var list: List! {
+        didSet {
+            setupUi()
+        }
     }
     
     // MARK UITableViewDataSource
@@ -26,7 +22,26 @@ class GameHistoryViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // TODO: Fill
-        return UITableViewCell()
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "gameHistoryCell") as? GameHistoryCell {
+            cell.setGame(list.games[indexPath.row])
+            return cell
+        } else {
+            return UITableViewCell()
+        }
+    }
+    
+    // MARK: Actions
+    
+    @IBAction func newGameTapped(_ sender: Any) {
+        if let timerViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "timerViewController") as? TimerViewController {
+            timerViewController.list = list
+            navigationController?.pushViewController(timerViewController, animated: true)
+        }
+    }
+    
+    // MARK: Helper
+    
+    private func setupUi() {
+        navigationItem.title = "\(list.playerOneName) vs \(list.playerTwoName)"
     }
 }

@@ -15,12 +15,9 @@ class GameHistoryCell: UITableViewCell {
     @IBOutlet weak var timeWinnerContentLabel: UILabel!
     @IBOutlet weak var gameStateLabel: UILabel!
     
-    var game: Game?
-    
     // MARK: Helper
     
-    private func fillUi(game: Game) {
-        self.game = game
+    func setGame(_ game: Game) {
         timeTotalContentLabel.text = String(format: "%02d:%02d", game.totalTimeInSeconds / 60, game.totalTimeInSeconds % 60)
         if let endDate = game.dateEnded {
             let dateFormatter = DateFormatter()
@@ -30,16 +27,16 @@ class GameHistoryCell: UITableViewCell {
         }
         
         switch game.state {
-        case GameState.new:
+        case .new:
             gameStateLabel.text = "new".uppercased()
             break
-        case GameState.running:
+        case .running:
             gameStateLabel.text = "running".uppercased()
             break
-        case GameState.paused:
+        case .paused:
             gameStateLabel.text = "paused".uppercased()
             break
-        case GameState.ended:
+        case .ended:
             gameStateLabel.text = "ended".uppercased()
             winnerContentLabel.text = game.winner?.name
             timeWinnerContentLabel.text = game.timeWinner?.name
