@@ -51,11 +51,18 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     // MARK: Actions
     
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
     @IBAction func createNewListTapped(_ sender: Any) {
         guard playerOneTextField.text != "" && playerTwoTextField.text != "" else {
             return
         }
-        listService.addList(list: List(playerOneName: playerTwoTextField.text!, playerTwoName: playerTwoTextField.text!))
+        listService.addList(list: List(playerOneName: playerOneTextField.text!, playerTwoName: playerTwoTextField.text!))
+        view.endEditing(true)
+        playerOneTextField.text = ""
+        playerTwoTextField.text = ""
     }
     
     // MARK: Helper

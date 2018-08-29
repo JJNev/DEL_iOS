@@ -148,8 +148,8 @@
 		19008E9020F38E9800AADB15 /* Die Ewige Liste */ = {
 			isa = PBXGroup;
 			children = (
-				19008E9D20F38EA800AADB15 /* Info.plist */,
 				19008EC020F38F2200AADB15 /* Supporting Files */,
+				19008E9D20F38EA800AADB15 /* Info.plist */,
 				1902137E21355AFB009F5E59 /* Main.storyboard */,
 				1902137D21355ADD009F5E59 /* Menu */,
 				1902137A2135572F009F5E59 /* Services */,
