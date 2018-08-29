@@ -35,7 +35,7 @@ class GameHistoryViewController: UIViewController, UITableViewDelegate, UITableV
     @IBAction func newGameTapped(_ sender: Any) {
         if let timerViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "timerViewController") as? TimerViewController {
             timerViewController.list = list
-            navigationController?.pushViewController(timerViewController, animated: true)
+            show(timerViewController, sender: self)
         }
     }
     
