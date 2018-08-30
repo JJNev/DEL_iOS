@@ -12,6 +12,8 @@ class List {
     var playerOneName: String
     var playerTwoName: String
     var games: [Game] = []
+    var playerOnePoints: Int = 0
+    var playerTwoPoints: Int = 0
     
     init(playerOneName: String, playerTwoName: String) {
         self.playerOneName = playerOneName
