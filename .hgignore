@@ -1,2 +1,5 @@
 syntax: glob
-Die Ewige Liste.xcworkspace/xcuserdata/johannesoffice.xcuserdatad/UserInterfaceState.xcuserstate.orig
+*._*
+*.DS_Store
+*xcuserdata*
+hgrc
