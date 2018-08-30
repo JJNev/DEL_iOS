@@ -38,6 +38,8 @@ class ListService {
     // MARK: Debug
     
     private func addDummyData() {
-        lists.append(List(playerOneName: "Tom", playerTwoName: "Johannes"))
+        let list = List(playerOneName: "Tom", playerTwoName: "Johannes")
+        list.games = [Game(state: .ended, dateStarted: Date(), dateEnded: Date(), winner: Player(color: .white, name: "Tom"), loser: Player(color: .black, name: "Johannes"), timeWinner: Player(color: .black, name: "Johannes"), settings: nil)]
+        lists.append(list)
     }
 }
