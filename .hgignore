@@ -1,2 +1,13 @@
 syntax: glob
-Die Ewige Liste.xcworkspace/xcuserdata/johannesoffice.xcuserdatad/UserInterfaceState.xcuserstate.orig
+
+.DS_Store
+
+*.swp
+*~.nib
+
+build
+
+*.mode1 *.mode1v3 *.mode2 *.mode2v3 *.pbxuser
+*.perspective
+*.perspectivev3
+xcuserdata
