@@ -18,6 +18,8 @@ class ListCell: UITableViewCell {
     func setList(_ list: List) {
         playerOneNameLabel.text = list.playerOneName
         playerTwoNameLabel.text = list.playerTwoName
+        playerOnePointsLabel.text = String(list.playerOnePoints)
+        playerTwoPointsLabel.text = String(list.playerTwoPoints)
         gamesPlayedContentLabel.text = String(list.games.count)
     }
 }
