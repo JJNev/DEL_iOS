@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -222,70 +223,109 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="724"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="gameHistoryCell" rowHeight="164" id="Jf1-cg-qY8" customClass="GameHistoryCell" customModule="Die_Ewige_Liste" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="164"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="gameHistoryCell" rowHeight="110" id="Jf1-cg-qY8" customClass="GameHistoryCell" customModule="Die_Ewige_Liste" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jf1-cg-qY8" id="9Gx-fo-cyr">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="163.66666666666666"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="109.66666666666667"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Winner:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KE7-aS-wUF" userLabel="Winner Label">
-                                                    <rect key="frame" x="15" y="22" width="91" height="32"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hf-9w-pgi" userLabel="Winner Content Label">
-                                                    <rect key="frame" x="125" y="22" width="51" height="32"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="01.01.1970" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="axm-A1-cCh" userLabel="Date Label">
-                                                    <rect key="frame" x="280" y="28" width="80" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MdP-jY-hd6" userLabel="Label Container">
+                                                    <rect key="frame" x="14.999999999999993" y="11" width="101.33333333333331" height="88"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Winner:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KE7-aS-wUF" userLabel="Winner Label">
+                                                            <rect key="frame" x="0.0" y="0.0" width="101.33333333333333" height="30"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Br-cA-uXl" userLabel="Game Time Label">
+                                                            <rect key="frame" x="0.0" y="38" width="101.33333333333333" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Winner:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SgU-8n-iYa" userLabel="Time Winner Label">
+                                                            <rect key="frame" x="0.0" y="67" width="101.33333333333333" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="1Br-cA-uXl" firstAttribute="top" secondItem="KE7-aS-wUF" secondAttribute="bottom" constant="8" id="1gZ-D4-PZI"/>
+                                                        <constraint firstAttribute="bottom" secondItem="SgU-8n-iYa" secondAttribute="bottom" id="V3I-0p-eEW"/>
+                                                        <constraint firstItem="KE7-aS-wUF" firstAttribute="leading" secondItem="MdP-jY-hd6" secondAttribute="leading" id="VfX-el-fAB"/>
+                                                        <constraint firstAttribute="trailing" secondItem="1Br-cA-uXl" secondAttribute="trailing" id="cqg-Zm-uI0"/>
+                                                        <constraint firstItem="1Br-cA-uXl" firstAttribute="leading" secondItem="MdP-jY-hd6" secondAttribute="leading" id="f1e-Ul-ES3"/>
+                                                        <constraint firstItem="KE7-aS-wUF" firstAttribute="top" secondItem="MdP-jY-hd6" secondAttribute="top" id="fZA-pL-3Rd"/>
+                                                        <constraint firstAttribute="trailing" secondItem="SgU-8n-iYa" secondAttribute="trailing" id="il4-X9-Kez"/>
+                                                        <constraint firstItem="SgU-8n-iYa" firstAttribute="top" secondItem="1Br-cA-uXl" secondAttribute="bottom" constant="8" id="ixB-g2-YGF"/>
+                                                        <constraint firstItem="SgU-8n-iYa" firstAttribute="leading" secondItem="MdP-jY-hd6" secondAttribute="leading" id="vVL-Kv-8DL"/>
+                                                        <constraint firstAttribute="trailing" secondItem="KE7-aS-wUF" secondAttribute="trailing" id="zrR-lA-YAT"/>
+                                                    </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4SK-by-s2S" userLabel="Label Content Container">
+                                                    <rect key="frame" x="124.33333333333331" y="11" width="74" height="88"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0hf-9w-pgi" userLabel="Winner Content Label">
+                                                            <rect key="frame" x="0.0" y="0.0" width="74" height="30"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:47" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDe-YU-rPR" userLabel="Game Time Content Label">
+                                                            <rect key="frame" x="0.0" y="38" width="74" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Johannes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdF-xC-R3w" userLabel="Time Winner Content Label">
+                                                            <rect key="frame" x="0.0" y="67" width="74" height="21"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="0hf-9w-pgi" firstAttribute="leading" secondItem="4SK-by-s2S" secondAttribute="leading" id="0xe-mr-FX7"/>
+                                                        <constraint firstItem="aDe-YU-rPR" firstAttribute="top" secondItem="0hf-9w-pgi" secondAttribute="bottom" constant="8" id="52r-tU-NZv"/>
+                                                        <constraint firstAttribute="trailing" secondItem="0hf-9w-pgi" secondAttribute="trailing" id="N9d-G0-DJL"/>
+                                                        <constraint firstItem="aDe-YU-rPR" firstAttribute="leading" secondItem="4SK-by-s2S" secondAttribute="leading" id="OH7-Kn-s7I"/>
+                                                        <constraint firstAttribute="bottom" secondItem="fdF-xC-R3w" secondAttribute="bottom" id="P4f-Rw-5ul"/>
+                                                        <constraint firstItem="0hf-9w-pgi" firstAttribute="top" secondItem="4SK-by-s2S" secondAttribute="top" id="UYc-UZ-amr"/>
+                                                        <constraint firstItem="fdF-xC-R3w" firstAttribute="leading" secondItem="4SK-by-s2S" secondAttribute="leading" id="V49-gl-3nW"/>
+                                                        <constraint firstAttribute="trailing" secondItem="aDe-YU-rPR" secondAttribute="trailing" id="YBO-Ab-X6A"/>
+                                                        <constraint firstItem="fdF-xC-R3w" firstAttribute="top" secondItem="aDe-YU-rPR" secondAttribute="bottom" constant="8" id="gKr-my-fL5"/>
+                                                        <constraint firstAttribute="trailing" secondItem="fdF-xC-R3w" secondAttribute="trailing" id="jFp-gd-jdb"/>
+                                                    </constraints>
+                                                </view>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="01.01.1970" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="axm-A1-cCh" userLabel="Date Label">
+                                                    <rect key="frame" x="288" y="20" width="80" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Br-cA-uXl" userLabel="Game Time Label">
-                                                    <rect key="frame" x="15" y="78" width="84" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="10:47" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aDe-YU-rPR" userLabel="Game Time Content Label">
-                                                    <rect key="frame" x="125" y="78" width="43" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time Winner:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SgU-8n-iYa" userLabel="Time Winner Label">
-                                                    <rect key="frame" x="15" y="119" width="102" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Johannes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdF-xC-R3w" userLabel="Time Winner Content Label">
-                                                    <rect key="frame" x="125" y="118" width="74" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ENDED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xiM-rG-Ory" userLabel="Game State Label">
-                                                    <rect key="frame" x="304" y="119" width="56" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ENDED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xiM-rG-Ory" userLabel="Game State Label">
+                                                    <rect key="frame" x="312" y="78" width="56" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="MdP-jY-hd6" secondAttribute="bottom" id="6GA-af-hFT"/>
+                                                <constraint firstItem="MdP-jY-hd6" firstAttribute="top" secondItem="9Gx-fo-cyr" secondAttribute="topMargin" id="JtW-9x-GqC"/>
+                                                <constraint firstItem="xiM-rG-Ory" firstAttribute="bottom" secondItem="SgU-8n-iYa" secondAttribute="bottom" id="N2l-Z3-PyY"/>
+                                                <constraint firstItem="xiM-rG-Ory" firstAttribute="trailing" secondItem="axm-A1-cCh" secondAttribute="trailing" id="Pf6-RC-8v8"/>
+                                                <constraint firstItem="MdP-jY-hd6" firstAttribute="leading" secondItem="9Gx-fo-cyr" secondAttribute="leadingMargin" id="XLo-PH-xyn"/>
+                                                <constraint firstItem="4SK-by-s2S" firstAttribute="leading" secondItem="MdP-jY-hd6" secondAttribute="trailing" constant="8" id="YwS-mQ-vQb"/>
+                                                <constraint firstItem="axm-A1-cCh" firstAttribute="trailing" secondItem="9Gx-fo-cyr" secondAttribute="trailingMargin" constant="8" id="hTD-Qf-m3q"/>
+                                                <constraint firstItem="axm-A1-cCh" firstAttribute="bottom" secondItem="KE7-aS-wUF" secondAttribute="bottom" id="xQi-IM-vRE"/>
+                                                <constraint firstItem="4SK-by-s2S" firstAttribute="top" secondItem="MdP-jY-hd6" secondAttribute="top" id="zhP-Q7-u03"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="dateLabel" destination="axm-A1-cCh" id="54D-MF-3pv"/>
