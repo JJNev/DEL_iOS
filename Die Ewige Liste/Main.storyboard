@@ -223,7 +223,7 @@
                                 <rect key="frame" x="0.0" y="88" width="375" height="724"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="gameHistoryCell" rowHeight="110" id="Jf1-cg-qY8" customClass="GameHistoryCell" customModule="Die_Ewige_Liste" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="gameHistoryCell" rowHeight="110" id="Jf1-cg-qY8" customClass="GameHistoryCell" customModule="Die_Ewige_Liste" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Jf1-cg-qY8" id="9Gx-fo-cyr">
@@ -376,7 +376,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="410.66666666666669"/>
                                 <subviews>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to end turn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNF-GR-kqh" customClass="RotatingLabel" customModule="Die_Ewige_Liste" customModuleProvider="target">
-                                        <rect key="frame" x="127" y="43.666666666666657" width="121" height="20.333333333333343"/>
+                                        <rect key="frame" x="127" y="43.666666666666664" width="121" height="20.333333333333336"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -386,7 +386,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QC2-nR-pmt" userLabel="Time White Label" customClass="RotatingLabel" customModule="Die_Ewige_Liste" customModuleProvider="target">
-                                        <rect key="frame" x="131.66666666666669" y="292.66666666666669" width="111.66666666666666" height="58"/>
+                                        <rect key="frame" x="131.66666666666666" y="292.66666666666669" width="111.66666666666666" height="58"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="49"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
