@@ -491,14 +491,16 @@
                     </view>
                     <connections>
                         <outlet property="midSeperatorYConstraint" destination="DAK-AN-CUy" id="T6f-TQ-Gdq"/>
+                        <outlet property="nameLabelBottom" destination="IhX-vC-SxZ" id="XNR-Uq-Rkr"/>
+                        <outlet property="nameLabelTop" destination="yMU-vh-pnc" id="Jjv-p8-yZi"/>
                         <outlet property="pauseResumeButton" destination="ofn-zU-9qf" id="LHJ-hQ-EJn"/>
                         <outlet property="resetButton" destination="g71-0F-T4w" id="8oL-Z9-9Lx"/>
-                        <outlet property="tapGestureRecognizerBlack" destination="ZKx-UP-RNV" id="Ep9-UJ-YFg"/>
-                        <outlet property="tapGestureRecognizerWhite" destination="Rds-cz-3qA" id="ejm-5s-3RK"/>
-                        <outlet property="tapToEndLabelBlack" destination="F6x-uU-aqb" id="zPQ-v4-W4B"/>
-                        <outlet property="tapToEndLabelWhite" destination="HNF-GR-kqh" id="3V0-5s-ilm"/>
-                        <outlet property="timeBlackLabel" destination="vVN-9J-00g" id="Bo6-eR-yy7"/>
-                        <outlet property="timeWhiteLabel" destination="QC2-nR-pmt" id="1zJ-PG-CKN"/>
+                        <outlet property="tapGestureRecognizerBottom" destination="ZKx-UP-RNV" id="Ep9-UJ-YFg"/>
+                        <outlet property="tapGestureRecognizerTop" destination="Rds-cz-3qA" id="ejm-5s-3RK"/>
+                        <outlet property="tapToEndLabelBottom" destination="F6x-uU-aqb" id="zPQ-v4-W4B"/>
+                        <outlet property="tapToEndLabelTop" destination="HNF-GR-kqh" id="3V0-5s-ilm"/>
+                        <outlet property="timeLabelBottom" destination="vVN-9J-00g" id="Bo6-eR-yy7"/>
+                        <outlet property="timeLabelTop" destination="QC2-nR-pmt" id="1zJ-PG-CKN"/>
                         <outletCollection property="defaultBlackViews" destination="yMU-vh-pnc" collectionClass="NSMutableArray" id="wms-NZ-Jmq"/>
                         <outletCollection property="defaultBlackViews" destination="QC2-nR-pmt" collectionClass="NSMutableArray" id="v17-r6-dF2"/>
                         <outletCollection property="defaultBlackViews" destination="HNF-GR-kqh" collectionClass="NSMutableArray" id="N4V-Zt-ba3"/>

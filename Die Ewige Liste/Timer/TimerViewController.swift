@@ -15,15 +15,19 @@ fileprivate enum SeperatorConstraintConstants: CGFloat {
 }
 
 class TimerViewController: UIViewController {
+    @IBOutlet var timeLabelTop: RotatingLabel!
+    @IBOutlet var timeLabelBottom: UILabel!
+    @IBOutlet var tapGestureRecognizerTop: UITapGestureRecognizer!
+    @IBOutlet var tapGestureRecognizerBottom: UITapGestureRecognizer!
+    @IBOutlet var tapToEndLabelTop: RotatingLabel!
+    @IBOutlet var tapToEndLabelBottom: UILabel!
+    @IBOutlet weak var nameLabelTop: RotatingLabel!
+    @IBOutlet weak var nameLabelBottom: UILabel!
+    
     @IBOutlet var midSeperatorYConstraint: NSLayoutConstraint!
-    @IBOutlet var timeWhiteLabel: RotatingLabel!
-    @IBOutlet var timeBlackLabel: UILabel!
-    @IBOutlet var tapGestureRecognizerWhite: UITapGestureRecognizer!
-    @IBOutlet var tapGestureRecognizerBlack: UITapGestureRecognizer!
-    @IBOutlet var tapToEndLabelWhite: RotatingLabel!
-    @IBOutlet var tapToEndLabelBlack: UILabel!
     @IBOutlet var pauseResumeButton: UIButton!
     @IBOutlet var resetButton: UIButton!
+    
     @IBOutlet var defaultBlackViews: [UIView]!
     @IBOutlet var defaultWhiteViews: [UIView]!
     
@@ -87,7 +91,7 @@ class TimerViewController: UIViewController {
         // Whoever taps first can start
         if currentPlayer == nil {
             // TODO: Who plays which color?
-            currentPlayer = sender == tapGestureRecognizerWhite ? playerTop : playerBottom
+            currentPlayer = sender == tapGestureRecognizerTop ? playerTop : playerBottom
         }
         changeTurn()
         updatePauseButton()
@@ -97,8 +101,11 @@ class TimerViewController: UIViewController {
     // MARK: Helper
     
     private func setupGame() {
+        // TODO: Who plays which position/color?
         playerTop = Player(color: .white, name: list.playerOneName)
         playerBottom = Player(color: .black, name: list.playerTwoName)
+        nameLabelTop.text = playerTop.name
+        nameLabelBottom.text = playerBottom.name
         adjustColors()
     }
     
@@ -173,15 +180,15 @@ class TimerViewController: UIViewController {
     private func updateTapGestureRecognizers() {
         if let unwrappedCurrentPlayer = currentPlayer {
             if unwrappedCurrentPlayer.color == .white {
-                tapGestureRecognizerWhite.isEnabled = true
-                tapGestureRecognizerBlack.isEnabled = false
+                tapGestureRecognizerTop.isEnabled = true
+                tapGestureRecognizerBottom.isEnabled = false
             } else if unwrappedCurrentPlayer.color == .black {
-                tapGestureRecognizerWhite.isEnabled = false
-                tapGestureRecognizerBlack.isEnabled = true
+                tapGestureRecognizerTop.isEnabled = false
+                tapGestureRecognizerBottom.isEnabled = true
             }
         } else {
-            tapGestureRecognizerWhite.isEnabled = true
-            tapGestureRecognizerBlack.isEnabled = true
+            tapGestureRecognizerTop.isEnabled = true
+            tapGestureRecognizerBottom.isEnabled = true
         }
     }
     
@@ -226,28 +233,28 @@ class TimerViewController: UIViewController {
     private func updateTimeLabels() {
         if let unwrappedCurrentPlayer = currentPlayer {
             if unwrappedCurrentPlayer.color == .white {
-                timeWhiteLabel.text = String(format: "%02d:%02d", timeWhite / 60, timeWhite % 60)
+                timeLabelTop.text = String(format: "%02d:%02d", timeWhite / 60, timeWhite % 60)
             } else if unwrappedCurrentPlayer.color == .black {
-                timeBlackLabel.text = String(format: "%02d:%02d", timeBlack / 60, timeBlack % 60)
+                timeLabelBottom.text = String(format: "%02d:%02d", timeBlack / 60, timeBlack % 60)
             }
         } else {
-            timeWhiteLabel.text = String(format: "%02d:%02d", timeWhite / 60, timeWhite % 60)
-            timeBlackLabel.text = String(format: "%02d:%02d", timeBlack / 60, timeBlack % 60)
+            timeLabelTop.text = String(format: "%02d:%02d", timeWhite / 60, timeWhite % 60)
+            timeLabelBottom.text = String(format: "%02d:%02d", timeBlack / 60, timeBlack % 60)
         }
     }
     
     private func updatePlayerLabels() {
         if let unwrappedCurrentPlayer = currentPlayer {
             if unwrappedCurrentPlayer.color == .white {
-                tapToEndLabelWhite.isHidden = false
-                tapToEndLabelBlack.isHidden = true
+                tapToEndLabelTop.isHidden = false
+                tapToEndLabelBottom.isHidden = true
             } else if unwrappedCurrentPlayer.color == .black {
-                tapToEndLabelWhite.isHidden = true
-                tapToEndLabelBlack.isHidden = false
+                tapToEndLabelTop.isHidden = true
+                tapToEndLabelBottom.isHidden = false
             }
         } else {
-            tapToEndLabelWhite.isHidden = true
-            tapToEndLabelBlack.isHidden = true
+            tapToEndLabelTop.isHidden = true
+            tapToEndLabelBottom.isHidden = true
         }
         
         UIView.animate(
