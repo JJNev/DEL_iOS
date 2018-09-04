@@ -43,6 +43,16 @@ class TimerViewController: UIViewController {
         // TODO: Create new game and add to list
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = false
+    }
+    
     // MARK: Actions
     
     @IBAction func pauseResumeTapped(_ sender: Any) {
