@@ -336,7 +336,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="410.66666666666669"/>
                                 <subviews>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to end turn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNF-GR-kqh" customClass="RotatingLabel" customModule="Die_Ewige_Liste" customModuleProvider="target">
-                                        <rect key="frame" x="127" y="43.666666666666664" width="121" height="20.333333333333336"/>
+                                        <rect key="frame" x="127" y="43.666666666666657" width="121" height="20.333333333333343"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -346,7 +346,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QC2-nR-pmt" userLabel="Time White Label" customClass="RotatingLabel" customModule="Die_Ewige_Liste" customModuleProvider="target">
-                                        <rect key="frame" x="131.66666666666666" y="292.66666666666669" width="111.66666666666666" height="58"/>
+                                        <rect key="frame" x="131.66666666666669" y="292.66666666666669" width="111.66666666666666" height="58"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="49"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -355,8 +355,8 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Johannes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yMU-vh-pnc" userLabel="Name Label White" customClass="RotatingLabel" customModule="Die_Ewige_Liste" customModuleProvider="target">
-                                        <rect key="frame" x="295.66666666666669" y="381" width="71.333333333333314" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Johannes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yMU-vh-pnc" userLabel="Name Label White" customClass="RotatingLabel" customModule="Die_Ewige_Liste" customModuleProvider="target">
+                                        <rect key="frame" x="295.66666666666674" y="381" width="71.333333333333314" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -401,7 +401,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="IhX-vC-SxZ" userLabel="Name Label Black">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="IhX-vC-SxZ" userLabel="Name Label Black">
                                         <rect key="frame" x="8" y="8" width="34.333333333333336" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -499,6 +499,14 @@
                         <outlet property="tapToEndLabelWhite" destination="HNF-GR-kqh" id="3V0-5s-ilm"/>
                         <outlet property="timeBlackLabel" destination="vVN-9J-00g" id="Bo6-eR-yy7"/>
                         <outlet property="timeWhiteLabel" destination="QC2-nR-pmt" id="1zJ-PG-CKN"/>
+                        <outletCollection property="defaultBlackViews" destination="yMU-vh-pnc" collectionClass="NSMutableArray" id="wms-NZ-Jmq"/>
+                        <outletCollection property="defaultBlackViews" destination="QC2-nR-pmt" collectionClass="NSMutableArray" id="v17-r6-dF2"/>
+                        <outletCollection property="defaultBlackViews" destination="HNF-GR-kqh" collectionClass="NSMutableArray" id="N4V-Zt-ba3"/>
+                        <outletCollection property="defaultWhiteViews" destination="vVN-9J-00g" collectionClass="NSMutableArray" id="g1a-7r-aJ4"/>
+                        <outletCollection property="defaultWhiteViews" destination="IhX-vC-SxZ" collectionClass="NSMutableArray" id="U71-To-zjl"/>
+                        <outletCollection property="defaultWhiteViews" destination="F6x-uU-aqb" collectionClass="NSMutableArray" id="T8n-wZ-wur"/>
+                        <outletCollection property="defaultWhiteViews" destination="lQp-ed-E6O" collectionClass="NSMutableArray" id="vZJ-Sm-HAc"/>
+                        <outletCollection property="defaultBlackViews" destination="Zt9-l4-lmU" collectionClass="NSMutableArray" id="eBG-Dx-MyX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EzS-t1-Bbx" userLabel="First Responder" sceneMemberID="firstResponder"/>

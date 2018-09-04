@@ -24,12 +24,14 @@ class TimerViewController: UIViewController {
     @IBOutlet var tapToEndLabelBlack: UILabel!
     @IBOutlet var pauseResumeButton: UIButton!
     @IBOutlet var resetButton: UIButton!
+    @IBOutlet var defaultBlackViews: [UIView]!
+    @IBOutlet var defaultWhiteViews: [UIView]!
     
     private lazy var timer = Timer()
     private var timeWhite = 0
     private var timeBlack = 0
-    private lazy var playerOne: Player = Player(color: .black, name: list.playerOneName)
-    private lazy var playerTwo: Player = Player(color: .white, name: list.playerTwoName)
+    private var playerTop: Player!
+    private var playerBottom: Player!
     private var currentPlayer: Player?
     private var gameState: Game.State = .new
     
@@ -41,6 +43,7 @@ class TimerViewController: UIViewController {
         super.viewDidLoad()
         
         // TODO: Create new game and add to list
+        setupGame()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -84,7 +87,7 @@ class TimerViewController: UIViewController {
         // Whoever taps first can start
         if currentPlayer == nil {
             // TODO: Who plays which color?
-            currentPlayer = sender == tapGestureRecognizerWhite ? playerOne : playerTwo
+            currentPlayer = sender == tapGestureRecognizerWhite ? playerTop : playerBottom
         }
         changeTurn()
         updatePauseButton()
@@ -92,6 +95,27 @@ class TimerViewController: UIViewController {
     }
     
     // MARK: Helper
+    
+    private func setupGame() {
+        playerTop = Player(color: .white, name: list.playerOneName)
+        playerBottom = Player(color: .black, name: list.playerTwoName)
+        adjustColors()
+    }
+    
+    private func adjustColors() {
+        guard playerBottom.color != .black else {
+            // This is the default case. Nothing to do.
+            return
+        }
+        
+        for view in defaultBlackViews + defaultWhiteViews {
+            if let label = view as? UILabel {
+                label.textColor = label.textColor == .white ? .black : .white
+            } else {
+                view.backgroundColor = view.backgroundColor == .white ? .black : .white
+            }
+        }
+    }
     
     private func startTimer(reset: Bool) {
         gameState = .running
@@ -104,7 +128,7 @@ class TimerViewController: UIViewController {
             return
         }
         
-        currentPlayer = unwrappedCurrentPlayer == playerOne ? playerTwo : playerOne
+        currentPlayer = unwrappedCurrentPlayer == playerTop ? playerBottom : playerTop
         
         startTimer(reset: true)
         updateTapGestureRecognizers()
