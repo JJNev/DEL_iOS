@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,7 +27,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wdE-gR-3ED" userLabel="New List Area">
-                                <rect key="frame" x="0.0" y="348" width="375" height="46"/>
+                                <rect key="frame" x="0.0" y="352" width="375" height="46"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ayN-yV-OlR" userLabel="Player One Name Text Field">
                                         <rect key="frame" x="7.9999999999999929" y="8" width="118.33333333333331" height="30"/>
@@ -72,17 +73,14 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lists" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ux5-7X-WFN" userLabel="Lists Headline Label">
-                                <rect key="frame" x="169" y="319" width="36" height="21"/>
+                                <rect key="frame" x="169" y="323" width="36" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yhH-gx-bY1" userLabel="List Table View">
-                                <rect key="frame" x="0.0" y="394" width="375" height="418"/>
+                                <rect key="frame" x="0.0" y="398" width="375" height="414"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="418" id="7GR-9f-Ol4"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="listCell" rowHeight="65" id="Tk1-r9-Dt7" userLabel="List Cell" customClass="ListCell" customModule="Die_Ewige_Liste" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="65"/>
@@ -193,6 +191,7 @@
                             <constraint firstItem="0D9-M9-drR" firstAttribute="top" secondItem="07O-oz-HMC" secondAttribute="top" constant="45" id="Q9g-nf-NZW"/>
                             <constraint firstItem="yhH-gx-bY1" firstAttribute="top" secondItem="wdE-gR-3ED" secondAttribute="bottom" id="RwE-B7-YQg"/>
                             <constraint firstItem="wdE-gR-3ED" firstAttribute="trailing" secondItem="07O-oz-HMC" secondAttribute="trailing" id="TxF-Ml-cPk"/>
+                            <constraint firstItem="yhH-gx-bY1" firstAttribute="height" secondItem="07O-oz-HMC" secondAttribute="height" multiplier="0.6" id="WvT-zp-S3y"/>
                             <constraint firstItem="wdE-gR-3ED" firstAttribute="top" secondItem="ux5-7X-WFN" secondAttribute="bottom" constant="8" id="ZlX-ne-Khc"/>
                             <constraint firstItem="07O-oz-HMC" firstAttribute="trailing" secondItem="yhH-gx-bY1" secondAttribute="trailing" id="eHV-LX-Zcd"/>
                             <constraint firstItem="yhH-gx-bY1" firstAttribute="bottom" secondItem="q0y-9v-71s" secondAttribute="bottom" id="gJU-4n-nbK"/>
