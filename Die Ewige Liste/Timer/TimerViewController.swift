@@ -92,7 +92,7 @@ class TimerViewController: UIViewController {
         // Whoever taps first can start
         if currentPlayer == nil {
             // TODO: Who plays which color?
-            currentPlayer = sender == tapGestureRecognizerTop ? playerTop : playerBottom
+            currentPlayer = sender == tapGestureRecognizerTop ? playerBottom : playerTop
         }
         changeTurn()
         updatePauseButton()
