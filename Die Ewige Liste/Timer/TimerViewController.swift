@@ -38,7 +38,6 @@ class TimerViewController: UIViewController {
     private var playerTop: Player!
     private var playerBottom: Player!
     private var currentPlayer: Player?
-    private var gameState: Game.State = .new
     private var game: Game!
 
     var list: List!
@@ -65,17 +64,17 @@ class TimerViewController: UIViewController {
     // MARK: Actions
     
     @IBAction func pauseResumeTapped(_ sender: Any) {
-        switch gameState {
+        switch game.state {
         case .running:
             timer.invalidate()
-            gameState = .paused
+            game.state = .paused
             if let pauseButton = sender as? UIButton {
                 pauseButton.setImage(#imageLiteral(resourceName: "play.png"), for: .normal)
             }
             break
         case .paused:
             startTimer(reset: false)
-            gameState = .running
+            game.state = .running
             if let pauseButton = sender as? UIButton {
                 pauseButton.setImage(#imageLiteral(resourceName: "pause.png"), for: .normal)
             }
@@ -108,7 +107,7 @@ class TimerViewController: UIViewController {
     // MARK: Helper
     
     private func setupGame() {
-        
+        game = Game(state: .new, dateStarted: Date(), dateEnded: nil, totalTimeInSeconds: 0, winner: nil, loser: nil, timeWinner: nil, settings: nil)
         
         // TODO: Modal: Who plays which position/color?
         playerTop = Player(color: .white, name: list.playerOneName)
@@ -134,7 +133,7 @@ class TimerViewController: UIViewController {
     }
     
     private func startTimer(reset: Bool) {
-        gameState = .running
+        game.state = .running
         if reset {timer.invalidate()}
         timer = .scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
     }
@@ -156,7 +155,7 @@ class TimerViewController: UIViewController {
         timeTop = 0
         timeBottom = 0
         currentPlayer = .none
-        gameState = .new
+        game.state = .new
         updateUi()
     }
     
@@ -218,7 +217,7 @@ class TimerViewController: UIViewController {
     }
     
     private func updatePauseButton() {
-        switch gameState {
+        switch game.state {
         case .running:
             pauseResumeButton.setImage(#imageLiteral(resourceName: "pause.png"), for: .normal)
             pauseResumeButton.isHidden = false
@@ -243,7 +242,7 @@ class TimerViewController: UIViewController {
     }
     
     private func updateResetButton() {
-        switch gameState {
+        switch game.state {
         case .new:
             fallthrough
         case .ended:
@@ -256,7 +255,7 @@ class TimerViewController: UIViewController {
     }
     
     private func updateEndGameButton() {
-        switch gameState {
+        switch game.state {
         case .new:
             fallthrough
         case .ended:
