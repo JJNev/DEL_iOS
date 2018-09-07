@@ -32,13 +32,14 @@ class TimerViewController: UIViewController {
     @IBOutlet var defaultWhiteViews: [UIView]!
     
     private lazy var timer = Timer()
-    private var timeWhite = 0
-    private var timeBlack = 0
+    private var timeTop = 0
+    private var timeBottom = 0
     private var playerTop: Player!
     private var playerBottom: Player!
     private var currentPlayer: Player?
     private var gameState: Game.State = .new
-    
+    private var game: Game!
+
     var list: List!
     
     // MARK: Life Cycle
@@ -101,7 +102,9 @@ class TimerViewController: UIViewController {
     // MARK: Helper
     
     private func setupGame() {
-        // TODO: Who plays which position/color?
+        
+        
+        // TODO: Modal: Who plays which position/color?
         playerTop = Player(color: .white, name: list.playerOneName)
         playerBottom = Player(color: .black, name: list.playerTwoName)
         nameLabelTop.text = playerTop.name
@@ -144,13 +147,29 @@ class TimerViewController: UIViewController {
     }
     
     private func resetGame() {
-        timeWhite = 0
-        timeBlack = 0
+        timeTop = 0
+        timeBottom = 0
         currentPlayer = .none
         gameState = .new
         updateUi()
     }
     
+    private func endGame() {
+        // TODO: Modal: Who won?
+        let winner = playerTop
+        // TODO: timeTop == timeBottom
+        let timeWinner = timeTop > timeBottom ? playerBottom : playerTop
+        
+        game.dateEnded = Date()
+        game.winner = winner
+        game.loser = winner == playerTop ? playerBottom : playerTop
+        game.state = .ended
+        game.timeWinner = timeWinner
+        game.totalTimeInSeconds = timeTop + timeBottom
+        list.games.append(game)
+        
+        navigationController?.popViewController(animated: true)
+    }
     
     @objc private func updateTime() {
         guard let unwrappedCurrentPlayer = currentPlayer else {
@@ -158,9 +177,9 @@ class TimerViewController: UIViewController {
         }
         
         if unwrappedCurrentPlayer.color == .white {
-            timeWhite += 1
+            timeTop += 1
         } else if unwrappedCurrentPlayer.color == .black {
-            timeBlack += 1
+            timeBottom += 1
         }
         
         updateTimeLabels()
@@ -233,13 +252,13 @@ class TimerViewController: UIViewController {
     private func updateTimeLabels() {
         if let unwrappedCurrentPlayer = currentPlayer {
             if unwrappedCurrentPlayer.color == .white {
-                timeLabelTop.text = String(format: "%02d:%02d", timeWhite / 60, timeWhite % 60)
+                timeLabelTop.text = String(format: "%02d:%02d", timeTop / 60, timeTop % 60)
             } else if unwrappedCurrentPlayer.color == .black {
-                timeLabelBottom.text = String(format: "%02d:%02d", timeBlack / 60, timeBlack % 60)
+                timeLabelBottom.text = String(format: "%02d:%02d", timeBottom / 60, timeBottom % 60)
             }
         } else {
-            timeLabelTop.text = String(format: "%02d:%02d", timeWhite / 60, timeWhite % 60)
-            timeLabelBottom.text = String(format: "%02d:%02d", timeBlack / 60, timeBlack % 60)
+            timeLabelTop.text = String(format: "%02d:%02d", timeTop / 60, timeTop % 60)
+            timeLabelBottom.text = String(format: "%02d:%02d", timeBottom / 60, timeBottom % 60)
         }
     }
     
