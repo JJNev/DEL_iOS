@@ -16,11 +16,11 @@ struct Game {
     // MARK: -
     
     var state: State = .new
-    let dateStarted: Date?
-    let dateEnded: Date?
-    let totalTimeInSeconds: Int = 0
-    let winner: Player?
-    let loser: Player?
-    let timeWinner: Player?
-    let settings: Dictionary<String, Any>?
+    var dateStarted: Date?
+    var dateEnded: Date?
+    var totalTimeInSeconds: Int = 0
+    var winner: Player?
+    var loser: Player?
+    var timeWinner: Player?
+    var settings: Dictionary<String, Any>?
 }

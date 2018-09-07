@@ -15,24 +15,31 @@ fileprivate enum SeperatorConstraintConstants: CGFloat {
 }
 
 class TimerViewController: UIViewController {
+    @IBOutlet var timeLabelTop: RotatingLabel!
+    @IBOutlet var timeLabelBottom: UILabel!
+    @IBOutlet var tapGestureRecognizerTop: UITapGestureRecognizer!
+    @IBOutlet var tapGestureRecognizerBottom: UITapGestureRecognizer!
+    @IBOutlet var tapToEndLabelTop: RotatingLabel!
+    @IBOutlet var tapToEndLabelBottom: UILabel!
+    @IBOutlet weak var nameLabelTop: RotatingLabel!
+    @IBOutlet weak var nameLabelBottom: UILabel!
+    
     @IBOutlet var midSeperatorYConstraint: NSLayoutConstraint!
-    @IBOutlet var timeWhiteLabel: RotatingLabel!
-    @IBOutlet var timeBlackLabel: UILabel!
-    @IBOutlet var tapGestureRecognizerWhite: UITapGestureRecognizer!
-    @IBOutlet var tapGestureRecognizerBlack: UITapGestureRecognizer!
-    @IBOutlet var tapToEndLabelWhite: RotatingLabel!
-    @IBOutlet var tapToEndLabelBlack: UILabel!
     @IBOutlet var pauseResumeButton: UIButton!
     @IBOutlet var resetButton: UIButton!
+    @IBOutlet weak var endGameButton: UIButton!
+    
+    @IBOutlet var defaultBlackViews: [UIView]!
+    @IBOutlet var defaultWhiteViews: [UIView]!
     
     private lazy var timer = Timer()
-    private var timeWhite = 0
-    private var timeBlack = 0
-    private lazy var playerOne: Player = Player(color: .black, name: list.playerOneName)
-    private lazy var playerTwo: Player = Player(color: .white, name: list.playerTwoName)
+    private var timeTop = 0
+    private var timeBottom = 0
+    private var playerTop: Player!
+    private var playerBottom: Player!
     private var currentPlayer: Player?
-    private var gameState: Game.State = .new
-    
+    private var game: Game!
+
     var list: List!
     
     // MARK: Life Cycle
@@ -41,22 +48,33 @@ class TimerViewController: UIViewController {
         super.viewDidLoad()
         
         // TODO: Create new game and add to list
+        setupGame()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.isNavigationBarHidden = false
     }
     
     // MARK: Actions
     
     @IBAction func pauseResumeTapped(_ sender: Any) {
-        switch gameState {
+        switch game.state {
         case .running:
             timer.invalidate()
-            gameState = .paused
+            game.state = .paused
             if let pauseButton = sender as? UIButton {
                 pauseButton.setImage(#imageLiteral(resourceName: "play.png"), for: .normal)
             }
             break
         case .paused:
             startTimer(reset: false)
-            gameState = .running
+            game.state = .running
             if let pauseButton = sender as? UIButton {
                 pauseButton.setImage(#imageLiteral(resourceName: "pause.png"), for: .normal)
             }
@@ -74,17 +92,48 @@ class TimerViewController: UIViewController {
         // Whoever taps first can start
         if currentPlayer == nil {
             // TODO: Who plays which color?
-            currentPlayer = sender == tapGestureRecognizerWhite ? playerOne : playerTwo
+            currentPlayer = sender == tapGestureRecognizerTop ? playerTop : playerBottom
         }
         changeTurn()
         updatePauseButton()
         updateResetButton()
+        updateEndGameButton()
+    }
+    
+    @IBAction func endGameTapped(_ sender: Any) {
+        endGame()
     }
     
     // MARK: Helper
     
+    private func setupGame() {
+        game = Game(state: .new, dateStarted: Date(), dateEnded: nil, totalTimeInSeconds: 0, winner: nil, loser: nil, timeWinner: nil, settings: nil)
+        
+        // TODO: Modal: Who plays which position/color?
+        playerTop = Player(color: .white, name: list.playerOneName)
+        playerBottom = Player(color: .black, name: list.playerTwoName)
+        nameLabelTop.text = playerTop.name
+        nameLabelBottom.text = playerBottom.name
+        adjustColors()
+    }
+    
+    private func adjustColors() {
+        guard playerBottom.color != .black else {
+            // This is the default case. Nothing to do.
+            return
+        }
+        
+        for view in defaultBlackViews + defaultWhiteViews {
+            if let label = view as? UILabel {
+                label.textColor = label.textColor == .white ? .black : .white
+            } else {
+                view.backgroundColor = view.backgroundColor == .white ? .black : .white
+            }
+        }
+    }
+    
     private func startTimer(reset: Bool) {
-        gameState = .running
+        game.state = .running
         if reset {timer.invalidate()}
         timer = .scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
     }
@@ -94,7 +143,7 @@ class TimerViewController: UIViewController {
             return
         }
         
-        currentPlayer = unwrappedCurrentPlayer == playerOne ? playerTwo : playerOne
+        currentPlayer = unwrappedCurrentPlayer == playerTop ? playerBottom : playerTop
         
         startTimer(reset: true)
         updateTapGestureRecognizers()
@@ -103,13 +152,29 @@ class TimerViewController: UIViewController {
     }
     
     private func resetGame() {
-        timeWhite = 0
-        timeBlack = 0
+        timeTop = 0
+        timeBottom = 0
         currentPlayer = .none
-        gameState = .new
+        game.state = .new
         updateUi()
     }
     
+    private func endGame() {
+        // TODO: Modal: Who won?
+        let winner = playerTop
+        // TODO: timeTop == timeBottom
+        let timeWinner = timeTop > timeBottom ? playerBottom : playerTop
+        
+        game.dateEnded = Date()
+        game.winner = winner
+        game.loser = winner == playerTop ? playerBottom : playerTop
+        game.state = .ended
+        game.timeWinner = timeWinner
+        game.totalTimeInSeconds = timeTop + timeBottom
+        list.games.append(game)
+        
+        navigationController?.popViewController(animated: true)
+    }
     
     @objc private func updateTime() {
         guard let unwrappedCurrentPlayer = currentPlayer else {
@@ -117,9 +182,9 @@ class TimerViewController: UIViewController {
         }
         
         if unwrappedCurrentPlayer.color == .white {
-            timeWhite += 1
+            timeTop += 1
         } else if unwrappedCurrentPlayer.color == .black {
-            timeBlack += 1
+            timeBottom += 1
         }
         
         updateTimeLabels()
@@ -139,20 +204,20 @@ class TimerViewController: UIViewController {
     private func updateTapGestureRecognizers() {
         if let unwrappedCurrentPlayer = currentPlayer {
             if unwrappedCurrentPlayer.color == .white {
-                tapGestureRecognizerWhite.isEnabled = true
-                tapGestureRecognizerBlack.isEnabled = false
+                tapGestureRecognizerTop.isEnabled = true
+                tapGestureRecognizerBottom.isEnabled = false
             } else if unwrappedCurrentPlayer.color == .black {
-                tapGestureRecognizerWhite.isEnabled = false
-                tapGestureRecognizerBlack.isEnabled = true
+                tapGestureRecognizerTop.isEnabled = false
+                tapGestureRecognizerBottom.isEnabled = true
             }
         } else {
-            tapGestureRecognizerWhite.isEnabled = true
-            tapGestureRecognizerBlack.isEnabled = true
+            tapGestureRecognizerTop.isEnabled = true
+            tapGestureRecognizerBottom.isEnabled = true
         }
     }
     
     private func updatePauseButton() {
-        switch gameState {
+        switch game.state {
         case .running:
             pauseResumeButton.setImage(#imageLiteral(resourceName: "pause.png"), for: .normal)
             pauseResumeButton.isHidden = false
@@ -177,7 +242,7 @@ class TimerViewController: UIViewController {
     }
     
     private func updateResetButton() {
-        switch gameState {
+        switch game.state {
         case .new:
             fallthrough
         case .ended:
@@ -189,31 +254,44 @@ class TimerViewController: UIViewController {
         }
     }
     
+    private func updateEndGameButton() {
+        switch game.state {
+        case .new:
+            fallthrough
+        case .ended:
+            endGameButton.isHidden = true
+            break
+        default:
+            endGameButton.isHidden = false
+            break
+        }
+    }
+    
     private func updateTimeLabels() {
         if let unwrappedCurrentPlayer = currentPlayer {
             if unwrappedCurrentPlayer.color == .white {
-                timeWhiteLabel.text = String(format: "%02d:%02d", timeWhite / 60, timeWhite % 60)
+                timeLabelTop.text = String(format: "%02d:%02d", timeTop / 60, timeTop % 60)
             } else if unwrappedCurrentPlayer.color == .black {
-                timeBlackLabel.text = String(format: "%02d:%02d", timeBlack / 60, timeBlack % 60)
+                timeLabelBottom.text = String(format: "%02d:%02d", timeBottom / 60, timeBottom % 60)
             }
         } else {
-            timeWhiteLabel.text = String(format: "%02d:%02d", timeWhite / 60, timeWhite % 60)
-            timeBlackLabel.text = String(format: "%02d:%02d", timeBlack / 60, timeBlack % 60)
+            timeLabelTop.text = String(format: "%02d:%02d", timeTop / 60, timeTop % 60)
+            timeLabelBottom.text = String(format: "%02d:%02d", timeBottom / 60, timeBottom % 60)
         }
     }
     
     private func updatePlayerLabels() {
         if let unwrappedCurrentPlayer = currentPlayer {
             if unwrappedCurrentPlayer.color == .white {
-                tapToEndLabelWhite.isHidden = false
-                tapToEndLabelBlack.isHidden = true
+                tapToEndLabelTop.isHidden = false
+                tapToEndLabelBottom.isHidden = true
             } else if unwrappedCurrentPlayer.color == .black {
-                tapToEndLabelWhite.isHidden = true
-                tapToEndLabelBlack.isHidden = false
+                tapToEndLabelTop.isHidden = true
+                tapToEndLabelBottom.isHidden = false
             }
         } else {
-            tapToEndLabelWhite.isHidden = true
-            tapToEndLabelBlack.isHidden = true
+            tapToEndLabelTop.isHidden = true
+            tapToEndLabelBottom.isHidden = true
         }
         
         UIView.animate(

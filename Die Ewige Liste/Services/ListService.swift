@@ -39,7 +39,7 @@ class ListService {
     
     private func addDummyData() {
         let list = List(playerOneName: "Tom", playerTwoName: "Johannes")
-        list.games = [Game(state: .ended, dateStarted: Date(), dateEnded: Date(), winner: Player(color: .white, name: "Tom"), loser: Player(color: .black, name: "Johannes"), timeWinner: Player(color: .black, name: "Johannes"), settings: nil)]
+        list.games = [Game(state: .ended, dateStarted: Date(), dateEnded: Date(), totalTimeInSeconds: 178, winner: Player(color: .white, name: "Tom"), loser: Player(color: .black, name: "Johannes"), timeWinner: Player(color: .black, name: "Johannes"), settings: nil)]
         lists.append(list)
     }
 }

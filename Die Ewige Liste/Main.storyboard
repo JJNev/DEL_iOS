@@ -397,12 +397,24 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Johannes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yMU-vh-pnc" userLabel="Name Label White" customClass="RotatingLabel" customModule="Die_Ewige_Liste" customModuleProvider="target">
+                                        <rect key="frame" x="295.66666666666674" y="381" width="71.333333333333314" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <nil key="highlightedColor"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="rotation">
+                                                <real key="value" value="180"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="QC2-nR-pmt" firstAttribute="centerX" secondItem="lQp-ed-E6O" secondAttribute="centerX" id="DMy-wh-cxe"/>
                                     <constraint firstItem="HNF-GR-kqh" firstAttribute="centerX" secondItem="lQp-ed-E6O" secondAttribute="centerX" id="Iux-0B-yYn"/>
+                                    <constraint firstAttribute="trailing" secondItem="yMU-vh-pnc" secondAttribute="trailing" constant="8" id="P7u-GF-3bI"/>
+                                    <constraint firstAttribute="bottom" secondItem="yMU-vh-pnc" secondAttribute="bottom" constant="8" id="gX4-9T-0HB"/>
                                     <constraint firstAttribute="bottom" secondItem="QC2-nR-pmt" secondAttribute="bottom" constant="60" id="wfu-aQ-jO9"/>
                                 </constraints>
                                 <connections>
@@ -431,12 +443,20 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.59999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="IhX-vC-SxZ" userLabel="Name Label Black">
+                                        <rect key="frame" x="8" y="8" width="34.333333333333336" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
+                                    <constraint firstItem="IhX-vC-SxZ" firstAttribute="leading" secondItem="Zt9-l4-lmU" secondAttribute="leading" constant="8" id="FKj-25-DNX"/>
                                     <constraint firstItem="vVN-9J-00g" firstAttribute="top" secondItem="Zt9-l4-lmU" secondAttribute="top" constant="60" id="Med-RW-2Dh"/>
                                     <constraint firstItem="vVN-9J-00g" firstAttribute="centerX" secondItem="Zt9-l4-lmU" secondAttribute="centerX" id="jQW-HY-aZD"/>
+                                    <constraint firstItem="IhX-vC-SxZ" firstAttribute="top" secondItem="Zt9-l4-lmU" secondAttribute="top" constant="8" id="tna-Ux-aIr"/>
                                     <constraint firstItem="F6x-uU-aqb" firstAttribute="centerX" secondItem="Zt9-l4-lmU" secondAttribute="centerX" id="zrM-bo-1Z7"/>
                                 </constraints>
                                 <connections>
@@ -444,12 +464,12 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F2P-Qr-41m" userLabel="Mid Controls">
-                                <rect key="frame" x="87.666666666666686" y="361.33333333333331" width="200" height="100"/>
+                                <rect key="frame" x="87.666666666666686" y="371.33333333333331" width="200" height="80"/>
                                 <subviews>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofn-zU-9qf" userLabel="Pause Button">
-                                        <rect key="frame" x="10" y="10" width="80" height="80"/>
+                                        <rect key="frame" x="0.0" y="10" width="60" height="60"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="VNM-Kk-Wec"/>
+                                            <constraint firstAttribute="width" constant="60" id="VNM-Kk-Wec"/>
                                             <constraint firstAttribute="width" secondItem="ofn-zU-9qf" secondAttribute="height" multiplier="1:1" id="Y8w-sZ-at0"/>
                                         </constraints>
                                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -461,8 +481,23 @@
                                             <action selector="pauseResumeTapped:" destination="rGg-Id-d0e" eventType="touchUpInside" id="00X-Jc-O7x"/>
                                         </connections>
                                     </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MfU-kE-ms1" userLabel="End Game Button">
+                                        <rect key="frame" x="140" y="10" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="MfU-kE-ms1" secondAttribute="height" multiplier="1:1" id="jLV-m9-Ies"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="7" minY="7" maxX="7" maxY="7"/>
+                                        <state key="normal" image="finish.png">
+                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="endGameTapped:" destination="rGg-Id-d0e" eventType="touchUpInside" id="Nmy-bc-iGm"/>
+                                        </connections>
+                                    </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g71-0F-T4w" userLabel="Refresh Button">
-                                        <rect key="frame" x="110" y="9.3333333333333712" width="80" height="80"/>
+                                        <rect key="frame" x="69.999999999999986" y="10" width="60.000000000000014" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="g71-0F-T4w" secondAttribute="height" multiplier="1:1" id="Aei-QS-2o8"/>
                                         </constraints>
@@ -480,10 +515,13 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="g71-0F-T4w" firstAttribute="centerY" secondItem="F2P-Qr-41m" secondAttribute="centerY" id="5sA-EN-pbQ"/>
-                                    <constraint firstAttribute="trailing" secondItem="g71-0F-T4w" secondAttribute="trailing" constant="10" id="AeN-k7-Eig"/>
+                                    <constraint firstItem="MfU-kE-ms1" firstAttribute="leading" secondItem="g71-0F-T4w" secondAttribute="trailing" constant="10" id="8gg-jy-Ae9"/>
+                                    <constraint firstItem="MfU-kE-ms1" firstAttribute="width" secondItem="ofn-zU-9qf" secondAttribute="width" id="HEo-j6-GYF"/>
                                     <constraint firstItem="ofn-zU-9qf" firstAttribute="top" secondItem="F2P-Qr-41m" secondAttribute="top" constant="10" id="LeD-Ii-fBd"/>
-                                    <constraint firstItem="g71-0F-T4w" firstAttribute="leading" secondItem="ofn-zU-9qf" secondAttribute="trailing" constant="20" id="PLf-DV-JON"/>
-                                    <constraint firstItem="ofn-zU-9qf" firstAttribute="leading" secondItem="F2P-Qr-41m" secondAttribute="leading" constant="10" id="mUE-nQ-GSb"/>
+                                    <constraint firstItem="g71-0F-T4w" firstAttribute="leading" secondItem="ofn-zU-9qf" secondAttribute="trailing" constant="10" id="PLf-DV-JON"/>
+                                    <constraint firstAttribute="trailing" secondItem="MfU-kE-ms1" secondAttribute="trailing" id="fgX-a0-R1K"/>
+                                    <constraint firstItem="MfU-kE-ms1" firstAttribute="centerY" secondItem="F2P-Qr-41m" secondAttribute="centerY" id="g0g-yb-cyX"/>
+                                    <constraint firstItem="ofn-zU-9qf" firstAttribute="leading" secondItem="F2P-Qr-41m" secondAttribute="leading" id="mUE-nQ-GSb"/>
                                     <constraint firstItem="g71-0F-T4w" firstAttribute="width" secondItem="ofn-zU-9qf" secondAttribute="width" id="w6i-kw-OXc"/>
                                     <constraint firstAttribute="bottom" secondItem="ofn-zU-9qf" secondAttribute="bottom" constant="10" id="z2N-VY-ptD"/>
                                 </constraints>
@@ -503,22 +541,35 @@
                             <constraint firstItem="Zt9-l4-lmU" firstAttribute="leading" secondItem="2wh-o4-qCB" secondAttribute="leading" id="Y98-7d-dbm"/>
                             <constraint firstItem="lQp-ed-E6O" firstAttribute="leading" secondItem="2wh-o4-qCB" secondAttribute="leading" id="aNL-pJ-ZqC"/>
                             <constraint firstItem="d4Y-mX-cNZ" firstAttribute="leading" secondItem="XZf-oq-OAE" secondAttribute="leading" id="bYZ-4p-a9d"/>
+                            <constraint firstItem="yMU-vh-pnc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="F2P-Qr-41m" secondAttribute="trailing" constant="8" id="jiI-tz-Yhd"/>
                             <constraint firstItem="F6x-uU-aqb" firstAttribute="top" secondItem="XZf-oq-OAE" secondAttribute="bottom" constant="-20" id="nlE-n4-hQ4"/>
                             <constraint firstItem="d4Y-mX-cNZ" firstAttribute="centerY" secondItem="F2P-Qr-41m" secondAttribute="centerY" id="oZ3-0M-O8e"/>
                             <constraint firstItem="XZf-oq-OAE" firstAttribute="top" secondItem="HNF-GR-kqh" secondAttribute="bottom" constant="-20" id="xB6-jQ-qt3"/>
+                            <constraint firstItem="F2P-Qr-41m" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="IhX-vC-SxZ" secondAttribute="trailing" constant="8" id="y6s-6E-fbD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XZf-oq-OAE"/>
                     </view>
                     <connections>
+                        <outlet property="endGameButton" destination="MfU-kE-ms1" id="kQq-Sq-gL9"/>
                         <outlet property="midSeperatorYConstraint" destination="DAK-AN-CUy" id="T6f-TQ-Gdq"/>
+                        <outlet property="nameLabelBottom" destination="IhX-vC-SxZ" id="XNR-Uq-Rkr"/>
+                        <outlet property="nameLabelTop" destination="yMU-vh-pnc" id="Jjv-p8-yZi"/>
                         <outlet property="pauseResumeButton" destination="ofn-zU-9qf" id="LHJ-hQ-EJn"/>
                         <outlet property="resetButton" destination="g71-0F-T4w" id="8oL-Z9-9Lx"/>
-                        <outlet property="tapGestureRecognizerBlack" destination="ZKx-UP-RNV" id="Ep9-UJ-YFg"/>
-                        <outlet property="tapGestureRecognizerWhite" destination="Rds-cz-3qA" id="ejm-5s-3RK"/>
-                        <outlet property="tapToEndLabelBlack" destination="F6x-uU-aqb" id="zPQ-v4-W4B"/>
-                        <outlet property="tapToEndLabelWhite" destination="HNF-GR-kqh" id="3V0-5s-ilm"/>
-                        <outlet property="timeBlackLabel" destination="vVN-9J-00g" id="Bo6-eR-yy7"/>
-                        <outlet property="timeWhiteLabel" destination="QC2-nR-pmt" id="1zJ-PG-CKN"/>
+                        <outlet property="tapGestureRecognizerBottom" destination="ZKx-UP-RNV" id="Ep9-UJ-YFg"/>
+                        <outlet property="tapGestureRecognizerTop" destination="Rds-cz-3qA" id="ejm-5s-3RK"/>
+                        <outlet property="tapToEndLabelBottom" destination="F6x-uU-aqb" id="zPQ-v4-W4B"/>
+                        <outlet property="tapToEndLabelTop" destination="HNF-GR-kqh" id="3V0-5s-ilm"/>
+                        <outlet property="timeLabelBottom" destination="vVN-9J-00g" id="Bo6-eR-yy7"/>
+                        <outlet property="timeLabelTop" destination="QC2-nR-pmt" id="1zJ-PG-CKN"/>
+                        <outletCollection property="defaultBlackViews" destination="yMU-vh-pnc" collectionClass="NSMutableArray" id="wms-NZ-Jmq"/>
+                        <outletCollection property="defaultBlackViews" destination="QC2-nR-pmt" collectionClass="NSMutableArray" id="v17-r6-dF2"/>
+                        <outletCollection property="defaultBlackViews" destination="HNF-GR-kqh" collectionClass="NSMutableArray" id="N4V-Zt-ba3"/>
+                        <outletCollection property="defaultWhiteViews" destination="vVN-9J-00g" collectionClass="NSMutableArray" id="g1a-7r-aJ4"/>
+                        <outletCollection property="defaultWhiteViews" destination="IhX-vC-SxZ" collectionClass="NSMutableArray" id="U71-To-zjl"/>
+                        <outletCollection property="defaultWhiteViews" destination="F6x-uU-aqb" collectionClass="NSMutableArray" id="T8n-wZ-wur"/>
+                        <outletCollection property="defaultWhiteViews" destination="lQp-ed-E6O" collectionClass="NSMutableArray" id="vZJ-Sm-HAc"/>
+                        <outletCollection property="defaultBlackViews" destination="Zt9-l4-lmU" collectionClass="NSMutableArray" id="eBG-Dx-MyX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EzS-t1-Bbx" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -555,6 +606,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="finish.png" width="512" height="512"/>
         <image name="pause.png" width="100" height="100"/>
         <image name="play.png" width="100" height="100"/>
         <image name="refresh.png" width="512" height="512"/>
