@@ -24,11 +24,6 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         listService.loadData()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        listTableView.reloadData()
-    }
-    
     // MARK: UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
