@@ -27,6 +27,7 @@ class TimerViewController: UIViewController {
     @IBOutlet var midSeperatorYConstraint: NSLayoutConstraint!
     @IBOutlet var pauseResumeButton: UIButton!
     @IBOutlet var resetButton: UIButton!
+    @IBOutlet weak var endGameButton: UIButton!
     
     @IBOutlet var defaultBlackViews: [UIView]!
     @IBOutlet var defaultWhiteViews: [UIView]!
@@ -97,6 +98,11 @@ class TimerViewController: UIViewController {
         changeTurn()
         updatePauseButton()
         updateResetButton()
+        updateEndGameButton()
+    }
+    
+    @IBAction func endGameTapped(_ sender: Any) {
+        endGame()
     }
     
     // MARK: Helper
@@ -245,6 +251,19 @@ class TimerViewController: UIViewController {
             break
         default:
             resetButton.isHidden = false
+            break
+        }
+    }
+    
+    private func updateEndGameButton() {
+        switch gameState {
+        case .new:
+            fallthrough
+        case .ended:
+            endGameButton.isHidden = true
+            break
+        default:
+            endGameButton.isHidden = false
             break
         }
     }
