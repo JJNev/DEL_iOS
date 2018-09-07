@@ -196,6 +196,7 @@ class TimerViewController: UIViewController {
         updateTapGestureRecognizers()
         updatePauseButton()
         updateResetButton()
+        updateEndGameButton()
         updateTimeLabels()
         updatePlayerLabels()
         updateMidSeperator()
