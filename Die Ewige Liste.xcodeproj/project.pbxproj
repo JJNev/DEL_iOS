@@ -195,17 +195,9 @@
 				1943BAD7210E227F0041ED8A /* Models */,
 				19008ECB20F3BA2100AADB15 /* IBDesignables */,
 				1943BACB210E21940041ED8A /* Libs */,
-				19008EC620F3926500AADB15 /* Icons */,
 				19D776732147F2A50042F809 /* Icons.xcassets */,
 			);
 			path = Assets;
-			sourceTree = "<group>";
-		};
-		19008EC620F3926500AADB15 /* Icons */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Icons;
 			sourceTree = "<group>";
 		};
 		19008ECB20F3BA2100AADB15 /* IBDesignables */ = {
