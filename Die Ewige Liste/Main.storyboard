@@ -490,7 +490,6 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <inset key="imageEdgeInsets" minX="7" minY="7" maxX="7" maxY="7"/>
                                         <state key="normal" image="swap_colors_2">
                                             <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -528,21 +527,6 @@
                                             <action selector="pauseResumeTapped:" destination="rGg-Id-d0e" eventType="touchUpInside" id="00X-Jc-O7x"/>
                                         </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MfU-kE-ms1" userLabel="End Game Button">
-                                        <rect key="frame" x="140" y="0.0" width="60" height="60"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="MfU-kE-ms1" secondAttribute="height" multiplier="1:1" id="jLV-m9-Ies"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <inset key="imageEdgeInsets" minX="7" minY="7" maxX="7" maxY="7"/>
-                                        <state key="normal" image="finish">
-                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="endGameTapped:" destination="rGg-Id-d0e" eventType="touchUpInside" id="Nmy-bc-iGm"/>
-                                        </connections>
-                                    </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g71-0F-T4w" userLabel="Refresh Button">
                                         <rect key="frame" x="69.999999999999986" y="0.0" width="60.000000000000014" height="60"/>
                                         <constraints>
@@ -556,6 +540,21 @@
                                         </state>
                                         <connections>
                                             <action selector="refreshTapped:" destination="rGg-Id-d0e" eventType="touchUpInside" id="pS0-1B-uVG"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MfU-kE-ms1" userLabel="End Game Button">
+                                        <rect key="frame" x="139.33333333333331" y="-0.33333333333331439" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="MfU-kE-ms1" secondAttribute="height" multiplier="1:1" id="jLV-m9-Ies"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
+                                        <state key="normal" image="finish">
+                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="endGameTapped:" destination="rGg-Id-d0e" eventType="touchUpInside" id="Nmy-bc-iGm"/>
                                         </connections>
                                     </button>
                                 </subviews>
