@@ -134,11 +134,7 @@ class TimerViewController: UIViewController {
     }
     
     private func setupGame() {
-        game = Game(state: .new, dateStarted: Date(), dateEnded: nil, totalTimeInSeconds: 0, playerTop: nil, playerBottom: nil, winner: nil, loser: nil, timeWinner: nil, settings: nil)
-        
-        // TODO: Modal: Who plays which position/color?
-        game.playerTop = Player(color: .white, name: list.playerOneName)
-        game.playerBottom = Player(color: .black, name: list.playerTwoName)
+        game = Game(state: .new, dateStarted: Date(), dateEnded: nil, totalTimeInSeconds: 0, playerTop: Player(color: .white, name: list.playerOneName), playerBottom: Player(color: .black, name: list.playerTwoName), winner: nil, loser: nil, timeWinner: nil, settings: nil)
         updateNameLabels()
     }
     
