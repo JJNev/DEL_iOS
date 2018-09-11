@@ -39,8 +39,6 @@ class TimerViewController: UIViewController {
     private lazy var timer = Timer()
     private var timeTop = 0
     private var timeBottom = 0
-    private var playerTop: Player!
-    private var playerBottom: Player!
     private var currentPlayer: Player?
     private var game: Game!
 
@@ -96,7 +94,7 @@ class TimerViewController: UIViewController {
         // Whoever taps first can start
         if currentPlayer == nil {
             // TODO: Who plays which color?
-            currentPlayer = sender == tapGestureRecognizerTop ? playerBottom : playerTop
+            currentPlayer = sender == tapGestureRecognizerTop ? game.playerBottom : game.playerTop
             startGame()
         }
         changeTurn()
@@ -136,19 +134,19 @@ class TimerViewController: UIViewController {
     }
     
     private func setupGame() {
-        game = Game(state: .new, dateStarted: Date(), dateEnded: nil, totalTimeInSeconds: 0, winner: nil, loser: nil, timeWinner: nil, settings: nil)
+        game = Game(state: .new, dateStarted: Date(), dateEnded: nil, totalTimeInSeconds: 0, playerTop: nil, playerBottom: nil, winner: nil, loser: nil, timeWinner: nil, settings: nil)
         
         // TODO: Modal: Who plays which position/color?
-        playerTop = Player(color: .white, name: list.playerOneName)
-        playerBottom = Player(color: .black, name: list.playerTwoName)
+        game.playerTop = Player(color: .white, name: list.playerOneName)
+        game.playerBottom = Player(color: .black, name: list.playerTwoName)
         updateNameLabels()
     }
     
     private func swapSeats() {
-        let newPlayerTop = Player(color: playerTop.color, name: playerBottom.name)
-        let newPlayerBottom = Player(color: playerBottom.color, name: playerTop.name)
-        playerBottom = newPlayerBottom
-        playerTop = newPlayerTop
+        let newPlayerTop = Player(color: game.playerTop.color, name: game.playerBottom.name)
+        let newPlayerBottom = Player(color: game.playerBottom.color, name: game.playerTop.name)
+        game.playerBottom = newPlayerBottom
+        game.playerTop = newPlayerTop
         updateNameLabels()
     }
     
@@ -172,7 +170,7 @@ class TimerViewController: UIViewController {
         guard let unwrappedCurrentPlayer = currentPlayer else {
             return
         }
-        currentPlayer = unwrappedCurrentPlayer == playerTop ? playerBottom : playerTop
+        currentPlayer = unwrappedCurrentPlayer == game.playerTop ? game.playerBottom : game.playerTop
         
         startTimer(reset: true)
         updateTapGestureRecognizers()
@@ -190,13 +188,13 @@ class TimerViewController: UIViewController {
     
     private func endGame() {
         // TODO: Modal: Who won?
-        let winner = playerTop
+        let winner = game.playerTop
         // TODO: timeTop == timeBottom
-        let timeWinner = timeTop > timeBottom ? playerBottom : playerTop
+        let timeWinner = timeTop > timeBottom ? game.playerBottom : game.playerTop
         
         game.dateEnded = Date()
         game.winner = winner
-        game.loser = winner == playerTop ? playerBottom : playerTop
+        game.loser = winner == game.playerTop ? game.playerBottom : game.playerTop
         game.state = .ended
         game.timeWinner = timeWinner
         game.totalTimeInSeconds = timeTop + timeBottom
@@ -299,8 +297,8 @@ class TimerViewController: UIViewController {
     }
     
     private func updateNameLabels() {
-        nameLabelTop.text = playerTop.name
-        nameLabelBottom.text = playerBottom.name
+        nameLabelTop.text = game.playerTop.name
+        nameLabelBottom.text = game.playerBottom.name
     }
     
     private func updatePlayerLabels() {

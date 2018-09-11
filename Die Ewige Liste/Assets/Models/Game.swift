@@ -19,6 +19,8 @@ struct Game {
     var dateStarted: Date?
     var dateEnded: Date?
     var totalTimeInSeconds: Int = 0
+    var playerTop: Player!
+    var playerBottom: Player!
     var winner: Player?
     var loser: Player?
     var timeWinner: Player?
