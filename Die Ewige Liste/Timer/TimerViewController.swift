@@ -122,10 +122,7 @@ class TimerViewController: UIViewController {
             return
         }
         game.state = .running
-        preGameControls.isHidden = true
-        preGameControls.isUserInteractionEnabled = false
-        inGameControls.isHidden = false
-        inGameControls.isUserInteractionEnabled = true
+        updateMidControls()
         updatePauseButton()
         
         UIView.animate(
@@ -230,6 +227,26 @@ class TimerViewController: UIViewController {
         updateTimeLabels()
         updatePlayerLabels()
         updateMidSeperator()
+        updateMidControls()
+    }
+    
+    private func updateMidControls() {
+        switch game.state {
+        case .paused:
+            fallthrough
+        case .running:
+            preGameControls.isHidden = true
+            preGameControls.isUserInteractionEnabled = false
+            inGameControls.isHidden = false
+            inGameControls.isUserInteractionEnabled = true
+            break
+        default:
+            preGameControls.isHidden = false
+            preGameControls.isUserInteractionEnabled = true
+            inGameControls.isHidden = true
+            inGameControls.isUserInteractionEnabled = false
+            break
+        }
     }
     
     private func updateTapGestureRecognizers() {
