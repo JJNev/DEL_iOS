@@ -24,6 +24,7 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var nameLabelTop: RotatingLabel!
     @IBOutlet weak var nameLabelBottom: UILabel!
     
+    @IBOutlet weak var preGameControls: UIView!
     @IBOutlet var midSeperatorYConstraint: NSLayoutConstraint!
     @IBOutlet var pauseResumeButton: UIButton!
     @IBOutlet var resetButton: UIButton!
@@ -94,6 +95,7 @@ class TimerViewController: UIViewController {
             // TODO: Who plays which color?
             currentPlayer = sender == tapGestureRecognizerTop ? playerBottom : playerTop
         }
+        preGameControls.isHidden = true
         changeTurn()
         updatePauseButton()
         updateResetButton()
@@ -103,6 +105,15 @@ class TimerViewController: UIViewController {
     @IBAction func endGameTapped(_ sender: Any) {
         endGame()
     }
+    
+    @IBAction func swapSeatsTapped(_ sender: Any) {
+        swapSeats()
+    }
+    
+    @IBAction func swapColorsTapped(_ sender: Any) {
+        swapColors()
+    }
+    
     
     // MARK: Helper
     

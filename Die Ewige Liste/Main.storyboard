@@ -465,11 +465,56 @@
                                     <outletCollection property="gestureRecognizers" destination="ZKx-UP-RNV" appends="YES" id="g3p-7X-dRo"/>
                                 </connections>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6E0-6G-Rsg" userLabel="Pre-Game Controls">
+                                <rect key="frame" x="122.66666666666669" y="381.33333333333331" width="130" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hP-g8-eEa" userLabel="Swap Seats Button">
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="9hP-g8-eEa" secondAttribute="height" multiplier="1:1" id="eeX-7e-XRX"/>
+                                            <constraint firstAttribute="width" constant="60" id="vcf-bN-DiH"/>
+                                        </constraints>
+                                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" image="swap_player.jpg">
+                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <state key="selected" image="play.png"/>
+                                        <connections>
+                                            <action selector="swapSeatsTapped:" destination="rGg-Id-d0e" eventType="touchUpInside" id="pvq-52-nb8"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X1o-as-6EL" userLabel="Swap Colors Button">
+                                        <rect key="frame" x="69.999999999999986" y="0.0" width="60.000000000000014" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="X1o-as-6EL" secondAttribute="height" multiplier="1:1" id="Sxr-hx-MYc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="7" minY="7" maxX="7" maxY="7"/>
+                                        <state key="normal" image="swap_color">
+                                            <color key="titleColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="swapColorsTapped:" destination="rGg-Id-d0e" eventType="touchUpInside" id="mbE-V8-CzD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="X1o-as-6EL" secondAttribute="trailing" id="CD1-hR-osR"/>
+                                    <constraint firstItem="X1o-as-6EL" firstAttribute="width" secondItem="9hP-g8-eEa" secondAttribute="width" id="Mqx-xq-oMA"/>
+                                    <constraint firstItem="9hP-g8-eEa" firstAttribute="top" secondItem="6E0-6G-Rsg" secondAttribute="top" id="NSd-LY-GbN"/>
+                                    <constraint firstItem="9hP-g8-eEa" firstAttribute="leading" secondItem="6E0-6G-Rsg" secondAttribute="leading" id="W6M-Pd-gTI"/>
+                                    <constraint firstItem="X1o-as-6EL" firstAttribute="leading" secondItem="9hP-g8-eEa" secondAttribute="trailing" constant="10" id="kY4-SC-fAj"/>
+                                    <constraint firstAttribute="bottom" secondItem="9hP-g8-eEa" secondAttribute="bottom" id="yuH-8l-bG8"/>
+                                    <constraint firstItem="X1o-as-6EL" firstAttribute="centerY" secondItem="6E0-6G-Rsg" secondAttribute="centerY" id="z6d-td-Amw"/>
+                                </constraints>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F2P-Qr-41m" userLabel="Mid Controls">
-                                <rect key="frame" x="87.666666666666686" y="371.33333333333331" width="200" height="80"/>
+                                <rect key="frame" x="87.666666666666686" y="381.33333333333331" width="200" height="60"/>
                                 <subviews>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofn-zU-9qf" userLabel="Pause Button">
-                                        <rect key="frame" x="0.0" y="10" width="60" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="VNM-Kk-Wec"/>
                                             <constraint firstAttribute="width" secondItem="ofn-zU-9qf" secondAttribute="height" multiplier="1:1" id="Y8w-sZ-at0"/>
@@ -484,7 +529,7 @@
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MfU-kE-ms1" userLabel="End Game Button">
-                                        <rect key="frame" x="140" y="10" width="60" height="60"/>
+                                        <rect key="frame" x="140" y="0.0" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="MfU-kE-ms1" secondAttribute="height" multiplier="1:1" id="jLV-m9-Ies"/>
                                         </constraints>
@@ -499,7 +544,7 @@
                                         </connections>
                                     </button>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g71-0F-T4w" userLabel="Refresh Button">
-                                        <rect key="frame" x="69.999999999999986" y="10" width="60.000000000000014" height="60"/>
+                                        <rect key="frame" x="69.999999999999986" y="0.0" width="60.000000000000014" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="g71-0F-T4w" secondAttribute="height" multiplier="1:1" id="Aei-QS-2o8"/>
                                         </constraints>
@@ -519,13 +564,13 @@
                                     <constraint firstItem="g71-0F-T4w" firstAttribute="centerY" secondItem="F2P-Qr-41m" secondAttribute="centerY" id="5sA-EN-pbQ"/>
                                     <constraint firstItem="MfU-kE-ms1" firstAttribute="leading" secondItem="g71-0F-T4w" secondAttribute="trailing" constant="10" id="8gg-jy-Ae9"/>
                                     <constraint firstItem="MfU-kE-ms1" firstAttribute="width" secondItem="ofn-zU-9qf" secondAttribute="width" id="HEo-j6-GYF"/>
-                                    <constraint firstItem="ofn-zU-9qf" firstAttribute="top" secondItem="F2P-Qr-41m" secondAttribute="top" constant="10" id="LeD-Ii-fBd"/>
+                                    <constraint firstItem="ofn-zU-9qf" firstAttribute="top" secondItem="F2P-Qr-41m" secondAttribute="top" id="LeD-Ii-fBd"/>
                                     <constraint firstItem="g71-0F-T4w" firstAttribute="leading" secondItem="ofn-zU-9qf" secondAttribute="trailing" constant="10" id="PLf-DV-JON"/>
                                     <constraint firstAttribute="trailing" secondItem="MfU-kE-ms1" secondAttribute="trailing" id="fgX-a0-R1K"/>
                                     <constraint firstItem="MfU-kE-ms1" firstAttribute="centerY" secondItem="F2P-Qr-41m" secondAttribute="centerY" id="g0g-yb-cyX"/>
                                     <constraint firstItem="ofn-zU-9qf" firstAttribute="leading" secondItem="F2P-Qr-41m" secondAttribute="leading" id="mUE-nQ-GSb"/>
                                     <constraint firstItem="g71-0F-T4w" firstAttribute="width" secondItem="ofn-zU-9qf" secondAttribute="width" id="w6i-kw-OXc"/>
-                                    <constraint firstAttribute="bottom" secondItem="ofn-zU-9qf" secondAttribute="bottom" constant="10" id="z2N-VY-ptD"/>
+                                    <constraint firstAttribute="bottom" secondItem="ofn-zU-9qf" secondAttribute="bottom" id="z2N-VY-ptD"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -539,6 +584,7 @@
                             <constraint firstItem="lQp-ed-E6O" firstAttribute="trailing" secondItem="2wh-o4-qCB" secondAttribute="trailing" id="Mm9-yl-jQe"/>
                             <constraint firstItem="XZf-oq-OAE" firstAttribute="trailing" secondItem="d4Y-mX-cNZ" secondAttribute="trailing" id="Mup-lR-HGl"/>
                             <constraint firstItem="Zt9-l4-lmU" firstAttribute="top" secondItem="d4Y-mX-cNZ" secondAttribute="bottom" id="NHE-C2-VnE"/>
+                            <constraint firstItem="6E0-6G-Rsg" firstAttribute="centerY" secondItem="d4Y-mX-cNZ" secondAttribute="centerY" id="Tl5-Oq-Vgn"/>
                             <constraint firstItem="F2P-Qr-41m" firstAttribute="centerX" secondItem="XZf-oq-OAE" secondAttribute="centerX" id="Xvn-uB-qiK"/>
                             <constraint firstItem="Zt9-l4-lmU" firstAttribute="leading" secondItem="2wh-o4-qCB" secondAttribute="leading" id="Y98-7d-dbm"/>
                             <constraint firstItem="lQp-ed-E6O" firstAttribute="leading" secondItem="2wh-o4-qCB" secondAttribute="leading" id="aNL-pJ-ZqC"/>
@@ -546,6 +592,7 @@
                             <constraint firstItem="yMU-vh-pnc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="F2P-Qr-41m" secondAttribute="trailing" constant="8" id="jiI-tz-Yhd"/>
                             <constraint firstItem="F6x-uU-aqb" firstAttribute="top" secondItem="XZf-oq-OAE" secondAttribute="bottom" constant="-20" id="nlE-n4-hQ4"/>
                             <constraint firstItem="d4Y-mX-cNZ" firstAttribute="centerY" secondItem="F2P-Qr-41m" secondAttribute="centerY" id="oZ3-0M-O8e"/>
+                            <constraint firstItem="6E0-6G-Rsg" firstAttribute="centerX" secondItem="XZf-oq-OAE" secondAttribute="centerX" id="tCP-tI-wtz"/>
                             <constraint firstItem="XZf-oq-OAE" firstAttribute="top" secondItem="HNF-GR-kqh" secondAttribute="bottom" constant="-20" id="xB6-jQ-qt3"/>
                             <constraint firstItem="F2P-Qr-41m" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="IhX-vC-SxZ" secondAttribute="trailing" constant="8" id="y6s-6E-fbD"/>
                         </constraints>
@@ -557,6 +604,7 @@
                         <outlet property="nameLabelBottom" destination="IhX-vC-SxZ" id="XNR-Uq-Rkr"/>
                         <outlet property="nameLabelTop" destination="yMU-vh-pnc" id="Jjv-p8-yZi"/>
                         <outlet property="pauseResumeButton" destination="ofn-zU-9qf" id="LHJ-hQ-EJn"/>
+                        <outlet property="preGameControls" destination="6E0-6G-Rsg" id="2n1-CI-CdY"/>
                         <outlet property="resetButton" destination="g71-0F-T4w" id="8oL-Z9-9Lx"/>
                         <outlet property="tapGestureRecognizerBottom" destination="ZKx-UP-RNV" id="Ep9-UJ-YFg"/>
                         <outlet property="tapGestureRecognizerTop" destination="Rds-cz-3qA" id="ejm-5s-3RK"/>
@@ -612,5 +660,7 @@
         <image name="pause.png" width="100" height="100"/>
         <image name="play.png" width="100" height="100"/>
         <image name="refresh.png" width="512" height="512"/>
+        <image name="swap_color" width="512" height="512"/>
+        <image name="swap_player.jpg" width="512" height="512"/>
     </resources>
 </document>
