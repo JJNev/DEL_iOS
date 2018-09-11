@@ -27,7 +27,7 @@
 		1943BAD6210E21B30041ED8A /* AccordionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943BAD1210E21B30041ED8A /* AccordionCell.swift */; };
 		1943BAD9210E22960041ED8A /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943BAD8210E22960041ED8A /* Game.swift */; };
 		1943BADB210E238A0041ED8A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943BADA210E238A0041ED8A /* Player.swift */; };
-		19D776742147F2A50042F809 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19D776732147F2A50042F809 /* Icons.xcassets */; };
+		19D776762147F4E70042F809 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19D776752147F4E70042F809 /* Icons.xcassets */; };
 		AC9FDDEBB32828C65A1097F4 /* Pods_Die_Ewige_Liste.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25AD98E0BE9FB62091CBA9C3 /* Pods_Die_Ewige_Liste.framework */; };
 		E0948F9917EC631F6E712713 /* Pods_Die_Ewige_ListeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 626C055EEED1DB4DDBFE5BB2 /* Pods_Die_Ewige_ListeTests.framework */; };
 		FABB41B2D5D41434C64E8E01 /* Pods_Die_Ewige_ListeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7F43C546CC027286AF6146 /* Pods_Die_Ewige_ListeUITests.framework */; };
@@ -78,7 +78,7 @@
 		1943BAD1210E21B30041ED8A /* AccordionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccordionCell.swift; sourceTree = "<group>"; };
 		1943BAD8210E22960041ED8A /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		1943BADA210E238A0041ED8A /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
-		19D776732147F2A50042F809 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
+		19D776752147F4E70042F809 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		1CCEA02E3F79C8F381E11BB3 /* Pods-Die Ewige Liste.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Die Ewige Liste.release.xcconfig"; path = "Pods/Target Support Files/Pods-Die Ewige Liste/Pods-Die Ewige Liste.release.xcconfig"; sourceTree = "<group>"; };
 		25AD98E0BE9FB62091CBA9C3 /* Pods_Die_Ewige_Liste.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Die_Ewige_Liste.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E20D9DD47D540EBCFBBA3CD /* Pods-Die Ewige Liste.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Die Ewige Liste.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Die Ewige Liste/Pods-Die Ewige Liste.debug.xcconfig"; sourceTree = "<group>"; };
@@ -195,7 +195,7 @@
 				1943BAD7210E227F0041ED8A /* Models */,
 				19008ECB20F3BA2100AADB15 /* IBDesignables */,
 				1943BACB210E21940041ED8A /* Libs */,
-				19D776732147F2A50042F809 /* Icons.xcassets */,
+				19D776752147F4E70042F809 /* Icons.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -396,8 +396,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1902137F21355AFB009F5E59 /* Main.storyboard in Resources */,
+				19D776762147F4E70042F809 /* Icons.xcassets in Resources */,
 				19008E9C20F38EA800AADB15 /* LaunchScreen.storyboard in Resources */,
-				19D776742147F2A50042F809 /* Icons.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -677,7 +677,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3E20D9DD47D540EBCFBBA3CD /* Pods-Die Ewige Liste.debug.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Die Ewige Liste/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -695,7 +694,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1CCEA02E3F79C8F381E11BB3 /* Pods-Die Ewige Liste.release.xcconfig */;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Die Ewige Liste/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
