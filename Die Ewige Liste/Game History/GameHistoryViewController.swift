@@ -9,10 +9,19 @@
 import UIKit
 
 class GameHistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var gameHistoryTableView: UITableView!
+    
     var list: List! {
         didSet {
             setupUi()
         }
+    }
+    
+    // MARK: Life Cycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        gameHistoryTableView.reloadData()
     }
     
     // MARK UITableViewDataSource
