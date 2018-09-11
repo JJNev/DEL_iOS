@@ -509,10 +509,10 @@
                                     <constraint firstItem="X1o-as-6EL" firstAttribute="centerY" secondItem="6E0-6G-Rsg" secondAttribute="centerY" id="z6d-td-Amw"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F2P-Qr-41m" userLabel="Mid Controls">
+                            <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F2P-Qr-41m" userLabel="In-Game Controls">
                                 <rect key="frame" x="87.666666666666686" y="381.33333333333331" width="200" height="60"/>
                                 <subviews>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofn-zU-9qf" userLabel="Pause Button">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofn-zU-9qf" userLabel="Pause Button">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="VNM-Kk-Wec"/>
@@ -527,7 +527,7 @@
                                             <action selector="pauseResumeTapped:" destination="rGg-Id-d0e" eventType="touchUpInside" id="00X-Jc-O7x"/>
                                         </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g71-0F-T4w" userLabel="Refresh Button">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g71-0F-T4w" userLabel="Refresh Button">
                                         <rect key="frame" x="69.999999999999986" y="0.0" width="60.000000000000014" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="g71-0F-T4w" secondAttribute="height" multiplier="1:1" id="Aei-QS-2o8"/>
@@ -542,7 +542,7 @@
                                             <action selector="refreshTapped:" destination="rGg-Id-d0e" eventType="touchUpInside" id="pS0-1B-uVG"/>
                                         </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MfU-kE-ms1" userLabel="End Game Button">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MfU-kE-ms1" userLabel="End Game Button">
                                         <rect key="frame" x="139.33333333333331" y="-0.33333333333331439" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="MfU-kE-ms1" secondAttribute="height" multiplier="1:1" id="jLV-m9-Ies"/>
@@ -599,6 +599,7 @@
                     </view>
                     <connections>
                         <outlet property="endGameButton" destination="MfU-kE-ms1" id="kQq-Sq-gL9"/>
+                        <outlet property="inGameControls" destination="F2P-Qr-41m" id="lav-E5-RIt"/>
                         <outlet property="midSeperatorYConstraint" destination="DAK-AN-CUy" id="T6f-TQ-Gdq"/>
                         <outlet property="nameLabelBottom" destination="IhX-vC-SxZ" id="XNR-Uq-Rkr"/>
                         <outlet property="nameLabelTop" destination="yMU-vh-pnc" id="Jjv-p8-yZi"/>

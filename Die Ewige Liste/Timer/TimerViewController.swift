@@ -25,6 +25,7 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var nameLabelBottom: UILabel!
     
     @IBOutlet weak var preGameControls: UIView!
+    @IBOutlet weak var inGameControls: UIView!
     @IBOutlet var midSeperatorYConstraint: NSLayoutConstraint!
     @IBOutlet var pauseResumeButton: UIButton!
     @IBOutlet var resetButton: UIButton!
@@ -32,6 +33,8 @@ class TimerViewController: UIViewController {
     
     @IBOutlet var defaultBlackViews: [UIView]!
     @IBOutlet var defaultWhiteViews: [UIView]!
+    
+    private let defaultAnimationTime: TimeInterval = 0.1
     
     private lazy var timer = Timer()
     private var timeTop = 0
@@ -94,12 +97,9 @@ class TimerViewController: UIViewController {
         if currentPlayer == nil {
             // TODO: Who plays which color?
             currentPlayer = sender == tapGestureRecognizerTop ? playerBottom : playerTop
+            startGame()
         }
-        preGameControls.isHidden = true
         changeTurn()
-        updatePauseButton()
-        updateResetButton()
-        updateEndGameButton()
     }
     
     @IBAction func endGameTapped(_ sender: Any) {
@@ -116,6 +116,27 @@ class TimerViewController: UIViewController {
     
     
     // MARK: Helper
+    
+    private func startGame() {
+        guard game.state != .running else {
+            return
+        }
+        game.state = .running
+        preGameControls.isHidden = true
+        preGameControls.isUserInteractionEnabled = false
+        inGameControls.isHidden = false
+        inGameControls.isUserInteractionEnabled = true
+        updatePauseButton()
+        
+        UIView.animate(
+            withDuration: defaultAnimationTime,
+            delay: 0.0,
+            options: [.curveEaseInOut, .allowUserInteraction, .beginFromCurrentState],
+            animations: {
+                self.preGameControls.layoutIfNeeded()
+                self.inGameControls.layoutIfNeeded()
+        }, completion: nil)
+    }
     
     private func setupGame() {
         game = Game(state: .new, dateStarted: Date(), dateEnded: nil, totalTimeInSeconds: 0, winner: nil, loser: nil, timeWinner: nil, settings: nil)
@@ -154,7 +175,6 @@ class TimerViewController: UIViewController {
         guard let unwrappedCurrentPlayer = currentPlayer else {
             return
         }
-        
         currentPlayer = unwrappedCurrentPlayer == playerTop ? playerBottom : playerTop
         
         startTimer(reset: true)
@@ -207,8 +227,6 @@ class TimerViewController: UIViewController {
     private func updateUi() {
         updateTapGestureRecognizers()
         updatePauseButton()
-        updateResetButton()
-        updateEndGameButton()
         updateTimeLabels()
         updatePlayerLabels()
         updateMidSeperator()
@@ -233,51 +251,21 @@ class TimerViewController: UIViewController {
         switch game.state {
         case .running:
             pauseResumeButton.setImage(#imageLiteral(resourceName: "pause.png"), for: .normal)
-            pauseResumeButton.isHidden = false
             break
         case .paused:
             pauseResumeButton.setImage(#imageLiteral(resourceName: "play.png"), for: .normal)
-            pauseResumeButton.isHidden = false
             break
-        case .new:
-            pauseResumeButton.isHidden = true
         default:
             break
         }
         
         UIView.animate(
-            withDuration: 0.1,
+            withDuration: defaultAnimationTime,
             delay: 0.0,
             options: .curveLinear,
             animations: {
                 self.pauseResumeButton.layoutIfNeeded()
         }, completion: nil)
-    }
-    
-    private func updateResetButton() {
-        switch game.state {
-        case .new:
-            fallthrough
-        case .ended:
-            resetButton.isHidden = true
-            break
-        default:
-            resetButton.isHidden = false
-            break
-        }
-    }
-    
-    private func updateEndGameButton() {
-        switch game.state {
-        case .new:
-            fallthrough
-        case .ended:
-            endGameButton.isHidden = true
-            break
-        default:
-            endGameButton.isHidden = false
-            break
-        }
     }
     
     private func updateTimeLabels() {
@@ -313,7 +301,7 @@ class TimerViewController: UIViewController {
         }
         
         UIView.animate(
-            withDuration: 0.1,
+            withDuration: defaultAnimationTime,
             delay: 0.0,
             options: .curveLinear,
             animations: {
@@ -333,7 +321,7 @@ class TimerViewController: UIViewController {
         }
         
         UIView.animate(
-            withDuration: 0.1,
+            withDuration: defaultAnimationTime,
             delay: 0.0,
             options: [.curveEaseInOut, .allowUserInteraction, .beginFromCurrentState],
             animations: {
