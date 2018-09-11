@@ -112,17 +112,18 @@ class TimerViewController: UIViewController {
         // TODO: Modal: Who plays which position/color?
         playerTop = Player(color: .white, name: list.playerOneName)
         playerBottom = Player(color: .black, name: list.playerTwoName)
-        nameLabelTop.text = playerTop.name
-        nameLabelBottom.text = playerBottom.name
-        adjustColors()
+        updateNameLabels()
     }
     
-    private func adjustColors() {
-        guard playerBottom.color != .black else {
-            // This is the default case. Nothing to do.
-            return
-        }
-        
+    private func swapSeats() {
+        let newPlayerTop = Player(color: playerTop.color, name: playerBottom.name)
+        let newPlayerBottom = Player(color: playerBottom.color, name: playerTop.name)
+        playerBottom = newPlayerBottom
+        playerTop = newPlayerTop
+        updateNameLabels()
+    }
+    
+    private func swapColors() {
         for view in defaultBlackViews + defaultWhiteViews {
             if let label = view as? UILabel {
                 label.textColor = label.textColor == .white ? .black : .white
@@ -279,6 +280,11 @@ class TimerViewController: UIViewController {
             timeLabelTop.text = String(format: "%02d:%02d", timeTop / 60, timeTop % 60)
             timeLabelBottom.text = String(format: "%02d:%02d", timeBottom / 60, timeBottom % 60)
         }
+    }
+    
+    private func updateNameLabels() {
+        nameLabelTop.text = playerTop.name
+        nameLabelBottom.text = playerBottom.name
     }
     
     private func updatePlayerLabels() {
