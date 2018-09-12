@@ -971,6 +971,9 @@
                                         <rect key="frame" x="155.66666666666666" y="454" width="64" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Proceed"/>
+                                        <connections>
+                                            <action selector="proceedButtonTapped:" destination="TiB-f7-LOL" eventType="touchUpInside" id="oBQ-If-ZQL"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1023,12 +1026,18 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="507"/>
                     <connections>
+                        <outlet property="contentView" destination="SfM-0O-upU" id="4Eu-mn-WYx"/>
+                        <outlet property="pointsPlayerBottomContentLabel" destination="3zs-p1-il4" id="hwz-n5-PIf"/>
+                        <outlet property="pointsPlayerBottomNameLabel" destination="di2-91-t9H" id="nr1-Nv-wEd"/>
+                        <outlet property="pointsPlayerTopContentLabel" destination="ZHL-Li-iDn" id="jaa-KQ-Fct"/>
+                        <outlet property="pointsPlayerTopNameLabel" destination="MmJ-6Z-yJ0" id="fYj-vP-fBZ"/>
                         <outlet property="timeBottomPlayerContentLabel" destination="cuZ-Su-L9T" id="P21-q6-8AH"/>
                         <outlet property="timeBottomPlayerLabel" destination="iXd-xm-DVg" id="fgY-kt-gWT"/>
                         <outlet property="timeTopPlayerContentLabel" destination="6U3-XE-2pX" id="fdO-XE-sxx"/>
                         <outlet property="timeTopPlayerLabel" destination="dFf-cF-5QF" id="YPT-06-csJ"/>
                         <outlet property="timeTotalContentLabel" destination="Gln-nl-63a" id="eF5-cb-zQ5"/>
                         <outlet property="timeWinnerContentLabel" destination="hR8-IY-Z8W" id="n7S-sl-wNg"/>
+                        <outlet property="winnerSelectionSegmentedControl" destination="M1t-xb-3f1" id="y2W-HX-oy2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gxV-fh-DpQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

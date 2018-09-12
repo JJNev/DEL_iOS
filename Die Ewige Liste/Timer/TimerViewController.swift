@@ -132,7 +132,7 @@ class TimerViewController: UIViewController {
     }
     
     private func setupGame() {
-        game = Game(state: .new, dateStarted: Date(), dateEnded: nil, totalTimeInSeconds: 0, playerTop: Player(color: .white, name: list.playerOneName), playerBottom: Player(color: .black, name: list.playerTwoName), winner: nil, loser: nil, timeWinner: nil, settings: nil)
+        game = Game(state: .new, dateStarted: Date(), dateEnded: nil, totalTime: 0, playerTop: Player(color: .white, name: list.playerOneName), playerBottom: Player(color: .black, name: list.playerTwoName), winner: nil, loser: nil, timeWinner: nil, settings: nil)
         updateNameLabels()
     }
     
@@ -197,10 +197,10 @@ class TimerViewController: UIViewController {
     private func endGame() {
         // TODO: game.playerTop.time == game.playerBottom.time
         let timeWinner = game.playerTop.time > game.playerBottom.time ? game.playerBottom : game.playerTop
+        game.totalTime = game.playerTop.time + game.playerBottom.time
         game.dateEnded = Date()
         game.state = .ended
         game.timeWinner = timeWinner
-        game.totalTimeInSeconds = game.playerTop.time + game.playerBottom.time
         showEndGameView()
     }
     
@@ -209,6 +209,7 @@ class TimerViewController: UIViewController {
             return
         }
         endGameViewController.setGame(game, fromList: list)
+        // TODO: Add as modal overlay
         endGameViewController.view.center = view.center
         view.addSubview(endGameViewController.view)
     }
