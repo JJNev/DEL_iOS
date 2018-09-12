@@ -10,7 +10,7 @@ import Foundation
 
 extension String {
     func replace(_ oldString: String, with newString: String) -> String {
-        return self.replacingOccurrences(of: target, with: withString, options: NSString.CompareOptions.literal, range: nil)
+        return self.replacingOccurrences(of: oldString, with: newString, options: NSString.CompareOptions.literal, range: nil)
     }
     
     func contains(_ s: String) -> Bool {
