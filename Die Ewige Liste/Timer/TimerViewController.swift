@@ -61,6 +61,7 @@ class TimerViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.isNavigationBarHidden = false
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
     }
     
     // MARK: Actions
@@ -154,6 +155,8 @@ class TimerViewController: UIViewController {
                 view.backgroundColor = view.backgroundColor == .white ? .black : .white
             }
         }
+        
+        UIApplication.shared.statusBarStyle = UIApplication.shared.statusBarStyle == .lightContent ? .default : .lightContent
     }
     
     private func startTimer(reset: Bool) {
