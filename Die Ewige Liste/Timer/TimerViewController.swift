@@ -37,8 +37,6 @@ class TimerViewController: UIViewController {
     private let defaultAnimationTime: TimeInterval = 0.1
     
     private lazy var timer = Timer()
-    private var timeTop = 0
-    private var timeBottom = 0
     private var currentPlayer: Player?
     private var game: Game!
 
@@ -175,8 +173,8 @@ class TimerViewController: UIViewController {
     }
     
     private func resetGame() {
-        timeTop = 0
-        timeBottom = 0
+        game.playerTop.time = 0
+        game.playerBottom.time = 0
         currentPlayer = .none
         game.state = .new
         updateUi()
@@ -188,21 +186,21 @@ class TimerViewController: UIViewController {
         }
         
         if unwrappedCurrentPlayer.color == .white {
-            timeTop += 1
+            game.playerTop.time += 1
         } else if unwrappedCurrentPlayer.color == .black {
-            timeBottom += 1
+            game.playerBottom.time += 1
         }
         
         updateTimeLabels()
     }
     
     private func endGame() {
-        // TODO: timeTop == timeBottom
-        let timeWinner = timeTop > timeBottom ? game.playerBottom : game.playerTop
+        // TODO: game.playerTop.time == game.playerBottom.time
+        let timeWinner = game.playerTop.time > game.playerBottom.time ? game.playerBottom : game.playerTop
         game.dateEnded = Date()
         game.state = .ended
         game.timeWinner = timeWinner
-        game.totalTimeInSeconds = timeTop + timeBottom
+        game.totalTimeInSeconds = game.playerTop.time + game.playerBottom.time
         showEndGameView()
     }
     
@@ -284,13 +282,13 @@ class TimerViewController: UIViewController {
     private func updateTimeLabels() {
         if let unwrappedCurrentPlayer = currentPlayer {
             if unwrappedCurrentPlayer.color == .white {
-                timeLabelTop.text = String(format: "%02d:%02d", timeTop / 60, timeTop % 60)
+                timeLabelTop.text = String(format: "%02d:%02d", game.playerTop.time / 60, game.playerTop.time % 60)
             } else if unwrappedCurrentPlayer.color == .black {
-                timeLabelBottom.text = String(format: "%02d:%02d", timeBottom / 60, timeBottom % 60)
+                timeLabelBottom.text = String(format: "%02d:%02d", game.playerBottom.time / 60, game.playerBottom.time % 60)
             }
         } else {
-            timeLabelTop.text = String(format: "%02d:%02d", timeTop / 60, timeTop % 60)
-            timeLabelBottom.text = String(format: "%02d:%02d", timeBottom / 60, timeBottom % 60)
+            timeLabelTop.text = String(format: "%02d:%02d", game.playerTop.time / 60, game.playerTop.time % 60)
+            timeLabelBottom.text = String(format: "%02d:%02d", game.playerBottom.time / 60, game.playerBottom.time % 60)
         }
     }
     

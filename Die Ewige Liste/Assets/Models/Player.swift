@@ -16,6 +16,7 @@ class Player: Equatable {
     
     var color: Color
     var name: String
+    var time: Int = 0
     
     // MARK: Life Cycle
     
