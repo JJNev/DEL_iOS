@@ -839,33 +839,30 @@
                                             <segment title="Tom"/>
                                             <segment title="Johannes"/>
                                         </segments>
-                                        <connections>
-                                            <action selector="winnerSelectionChanged:" destination="TiB-f7-LOL" eventType="valueChanged" id="9dj-WU-9V9"/>
-                                        </connections>
                                     </segmentedControl>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SG4-VJ-qpm" userLabel="Label Container">
-                                        <rect key="frame" x="0.0" y="141" width="167" height="108"/>
+                                        <rect key="frame" x="0.0" y="141" width="167.66666666666666" height="108"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Winner" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXt-s0-dPO" userLabel="Time Winner Label">
-                                                <rect key="frame" x="0.0" y="0.0" width="166.33333333333334" height="21"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="167" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Top" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dFf-cF-5QF" userLabel="Time Player Top Label">
-                                                <rect key="frame" x="0.0" y="29" width="166.66666666666666" height="21"/>
+                                                <rect key="frame" x="0.0" y="29" width="167.33333333333334" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Bottom" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iXd-xm-DVg" userLabel="Time Player Bottom Label">
-                                                <rect key="frame" x="0.0" y="58" width="166.66666666666666" height="21"/>
+                                                <rect key="frame" x="0.0" y="58" width="167.33333333333334" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Total" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGN-E8-MoL" userLabel="Time Total Label">
-                                                <rect key="frame" x="0.0" y="87" width="167" height="21"/>
+                                                <rect key="frame" x="0.0" y="87" width="167.66666666666666" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -889,35 +886,35 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pol-5c-PfT" userLabel="Mid Seperator View">
-                                        <rect key="frame" x="186.33333333333334" y="141" width="2" height="108"/>
+                                        <rect key="frame" x="187" y="141" width="1" height="108"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="2" id="8Hy-vU-R1t"/>
+                                            <constraint firstAttribute="width" constant="1" id="8Hy-vU-R1t"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="628-bB-U89" userLabel="Label Content Container">
-                                        <rect key="frame" x="208.33333333333337" y="141" width="166.66666666666663" height="107.66666666666669"/>
+                                        <rect key="frame" x="208" y="141" width="167" height="107.66666666666669"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Johannes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hR8-IY-Z8W" userLabel="Time Winner Content Label">
-                                                <rect key="frame" x="0.0" y="0.0" width="167" height="20.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="167.33333333333334" height="20.333333333333332"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1:32" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6U3-XE-2pX" userLabel="Time Player Top Content Label">
-                                                <rect key="frame" x="0.0" y="29.666666666666657" width="167.33333333333334" height="20.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="29.666666666666657" width="167.66666666666666" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2:11" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cuZ-Su-L9T" userLabel="Time Player Bottom Content Label">
-                                                <rect key="frame" x="0.0" y="58" width="167.33333333333334" height="21"/>
+                                                <rect key="frame" x="0.0" y="58" width="167.66666666666666" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3:43" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gln-nl-63a" userLabel="Time Total Content Label">
-                                                <rect key="frame" x="0.0" y="86.666666666666657" width="166.66666666666666" height="21"/>
+                                                <rect key="frame" x="0.0" y="86.666666666666657" width="167" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1020,6 +1017,7 @@
                             <constraint firstItem="SfM-0O-upU" firstAttribute="leading" secondItem="s4q-NH-6Rc" secondAttribute="leading" id="XM5-C1-Nxn"/>
                             <constraint firstAttribute="trailing" secondItem="SfM-0O-upU" secondAttribute="trailing" id="oPo-bd-9Xl"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="dyo-Ro-4T2"/>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>

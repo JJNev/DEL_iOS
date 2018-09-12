@@ -27,6 +27,7 @@ class EndGameViewController: UIViewController {
     
     // MARK: Life Cycle
     
+    
     // MARK: Actions
     
     @IBAction func winnerSelectionChanged(_ sender: Any) {
@@ -41,6 +42,7 @@ class EndGameViewController: UIViewController {
     
     func setGame(_ game: Game, fromList list: List) {
         self.game = game
+        self.list = list
         
         // Necessary hack to load view hierarchy.
         _ = view
@@ -71,10 +73,12 @@ class EndGameViewController: UIViewController {
             pointsPlayerBottom += pointsForGameWin
         }
         
-        if game.timeWinner! == game.playerTop {
-            pointsPlayerTop += pointsForTimeWin
-        } else {
-            pointsPlayerBottom += pointsForTimeWin
+        if let timeWinner = game.timeWinner {
+            if timeWinner == game.playerTop {
+                pointsPlayerTop += pointsForTimeWin
+            } else {
+                pointsPlayerBottom += pointsForTimeWin
+            }
         }
         
         pointsPlayerTopContentLabel.text = String(pointsPlayerTop)
