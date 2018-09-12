@@ -182,23 +182,6 @@ class TimerViewController: UIViewController {
         updateUi()
     }
     
-    private func endGame() {
-        // TODO: Modal: Who won?
-        let winner = game.playerTop
-        // TODO: timeTop == timeBottom
-        let timeWinner = timeTop > timeBottom ? game.playerBottom : game.playerTop
-        
-        game.dateEnded = Date()
-        game.winner = winner
-        game.loser = winner == game.playerTop ? game.playerBottom : game.playerTop
-        game.state = .ended
-        game.timeWinner = timeWinner
-        game.totalTimeInSeconds = timeTop + timeBottom
-        list.games.append(game)
-        
-        navigationController?.popViewController(animated: true)
-    }
-    
     @objc private func updateTime() {
         guard let unwrappedCurrentPlayer = currentPlayer else {
             return
@@ -211,6 +194,25 @@ class TimerViewController: UIViewController {
         }
         
         updateTimeLabels()
+    }
+    
+    private func endGame() {
+        // TODO: timeTop == timeBottom
+        let timeWinner = timeTop > timeBottom ? game.playerBottom : game.playerTop
+        game.dateEnded = Date()
+        game.state = .ended
+        game.timeWinner = timeWinner
+        game.totalTimeInSeconds = timeTop + timeBottom
+        showEndGameView()
+    }
+    
+    private func showEndGameView() {
+        guard let endGameViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "endGameViewController") as? EndGameViewController else {
+            return
+        }
+        endGameViewController.setGame(game, fromList: list)
+        endGameViewController.view.center = view.center
+        view.addSubview(endGameViewController.view)
     }
     
     // MARK: Update UI
