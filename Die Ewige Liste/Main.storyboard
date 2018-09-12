@@ -839,6 +839,9 @@
                                             <segment title="Tom"/>
                                             <segment title="Johannes"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="winnerSelectionChanged:" destination="TiB-f7-LOL" eventType="valueChanged" id="LWz-RX-Hct"/>
+                                        </connections>
                                     </segmentedControl>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SG4-VJ-qpm" userLabel="Label Container">
                                         <rect key="frame" x="0.0" y="141" width="167.66666666666666" height="108"/>

@@ -31,6 +31,7 @@ class EndGameViewController: UIViewController {
     // MARK: Actions
     
     @IBAction func winnerSelectionChanged(_ sender: Any) {
+        // TODO: Why ain't this triggered?
         updatePoints()
     }
     
