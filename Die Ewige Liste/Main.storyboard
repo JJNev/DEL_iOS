@@ -644,8 +644,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SfM-0O-upU" userLabel="Content View">
-                                <rect key="frame" x="10" y="157.66666666666663" width="355" height="507"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SfM-0O-upU" userLabel="Content View" customClass="DELView" customModule="Die_Ewige_Liste" customModuleProvider="target">
+                                <rect key="frame" x="10" y="160.66666666666663" width="355" height="501"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who won?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Sq-U2-RcN">
                                         <rect key="frame" x="127" y="20" width="101" height="27"/>
@@ -654,7 +654,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="M1t-xb-3f1" userLabel="Winner Selection Segmented Control">
-                                        <rect key="frame" x="104" y="63" width="147" height="29"/>
+                                        <rect key="frame" x="104" y="77" width="147" height="29"/>
                                         <segments>
                                             <segment title="Tom"/>
                                             <segment title="Johannes"/>
@@ -664,7 +664,7 @@
                                         </connections>
                                     </segmentedControl>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SG4-VJ-qpm" userLabel="Label Container">
-                                        <rect key="frame" x="0.0" y="141.00000000000003" width="157.66666666666666" height="108"/>
+                                        <rect key="frame" x="0.0" y="135.00000000000003" width="157.66666666666666" height="108"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Winner" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXt-s0-dPO" userLabel="Time Winner Label">
                                                 <rect key="frame" x="0.0" y="0.0" width="157" height="21"/>
@@ -709,14 +709,14 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pol-5c-PfT" userLabel="Mid Seperator View">
-                                        <rect key="frame" x="177" y="141.00000000000003" width="1" height="108"/>
+                                        <rect key="frame" x="177" y="135.00000000000003" width="1" height="108"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="1" id="8Hy-vU-R1t"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="628-bB-U89" userLabel="Label Content Container">
-                                        <rect key="frame" x="198" y="141.00000000000003" width="157" height="107.66666666666666"/>
+                                        <rect key="frame" x="198" y="135.00000000000003" width="157" height="107.66666666666666"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Johannes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hR8-IY-Z8W" userLabel="Time Winner Content Label">
                                                 <rect key="frame" x="0.0" y="0.0" width="157.33333333333334" height="20.333333333333332"/>
@@ -758,37 +758,37 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3RK-6j-GLu" userLabel="Points Headline Label">
-                                        <rect key="frame" x="154" y="289" width="47.333333333333343" height="21"/>
+                                        <rect key="frame" x="154" y="283" width="47.333333333333343" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tom" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MmJ-6Z-yJ0" userLabel="Points Player Top Label">
-                                        <rect key="frame" x="0.0" y="320" width="178" height="24"/>
+                                        <rect key="frame" x="0.0" y="314" width="178" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Johannes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="di2-91-t9H" userLabel="Points Player Bottom Label">
-                                        <rect key="frame" x="177.33333333333337" y="320" width="177.66666666666663" height="24"/>
+                                        <rect key="frame" x="177.33333333333337" y="314" width="177.66666666666663" height="24"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHL-Li-iDn" userLabel="Points Player Top Content Label">
-                                        <rect key="frame" x="71.333333333333329" y="352" width="36" height="72"/>
+                                        <rect key="frame" x="71.333333333333329" y="346" width="36" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3zs-p1-il4" userLabel="Points Player Bottom Content Label">
-                                        <rect key="frame" x="248.33333333333331" y="352" width="36" height="72"/>
+                                        <rect key="frame" x="248.33333333333331" y="346" width="36" height="72"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="60"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6By-lN-jBa" userLabel="Proceed Button">
-                                        <rect key="frame" x="145.66666666666666" y="454" width="64" height="33"/>
+                                        <rect key="frame" x="145.66666666666666" y="448" width="64" height="33"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <state key="normal" title="Proceed"/>
                                         <connections>
@@ -818,7 +818,7 @@
                                     <constraint firstItem="di2-91-t9H" firstAttribute="width" secondItem="MmJ-6Z-yJ0" secondAttribute="width" id="UMJ-hG-aQf"/>
                                     <constraint firstAttribute="bottom" secondItem="6By-lN-jBa" secondAttribute="bottom" constant="20" id="VHA-WH-Fpd"/>
                                     <constraint firstItem="Gln-nl-63a" firstAttribute="bottom" secondItem="NGN-E8-MoL" secondAttribute="bottom" id="bgI-rj-UNd"/>
-                                    <constraint firstItem="SG4-VJ-qpm" firstAttribute="top" secondItem="M1t-xb-3f1" secondAttribute="bottom" constant="50" id="cSb-KM-W6G"/>
+                                    <constraint firstItem="SG4-VJ-qpm" firstAttribute="top" secondItem="M1t-xb-3f1" secondAttribute="bottom" constant="30" id="cSb-KM-W6G"/>
                                     <constraint firstItem="ZHL-Li-iDn" firstAttribute="centerX" secondItem="MmJ-6Z-yJ0" secondAttribute="centerX" id="cf5-fo-VMU"/>
                                     <constraint firstItem="3RK-6j-GLu" firstAttribute="top" secondItem="SG4-VJ-qpm" secondAttribute="bottom" constant="40" id="fLt-xb-Ybi"/>
                                     <constraint firstItem="3RK-6j-GLu" firstAttribute="centerX" secondItem="SfM-0O-upU" secondAttribute="centerX" id="fuU-Y8-AZO"/>
@@ -827,11 +827,22 @@
                                     <constraint firstItem="6U3-XE-2pX" firstAttribute="bottom" secondItem="dFf-cF-5QF" secondAttribute="bottom" id="ljm-re-GpD"/>
                                     <constraint firstItem="di2-91-t9H" firstAttribute="leading" secondItem="MmJ-6Z-yJ0" secondAttribute="trailing" id="luu-Ra-qAy"/>
                                     <constraint firstItem="6By-lN-jBa" firstAttribute="centerX" secondItem="SfM-0O-upU" secondAttribute="centerX" id="pAj-Xm-TfY"/>
-                                    <constraint firstItem="M1t-xb-3f1" firstAttribute="top" secondItem="6Sq-U2-RcN" secondAttribute="bottom" constant="16" id="syO-I7-lSU"/>
+                                    <constraint firstItem="M1t-xb-3f1" firstAttribute="top" secondItem="6Sq-U2-RcN" secondAttribute="bottom" constant="30" id="syO-I7-lSU"/>
                                     <constraint firstItem="hR8-IY-Z8W" firstAttribute="bottom" secondItem="FXt-s0-dPO" secondAttribute="bottom" id="v4J-bK-kuD"/>
                                     <constraint firstItem="di2-91-t9H" firstAttribute="leading" secondItem="MmJ-6Z-yJ0" secondAttribute="trailing" id="v53-E9-z68"/>
                                     <constraint firstItem="3zs-p1-il4" firstAttribute="top" secondItem="ZHL-Li-iDn" secondAttribute="top" id="zsG-V7-nE1"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="11"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
