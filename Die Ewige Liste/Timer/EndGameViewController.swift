@@ -31,7 +31,6 @@ class EndGameViewController: UIViewController {
     // MARK: Actions
     
     @IBAction func winnerSelectionChanged(_ sender: Any) {
-        // TODO: Why ain't this triggered?
         updatePoints()
     }
     
@@ -92,6 +91,7 @@ class EndGameViewController: UIViewController {
         }
         game.winner = winnerSelectionSegmentedControl.selectedSegmentIndex == 0 ? game.playerTop : game.playerBottom
         game.loser = winnerSelectionSegmentedControl.selectedSegmentIndex == 0 ? game.playerBottom : game.playerTop
+        list.games.append(game)
         
         list.games.append(game)
         // TODO: Leave screen
