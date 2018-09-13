@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Die Ewige Liste/Timer/EndGameViewController.swift"
-            timestampString = "558461588.588012"
+            timestampString = "558543226.110785"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
             landmarkName = "winnerSelectionChanged(_:)"
             landmarkType = "7">
          </BreakpointContent>

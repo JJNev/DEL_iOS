@@ -61,6 +61,13 @@ class TimerViewController: UIViewController {
         navigationController?.isNavigationBarHidden = false
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let endGameViewController = segue.destination as? EndGameViewController {
+            endGame()
+            endGameViewController.setGame(game, fromList: list)
+        }
+    }
+    
     // MARK: Actions
     
     @IBAction func pauseResumeTapped(_ sender: Any) {
@@ -96,10 +103,6 @@ class TimerViewController: UIViewController {
             startGame()
         }
         changeTurn()
-    }
-    
-    @IBAction func endGameTapped(_ sender: Any) {
-        endGame()
     }
     
     @IBAction func swapSeatsTapped(_ sender: Any) {
@@ -201,17 +204,6 @@ class TimerViewController: UIViewController {
         game.dateEnded = Date()
         game.state = .ended
         game.timeWinner = timeWinner
-        showEndGameView()
-    }
-    
-    private func showEndGameView() {
-        guard let endGameViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "endGameViewController") as? EndGameViewController else {
-            return
-        }
-        endGameViewController.setGame(game, fromList: list)
-        // TODO: Add as modal overlay
-        endGameViewController.view.center = view.center
-        view.addSubview(endGameViewController.view)
     }
     
     // MARK: Update UI
