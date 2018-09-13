@@ -198,11 +198,13 @@ class TimerViewController: UIViewController {
     }
     
     private func endGame() {
+        timer.invalidate()
+        game.state = .ended
+        game.dateEnded = Date()
+        game.totalTime = game.playerTop.time + game.playerBottom.time
+        
         // TODO: game.playerTop.time == game.playerBottom.time
         let timeWinner = game.playerTop.time > game.playerBottom.time ? game.playerBottom : game.playerTop
-        game.totalTime = game.playerTop.time + game.playerBottom.time
-        game.dateEnded = Date()
-        game.state = .ended
         game.timeWinner = timeWinner
     }
     

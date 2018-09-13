@@ -93,7 +93,10 @@ class EndGameViewController: UIViewController {
         game.loser = winnerSelectionSegmentedControl.selectedSegmentIndex == 0 ? game.playerBottom : game.playerTop
         list.games.append(game)
         
-        list.games.append(game)
-        // TODO: Leave screen
+        if let navigationController = presentingViewController as? UINavigationController {
+            dismiss(animated: false, completion: {
+                navigationController.popViewController(animated: true)
+            })
+        }
     }
 }
