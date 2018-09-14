@@ -19,7 +19,6 @@ extension CGFloat {
         }
     }
     
-    
     // Returns value as a triple of the format (minutes, seconds, milliseconds).
     func secondsToTimeTriple() -> (Int, Int, Int) {
         let minutes = Int(self) / 60
