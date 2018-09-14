@@ -39,6 +39,10 @@ class TimerViewController: UIViewController {
     private lazy var timer = Timer()
     private var currentPlayer: Player?
     private var game: Game!
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 
     var list: List!
     
@@ -59,6 +63,7 @@ class TimerViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.isNavigationBarHidden = false
+        UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -148,6 +153,7 @@ class TimerViewController: UIViewController {
     }
     
     private func swapColors() {
+        UIApplication.shared.statusBarStyle = UIApplication.shared.statusBarStyle == .lightContent ? .default : .lightContent
         for view in defaultBlackViews + defaultWhiteViews {
             if let label = view as? UILabel {
                 label.textColor = label.textColor == .white ? .black : .white
