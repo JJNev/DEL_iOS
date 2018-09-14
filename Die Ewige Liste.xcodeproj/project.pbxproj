@@ -726,6 +726,7 @@
 			baseConfigurationReference = 3E20D9DD47D540EBCFBBA3CD /* Pods-Die Ewige Liste.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 29BKULVN4Z;
 				INFOPLIST_FILE = "Die Ewige Liste/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -743,6 +744,7 @@
 			baseConfigurationReference = 1CCEA02E3F79C8F381E11BB3 /* Pods-Die Ewige Liste.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 29BKULVN4Z;
 				INFOPLIST_FILE = "Die Ewige Liste/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
