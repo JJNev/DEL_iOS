@@ -214,12 +214,12 @@
 			path = IBDesignables;
 			sourceTree = "<group>";
 		};
-		1900FE7B214BD90E0089F5D9 /* Modal View Controller */ = {
+		1900FE7B214BD90E0089F5D9 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
 				1900FE7C214BD92D0089F5D9 /* ModalViewController.swift */,
 			);
-			path = "Modal View Controller";
+			path = "View Controller";
 			sourceTree = "<group>";
 		};
 		1900FE7E214BD9460089F5D9 /* Areas */ = {
@@ -236,7 +236,7 @@
 		1900FE80214BDA060089F5D9 /* Implementations */ = {
 			isa = PBXGroup;
 			children = (
-				1900FE7B214BD90E0089F5D9 /* Modal View Controller */,
+				1900FE7B214BD90E0089F5D9 /* View Controller */,
 				1943BAD7210E227F0041ED8A /* Models */,
 				19D776792149463F0042F809 /* Extensions */,
 				19008ECB20F3BA2100AADB15 /* IBDesignables */,
