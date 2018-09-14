@@ -39,10 +39,6 @@ class TimerViewController: UIViewController {
     private lazy var timer = Timer()
     private var currentPlayer: Player?
     private var game: Game!
-    
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
-    }
 
     var list: List!
     
