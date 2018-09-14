@@ -18,7 +18,7 @@ class GameHistoryCell: UITableViewCell {
     // MARK: Helper
     
     func setGame(_ game: Game) {
-        timeTotalContentLabel.text = String(format: "%02d:%02d", game.totalTime / 60, game.totalTime % 60)
+        timeTotalContentLabel.text = game.totalTimeInSeconds.secondsToTimeString()
         if let endDate = game.dateEnded {
             let dateFormatter = DateFormatter()
             dateFormatter.dateStyle = .short

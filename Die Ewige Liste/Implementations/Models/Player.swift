@@ -6,6 +6,7 @@
 //  Copyright © 2018 jmb. All rights reserved.
 //
 
+import UIKit
 
 class Player: Equatable {
     enum Color {
@@ -16,7 +17,7 @@ class Player: Equatable {
     
     var color: Color
     var name: String
-    var time: Int = 0
+    var timeInSeconds: CGFloat = 0.0
     
     // MARK: Life Cycle
     

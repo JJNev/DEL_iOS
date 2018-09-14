@@ -389,8 +389,8 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QC2-nR-pmt" userLabel="Time White Label" customClass="RotatingLabel" customModule="Die_Ewige_Liste" customModuleProvider="target">
-                                        <rect key="frame" x="131.66666666666669" y="292.66666666666669" width="111.66666666666666" height="58"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QC2-nR-pmt" userLabel="Time White Label" customClass="RotatingLabel" customModule="Die_Ewige_Liste" customModuleProvider="target">
+                                        <rect key="frame" x="115.66666666666669" y="292.66666666666669" width="144" height="58"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="49"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -439,8 +439,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVN-9J-00g" userLabel="Time Black Label">
-                                        <rect key="frame" x="131.66666666666666" y="60" width="111.66666666666666" height="58"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVN-9J-00g" userLabel="Time Black Label">
+                                        <rect key="frame" x="115.66666666666669" y="60" width="144" height="58"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="49"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>

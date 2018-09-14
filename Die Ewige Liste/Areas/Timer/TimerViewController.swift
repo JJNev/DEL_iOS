@@ -136,7 +136,7 @@ class TimerViewController: UIViewController {
     }
     
     private func setupGame() {
-        game = Game(state: .new, dateStarted: Date(), dateEnded: nil, totalTime: 0, playerTop: Player(color: .white, name: list.playerOneName), playerBottom: Player(color: .black, name: list.playerTwoName), winner: nil, loser: nil, timeWinner: nil, settings: nil)
+        game = Game(state: .new, dateStarted: Date(), dateEnded: nil, totalTimeInSeconds: 0, playerTop: Player(color: .white, name: list.playerOneName), playerBottom: Player(color: .black, name: list.playerTwoName), winner: nil, loser: nil, timeWinner: nil, settings: nil)
         updateNameLabels()
     }
     
@@ -161,8 +161,9 @@ class TimerViewController: UIViewController {
     
     private func startTimer(reset: Bool) {
         game.state = .running
+        // TODO: Consider using two timers for more precision.
         if reset {timer.invalidate()}
-        timer = .scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+        timer = .scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
     }
     
     private func changeTurn() {
@@ -178,8 +179,8 @@ class TimerViewController: UIViewController {
     }
     
     private func resetGame() {
-        game.playerTop.time = 0
-        game.playerBottom.time = 0
+        game.playerTop.timeInSeconds = 0
+        game.playerBottom.timeInSeconds = 0
         currentPlayer = .none
         game.state = .new
         updateUi()
@@ -189,13 +190,7 @@ class TimerViewController: UIViewController {
         guard let unwrappedCurrentPlayer = currentPlayer else {
             return
         }
-        
-        if unwrappedCurrentPlayer.color == .white {
-            game.playerTop.time += 1
-        } else if unwrappedCurrentPlayer.color == .black {
-            game.playerBottom.time += 1
-        }
-        
+        unwrappedCurrentPlayer.timeInSeconds += 0.01
         updateTimeLabels()
     }
     
@@ -203,10 +198,10 @@ class TimerViewController: UIViewController {
         timer.invalidate()
         game.state = .ended
         game.dateEnded = Date()
-        game.totalTime = game.playerTop.time + game.playerBottom.time
+        game.totalTimeInSeconds = game.playerTop.timeInSeconds + game.playerBottom.timeInSeconds
         
         // TODO: game.playerTop.time == game.playerBottom.time
-        let timeWinner = game.playerTop.time > game.playerBottom.time ? game.playerBottom : game.playerTop
+        let timeWinner = game.playerTop.timeInSeconds > game.playerBottom.timeInSeconds ? game.playerBottom : game.playerTop
         game.timeWinner = timeWinner
     }
     
@@ -279,13 +274,13 @@ class TimerViewController: UIViewController {
     private func updateTimeLabels() {
         if let unwrappedCurrentPlayer = currentPlayer {
             if unwrappedCurrentPlayer.color == .white {
-                timeLabelTop.text = game.playerTop.time.toTimeString()
+                timeLabelTop.text = game.playerTop.timeInSeconds.secondsToTimeString()
             } else if unwrappedCurrentPlayer.color == .black {
-                timeLabelBottom.text = game.playerBottom.time.toTimeString()
+                timeLabelBottom.text = game.playerBottom.timeInSeconds.secondsToTimeString()
             }
         } else {
-            timeLabelTop.text = game.playerTop.time.toTimeString()
-            timeLabelBottom.text = game.playerBottom.time.toTimeString()
+            timeLabelTop.text = game.playerTop.timeInSeconds.secondsToTimeString()
+            timeLabelBottom.text = game.playerBottom.timeInSeconds.secondsToTimeString()
         }
     }
     
