@@ -277,13 +277,13 @@ class TimerViewController: UIViewController {
     private func updateTimeLabels() {
         if let unwrappedCurrentPlayer = currentPlayer {
             if unwrappedCurrentPlayer.color == .white {
-                timeLabelTop.text = String(format: "%02d:%02d", game.playerTop.time / 60, game.playerTop.time % 60)
+                timeLabelTop.text = game.playerTop.time.toTimeString()
             } else if unwrappedCurrentPlayer.color == .black {
-                timeLabelBottom.text = String(format: "%02d:%02d", game.playerBottom.time / 60, game.playerBottom.time % 60)
+                timeLabelBottom.text = game.playerBottom.time.toTimeString()
             }
         } else {
-            timeLabelTop.text = String(format: "%02d:%02d", game.playerTop.time / 60, game.playerTop.time % 60)
-            timeLabelBottom.text = String(format: "%02d:%02d", game.playerBottom.time / 60, game.playerBottom.time % 60)
+            timeLabelTop.text = game.playerTop.time.toTimeString()
+            timeLabelBottom.text = game.playerBottom.time.toTimeString()
         }
     }
     

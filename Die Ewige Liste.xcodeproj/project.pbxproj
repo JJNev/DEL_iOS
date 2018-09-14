@@ -14,6 +14,7 @@
 		19008EC220F38F3D00AADB15 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19008EC120F38F3D00AADB15 /* TimerViewController.swift */; };
 		19008ECD20F3BA6500AADB15 /* RotatingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19008ECC20F3BA6400AADB15 /* RotatingLabel.swift */; };
 		1900FE7D214BD92D0089F5D9 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1900FE7C214BD92D0089F5D9 /* ModalViewController.swift */; };
+		1900FE82214BED6D0089F5D9 /* Int+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1900FE81214BED6D0089F5D9 /* Int+Util.swift */; };
 		1902137921345A4C009F5E59 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1902137821345A4C009F5E59 /* List.swift */; };
 		1902137C213558ED009F5E59 /* ListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1902137B213558ED009F5E59 /* ListService.swift */; };
 		1902137F21355AFB009F5E59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1902137E21355AFB009F5E59 /* Main.storyboard */; };
@@ -69,6 +70,7 @@
 		19008EC120F38F3D00AADB15 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		19008ECC20F3BA6400AADB15 /* RotatingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingLabel.swift; sourceTree = "<group>"; };
 		1900FE7C214BD92D0089F5D9 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
+		1900FE81214BED6D0089F5D9 /* Int+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Util.swift"; sourceTree = "<group>"; };
 		1902137821345A4C009F5E59 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		1902137B213558ED009F5E59 /* ListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListService.swift; sourceTree = "<group>"; };
 		1902137E21355AFB009F5E59 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 			isa = PBXGroup;
 			children = (
 				19D7767A214946510042F809 /* String+Util.swift */,
+				1900FE81214BED6D0089F5D9 /* Int+Util.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -541,6 +544,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1900FE82214BED6D0089F5D9 /* Int+Util.swift in Sources */,
 				19008ECD20F3BA6500AADB15 /* RotatingLabel.swift in Sources */,
 				1943BAB9210E1E810041ED8A /* GameHistoryViewController.swift in Sources */,
 				1943BAD6210E21B30041ED8A /* AccordionCell.swift in Sources */,

@@ -49,9 +49,9 @@ class EndGameViewController: ModalViewController {
         timeTopPlayerLabel.text = "Time \(game.playerTop.name)"
         timeBottomPlayerLabel.text = "Time \(game.playerBottom.name)"
         timeWinnerContentLabel.text = game.timeWinner?.name
-        timeTopPlayerContentLabel.text = String(game.playerTop.time)
-        timeBottomPlayerContentLabel.text = String(game.playerBottom.time)
-        timeTotalContentLabel.text = String(game.totalTime)
+        timeTopPlayerContentLabel.text = game.playerTop.time.toTimeString()
+        timeBottomPlayerContentLabel.text = game.playerBottom.time.toTimeString()
+        timeTotalContentLabel.text = game.totalTime.toTimeString()
         pointsPlayerTopNameLabel.text = game.playerTop.name
         pointsPlayerBottomNameLabel.text = game.playerBottom.name
         updatePoints()
