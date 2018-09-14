@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EndGameViewController: UIViewController {
+class EndGameViewController: ModalViewController {
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var winnerSelectionSegmentedControl: UISegmentedControl!
     @IBOutlet weak var timeTopPlayerLabel: UILabel!
@@ -24,9 +24,6 @@ class EndGameViewController: UIViewController {
     
     private var game: Game!
     private var list: List?
-    
-    // MARK: Life Cycle
-    
     
     // MARK: Actions
     

@@ -13,6 +13,7 @@
 		19008EB220F38EAA00AADB15 /* Die_Ewige_ListeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19008EB120F38EAA00AADB15 /* Die_Ewige_ListeUITests.swift */; };
 		19008EC220F38F3D00AADB15 /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19008EC120F38F3D00AADB15 /* TimerViewController.swift */; };
 		19008ECD20F3BA6500AADB15 /* RotatingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19008ECC20F3BA6400AADB15 /* RotatingLabel.swift */; };
+		1900FE7D214BD92D0089F5D9 /* ModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1900FE7C214BD92D0089F5D9 /* ModalViewController.swift */; };
 		1902137921345A4C009F5E59 /* List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1902137821345A4C009F5E59 /* List.swift */; };
 		1902137C213558ED009F5E59 /* ListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1902137B213558ED009F5E59 /* ListService.swift */; };
 		1902137F21355AFB009F5E59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1902137E21355AFB009F5E59 /* Main.storyboard */; };
@@ -67,6 +68,7 @@
 		19008EB320F38EAA00AADB15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19008EC120F38F3D00AADB15 /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		19008ECC20F3BA6400AADB15 /* RotatingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingLabel.swift; sourceTree = "<group>"; };
+		1900FE7C214BD92D0089F5D9 /* ModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalViewController.swift; sourceTree = "<group>"; };
 		1902137821345A4C009F5E59 /* List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = List.swift; sourceTree = "<group>"; };
 		1902137B213558ED009F5E59 /* ListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListService.swift; sourceTree = "<group>"; };
 		1902137E21355AFB009F5E59 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -148,13 +150,11 @@
 		19008E9020F38E9800AADB15 /* Die Ewige Liste */ = {
 			isa = PBXGroup;
 			children = (
-				19008EC020F38F2200AADB15 /* Supporting Files */,
 				19008E9D20F38EA800AADB15 /* Info.plist */,
-				1902137E21355AFB009F5E59 /* Main.storyboard */,
+				19008EC020F38F2200AADB15 /* Supporting Files */,
+				1900FE7E214BD9460089F5D9 /* Areas */,
+				1900FE80214BDA060089F5D9 /* Implementations */,
 				1902137A2135572F009F5E59 /* Services */,
-				1902137D21355ADD009F5E59 /* Menu */,
-				1943BAB7210E1E4A0041ED8A /* Game History */,
-				19008EBF20F38F1800AADB15 /* Timer */,
 				19008EC520F3925A00AADB15 /* Assets */,
 			);
 			path = "Die Ewige Liste";
@@ -199,9 +199,6 @@
 		19008EC520F3925A00AADB15 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				19D776792149463F0042F809 /* Extensions */,
-				1943BAD7210E227F0041ED8A /* Models */,
-				19008ECB20F3BA2100AADB15 /* IBDesignables */,
 				1943BACB210E21940041ED8A /* Libs */,
 				19D776752147F4E70042F809 /* Icons.xcassets */,
 			);
@@ -215,6 +212,36 @@
 				19ABD6DC214AB260004F2791 /* DELView.swift */,
 			);
 			path = IBDesignables;
+			sourceTree = "<group>";
+		};
+		1900FE7B214BD90E0089F5D9 /* Modal View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1900FE7C214BD92D0089F5D9 /* ModalViewController.swift */,
+			);
+			path = "Modal View Controller";
+			sourceTree = "<group>";
+		};
+		1900FE7E214BD9460089F5D9 /* Areas */ = {
+			isa = PBXGroup;
+			children = (
+				1902137E21355AFB009F5E59 /* Main.storyboard */,
+				1902137D21355ADD009F5E59 /* Menu */,
+				1943BAB7210E1E4A0041ED8A /* Game History */,
+				19008EBF20F38F1800AADB15 /* Timer */,
+			);
+			path = Areas;
+			sourceTree = "<group>";
+		};
+		1900FE80214BDA060089F5D9 /* Implementations */ = {
+			isa = PBXGroup;
+			children = (
+				1900FE7B214BD90E0089F5D9 /* Modal View Controller */,
+				1943BAD7210E227F0041ED8A /* Models */,
+				19D776792149463F0042F809 /* Extensions */,
+				19008ECB20F3BA2100AADB15 /* IBDesignables */,
+			);
+			path = Implementations;
 			sourceTree = "<group>";
 		};
 		1902137A2135572F009F5E59 /* Services */ = {
@@ -530,6 +557,7 @@
 				19D7767B214946510042F809 /* String+Util.swift in Sources */,
 				19008E9220F38E9800AADB15 /* AppDelegate.swift in Sources */,
 				1943BAD4210E21B30041ED8A /* AccordionViewController.swift in Sources */,
+				1900FE7D214BD92D0089F5D9 /* ModalViewController.swift in Sources */,
 				1902137C213558ED009F5E59 /* ListService.swift in Sources */,
 				1943BAD5210E21B30041ED8A /* AccordionData.swift in Sources */,
 				1943BABD210E1FA80041ED8A /* GameHistoryCell.swift in Sources */,
