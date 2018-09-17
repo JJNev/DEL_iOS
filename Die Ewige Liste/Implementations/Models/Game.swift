@@ -6,7 +6,7 @@
 //  Copyright © 2018 jmb. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Game {
     enum State {
@@ -18,7 +18,9 @@ struct Game {
     var state: State = .new
     var dateStarted: Date?
     var dateEnded: Date?
-    var totalTimeInSeconds: Int = 0
+    var totalTimeInSeconds: CGFloat = 0.0
+    var playerTop: Player!
+    var playerBottom: Player!
     var winner: Player?
     var loser: Player?
     var timeWinner: Player?
