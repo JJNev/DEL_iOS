@@ -37,8 +37,6 @@ class TimerViewController: UIViewController {
     private let defaultAnimationTime: TimeInterval = 0.1
     
     private lazy var timer = Timer()
-    private var timeTop = 0
-    private var timeBottom = 0
     private var currentPlayer: Player?
     private var game: Game!
 
@@ -55,13 +53,25 @@ class TimerViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.isNavigationBarHidden = true
+        
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.navigationBar.backgroundColor = .clear
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        
         navigationController?.isNavigationBarHidden = false
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let endGameViewController = segue.destination as? EndGameViewController {
+            endGame()
+            updatePauseButton(animated: false)
+            endGameViewController.setGame(game, fromList: list)
+        }
     }
     
     // MARK: Actions
@@ -75,16 +85,16 @@ class TimerViewController: UIViewController {
                 pauseButton.setImage(#imageLiteral(resourceName: "play.png"), for: .normal)
             }
             break
-        case .paused:
+        default:
             startTimer(reset: false)
             game.state = .running
             if let pauseButton = sender as? UIButton {
                 pauseButton.setImage(#imageLiteral(resourceName: "pause.png"), for: .normal)
             }
             break
-        default:
-            break
         }
+        
+        updateNavigationBar()
     }
     
     @IBAction func refreshTapped(_ sender: Any) {
@@ -99,10 +109,8 @@ class TimerViewController: UIViewController {
             startGame()
         }
         changeTurn()
-    }
-    
-    @IBAction func endGameTapped(_ sender: Any) {
-        endGame()
+        updatePauseButton()
+        updateNavigationBar()
     }
     
     @IBAction func swapSeatsTapped(_ sender: Any) {
@@ -123,6 +131,7 @@ class TimerViewController: UIViewController {
         game.state = .running
         updateMidControls()
         updatePauseButton()
+        updateNavigationBar()
         
         UIView.animate(
             withDuration: defaultAnimationTime,
@@ -132,6 +141,14 @@ class TimerViewController: UIViewController {
                 self.preGameControls.layoutIfNeeded()
                 self.inGameControls.layoutIfNeeded()
         }, completion: nil)
+    }
+    
+    private func resetGame() {
+        game.playerTop.timeInSeconds = 0
+        game.playerBottom.timeInSeconds = 0
+        currentPlayer = .none
+        game.state = .new
+        updateUi()
     }
     
     private func setupGame() {
@@ -148,6 +165,7 @@ class TimerViewController: UIViewController {
     }
     
     private func swapColors() {
+        UIApplication.shared.statusBarStyle = UIApplication.shared.statusBarStyle == .lightContent ? .default : .lightContent
         for view in defaultBlackViews + defaultWhiteViews {
             if let label = view as? UILabel {
                 label.textColor = label.textColor == .white ? .black : .white
@@ -155,14 +173,13 @@ class TimerViewController: UIViewController {
                 view.backgroundColor = view.backgroundColor == .white ? .black : .white
             }
         }
-        
-        UIApplication.shared.statusBarStyle = UIApplication.shared.statusBarStyle == .lightContent ? .default : .lightContent
     }
     
     private func startTimer(reset: Bool) {
         game.state = .running
+        // TODO: Consider using two timers for more precision.
         if reset {timer.invalidate()}
-        timer = .scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+        timer = .scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
     }
     
     private func changeTurn() {
@@ -177,43 +194,23 @@ class TimerViewController: UIViewController {
         updatePlayerLabels()
     }
     
-    private func resetGame() {
-        timeTop = 0
-        timeBottom = 0
-        currentPlayer = .none
-        game.state = .new
-        updateUi()
-    }
-    
-    private func endGame() {
-        // TODO: Modal: Who won?
-        let winner = game.playerTop
-        // TODO: timeTop == timeBottom
-        let timeWinner = timeTop > timeBottom ? game.playerBottom : game.playerTop
-        
-        game.dateEnded = Date()
-        game.winner = winner
-        game.loser = winner == game.playerTop ? game.playerBottom : game.playerTop
-        game.state = .ended
-        game.timeWinner = timeWinner
-        game.totalTimeInSeconds = timeTop + timeBottom
-        list.games.append(game)
-        
-        navigationController?.popViewController(animated: true)
-    }
-    
     @objc private func updateTime() {
         guard let unwrappedCurrentPlayer = currentPlayer else {
             return
         }
-        
-        if unwrappedCurrentPlayer.color == .white {
-            timeTop += 1
-        } else if unwrappedCurrentPlayer.color == .black {
-            timeBottom += 1
-        }
-        
+        unwrappedCurrentPlayer.timeInSeconds += 0.01
         updateTimeLabels()
+    }
+    
+    private func endGame() {
+        timer.invalidate()
+        game.state = .ended
+        game.dateEnded = Date()
+        game.totalTimeInSeconds = game.playerTop.timeInSeconds + game.playerBottom.timeInSeconds
+        
+        // TODO: game.playerTop.time == game.playerBottom.time
+        let timeWinner = game.playerTop.timeInSeconds > game.playerBottom.timeInSeconds ? game.playerBottom : game.playerTop
+        game.timeWinner = timeWinner
     }
     
     // MARK: Update UI
@@ -225,6 +222,7 @@ class TimerViewController: UIViewController {
         updatePlayerLabels()
         updateMidSeperator()
         updateMidControls()
+        updateNavigationBar()
     }
     
     private func updateMidControls() {
@@ -261,37 +259,48 @@ class TimerViewController: UIViewController {
         }
     }
     
-    private func updatePauseButton() {
+    private func updateNavigationBar() {
+        switch game.state {
+        case .running:
+            navigationController?.setNavigationBarHidden(true, animated: true)
+            break
+        default:
+            navigationController?.setNavigationBarHidden(false, animated: false)
+            break
+        }
+    }
+    
+    private func updatePauseButton(animated: Bool = true) {
         switch game.state {
         case .running:
             pauseResumeButton.setImage(#imageLiteral(resourceName: "pause.png"), for: .normal)
             break
-        case .paused:
-            pauseResumeButton.setImage(#imageLiteral(resourceName: "play.png"), for: .normal)
-            break
         default:
+            pauseResumeButton.setImage(#imageLiteral(resourceName: "play.png"), for: .normal)
             break
         }
         
-        UIView.animate(
-            withDuration: defaultAnimationTime,
-            delay: 0.0,
-            options: .curveLinear,
-            animations: {
-                self.pauseResumeButton.layoutIfNeeded()
-        }, completion: nil)
+        if animated {
+            UIView.animate(
+                withDuration: defaultAnimationTime,
+                delay: 0.0,
+                options: .curveLinear,
+                animations: {
+                    self.pauseResumeButton.layoutIfNeeded()
+            }, completion: nil)
+        }
     }
     
     private func updateTimeLabels() {
         if let unwrappedCurrentPlayer = currentPlayer {
             if unwrappedCurrentPlayer.color == .white {
-                timeLabelTop.text = String(format: "%02d:%02d", timeTop / 60, timeTop % 60)
+                timeLabelTop.text = game.playerTop.timeInSeconds.secondsToTimeString()
             } else if unwrappedCurrentPlayer.color == .black {
-                timeLabelBottom.text = String(format: "%02d:%02d", timeBottom / 60, timeBottom % 60)
+                timeLabelBottom.text = game.playerBottom.timeInSeconds.secondsToTimeString()
             }
         } else {
-            timeLabelTop.text = String(format: "%02d:%02d", timeTop / 60, timeTop % 60)
-            timeLabelBottom.text = String(format: "%02d:%02d", timeBottom / 60, timeBottom % 60)
+            timeLabelTop.text = game.playerTop.timeInSeconds.secondsToTimeString()
+            timeLabelBottom.text = game.playerBottom.timeInSeconds.secondsToTimeString()
         }
     }
     
