@@ -18,9 +18,13 @@ class ListService {
         loadListData()
     }
 
-    func addList(list: List) {
+    func addList(_ list: List) {
         lists.append(list)
         sendDataLoadedNotification()
+    }
+    
+    func removeList(atIndex index: Int) {
+        lists.remove(at: index)
     }
     
     // MARK: Private
