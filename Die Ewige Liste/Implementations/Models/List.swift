@@ -8,7 +8,7 @@
 
 import Foundation
 
-class List {
+class List: NSObject, NSCoding {
     private (set) var games: [Game] = []
     var playerOneName: String
     var playerTwoName: String
@@ -20,6 +20,21 @@ class List {
     init(playerOneName: String, playerTwoName: String) {
         self.playerOneName = playerOneName
         self.playerTwoName = playerTwoName
+    }
+    
+    required convenience init?(coder aDecoder: NSCoder) {
+        let playerOneName = aDecoder.decodeObject(forKey: "playerOneName") as! String
+        let playerTwoName = aDecoder.decodeObject(forKey: "playerTwoName") as! String
+        self.init(playerOneName: playerOneName, playerTwoName: playerTwoName)
+        self.playerOnePoints = aDecoder.decodeObject(forKey: "playerOnePoints") as! Int
+        self.playerTwoPoints = aDecoder.decodeObject(forKey: "playerTwoPoints") as! Int
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(playerOneName, forKey: "playerOneName")
+        aCoder.encode(playerTwoName, forKey: "playerTwoName")
+        aCoder.encode(playerOnePoints, forKey: "playerOnePoints")
+        aCoder.encode(playerTwoPoints, forKey: "playerTwoPoints")
     }
     
     // MARK: Public
