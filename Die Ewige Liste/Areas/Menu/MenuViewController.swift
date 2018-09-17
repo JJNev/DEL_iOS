@@ -49,6 +49,17 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            listService.removeList(atIndex: indexPath.row)
+            tableView.reloadData()
+        }
+    }
+    
     // MARK: Actions
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -59,7 +70,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         guard playerOneTextField.text != "" && playerTwoTextField.text != "" else {
             return
         }
-        listService.addList(list: List(playerOneName: playerOneTextField.text!, playerTwoName: playerTwoTextField.text!))
+        listService.addList(List(playerOneName: playerOneTextField.text!, playerTwoName: playerTwoTextField.text!))
         view.endEditing(true)
         playerOneTextField.text = ""
         playerTwoTextField.text = ""
