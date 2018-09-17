@@ -17,10 +17,10 @@ class EndGameViewController: ModalViewController {
     @IBOutlet weak var timeTopPlayerContentLabel: UILabel!
     @IBOutlet weak var timeBottomPlayerContentLabel: UILabel!
     @IBOutlet weak var timeTotalContentLabel: UILabel!
-    @IBOutlet weak var pointsPlayerTopNameLabel: UILabel!
-    @IBOutlet weak var pointsPlayerBottomNameLabel: UILabel!
-    @IBOutlet weak var pointsPlayerTopContentLabel: UILabel!
-    @IBOutlet weak var pointsPlayerBottomContentLabel: UILabel!
+    @IBOutlet weak var namePlayerTopLabel: UILabel!
+    @IBOutlet weak var namePlayerBottomLabel: UILabel!
+    @IBOutlet weak var pointsPlayerTopLabel: UILabel!
+    @IBOutlet weak var pointsPlayerBottomLabel: UILabel!
     
     private var game: Game!
     private var list: List?
@@ -52,8 +52,8 @@ class EndGameViewController: ModalViewController {
         timeTopPlayerContentLabel.text = game.playerTop.timeInSeconds.secondsToTimeString()
         timeBottomPlayerContentLabel.text = game.playerBottom.timeInSeconds.secondsToTimeString()
         timeTotalContentLabel.text = game.totalTimeInSeconds.secondsToTimeString()
-        pointsPlayerTopNameLabel.text = game.playerTop.name
-        pointsPlayerBottomNameLabel.text = game.playerBottom.name
+        namePlayerTopLabel.text = game.playerTop.name
+        namePlayerBottomLabel.text = game.playerBottom.name
         updatePoints()
     }
     
@@ -78,8 +78,8 @@ class EndGameViewController: ModalViewController {
             }
         }
         
-        pointsPlayerTopContentLabel.text = String(pointsPlayerTop)
-        pointsPlayerBottomContentLabel.text = String(pointsPlayerBottom)
+        pointsPlayerTopLabel.text = String(pointsPlayerTop)
+        pointsPlayerBottomLabel.text = String(pointsPlayerBottom)
     }
     
     private func finalizeGame() {
