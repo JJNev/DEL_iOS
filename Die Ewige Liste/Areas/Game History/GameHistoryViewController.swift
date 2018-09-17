@@ -24,7 +24,7 @@ class GameHistoryViewController: UIViewController, UITableViewDelegate, UITableV
         gameHistoryTableView.reloadData()
     }
     
-    // MARK UITableViewDataSource
+    // MARK: UITableViewDataSource
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.games.count
@@ -36,6 +36,22 @@ class GameHistoryViewController: UIViewController, UITableViewDelegate, UITableV
             return cell
         } else {
             return UITableViewCell()
+        }
+    }
+    
+    // MARK: UITableViewDelegate
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        guard list != nil else {
+            return
+        }
+        if editingStyle == .delete {
+            list.games.remove(at: indexPath.row)
+            tableView.reloadData()
         }
     }
     
