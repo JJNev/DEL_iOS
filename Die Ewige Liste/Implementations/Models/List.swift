@@ -22,15 +22,33 @@ class List: NSObject, NSCoding {
         self.playerTwoName = playerTwoName
     }
     
+    convenience init(playerOneName: String, playerTwoName: String, playerOnePoints: Int, playerTwoPoints: Int) {
+        self.init(playerOneName: playerOneName, playerTwoName: playerTwoName)
+        self.playerOnePoints = playerOnePoints
+        self.playerTwoPoints = playerTwoPoints
+    }
+    
+    convenience init(playerOneName: String, playerTwoName: String, games: [Game]) {
+        self.init(playerOneName: playerOneName, playerTwoName: playerTwoName)
+        self.games = games
+    }
+    
     required convenience init?(coder aDecoder: NSCoder) {
+        let games = aDecoder.decodeObject(forKey: "games") as! [Game]
         let playerOneName = aDecoder.decodeObject(forKey: "playerOneName") as! String
         let playerTwoName = aDecoder.decodeObject(forKey: "playerTwoName") as! String
-        self.init(playerOneName: playerOneName, playerTwoName: playerTwoName)
-        self.playerOnePoints = aDecoder.decodeObject(forKey: "playerOnePoints") as! Int
-        self.playerTwoPoints = aDecoder.decodeObject(forKey: "playerTwoPoints") as! Int
+        
+        print("games: \(games)")
+        
+        self.init(playerOneName: playerOneName, playerTwoName: playerTwoName, games: games)
+//        self.init(playerOneName: playerOneName, playerTwoName: playerTwoName)
+        
+        // TODO: Make sure  games and points are loaded
+        updatePoints()
     }
     
     func encode(with aCoder: NSCoder) {
+        aCoder.encode(games, forKey: "games")
         aCoder.encode(playerOneName, forKey: "playerOneName")
         aCoder.encode(playerTwoName, forKey: "playerTwoName")
         aCoder.encode(playerOnePoints, forKey: "playerOnePoints")
