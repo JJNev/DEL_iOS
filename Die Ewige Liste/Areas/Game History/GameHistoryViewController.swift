@@ -9,6 +9,10 @@
 import UIKit
 
 class GameHistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var namePlayerTopLabel: UILabel!
+    @IBOutlet weak var namePlayerBottomLabel: UILabel!
+    @IBOutlet weak var pointsPlayerTopLabel: UILabel!
+    @IBOutlet weak var pointsPlayerBottomLabel: UILabel!
     @IBOutlet weak var gameHistoryTableView: UITableView!
     
     var list: List! {
@@ -67,6 +71,13 @@ class GameHistoryViewController: UIViewController, UITableViewDelegate, UITableV
     // MARK: Helper
     
     private func setupUi() {
+        // Necessary hack to load view hierarchy.
+        _ = view
+        
         navigationItem.title = "\(list.playerOneName) vs \(list.playerTwoName)"
+        namePlayerTopLabel.text = list.playerOneName
+        namePlayerBottomLabel.text = list.playerTwoName
+        pointsPlayerTopLabel.text = String(list.playerOnePoints)
+        pointsPlayerBottomLabel.text = String(list.playerTwoPoints)
     }
 }
