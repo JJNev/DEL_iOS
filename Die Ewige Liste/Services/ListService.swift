@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftKeychainWrapper
 
 class ListService {
     private (set) var lists: [List] = []
@@ -21,10 +22,12 @@ class ListService {
     func addList(_ list: List) {
         lists.append(list)
         sendDataLoadedNotification()
+        saveLists()
     }
     
     func removeList(atIndex index: Int) {
         lists.remove(at: index)
+        saveLists()
     }
     
     // MARK: Private
@@ -35,7 +38,7 @@ class ListService {
 
     private func loadListData() {
         // TODO: Load data
-        addDummyData()
+        lists = getLists() ?? []
         sendDataLoadedNotification()
     }
     
@@ -46,5 +49,22 @@ class ListService {
         let newGame = Game(state: .ended, dateStarted: Date(), dateEnded: Date(), totalTimeInSeconds: 178, playerTop: Player(color: .white, name: "Tom"), playerBottom: Player(color: .black, name: "Johannes"), winner: Player(color: .white, name: "Tom"), loser: Player(color: .black, name: "Johannes"), timeWinner: Player(color: .black, name: "Johannes"), settings: nil)
         list.addGame(newGame)
         lists.append(list)
+    }
+    
+    // MARK: Persistence
+    
+    private func saveLists() {
+        let listsData = NSKeyedArchiver.archivedData(withRootObject: lists)
+        KeychainWrapper.standard.set(listsData, forKey: Constants.KeychainIdentifier.lists)
+    }
+    
+    private func getLists() -> [List]? {
+        let listsData = KeychainWrapper.standard.data(forKey: Constants.KeychainIdentifier.lists)
+        if let listsData = listsData {
+            if let lists = NSKeyedUnarchiver.unarchiveObject(with: listsData) as? Array<List> {
+                return lists
+            }
+        }
+        return nil
     }
 }
