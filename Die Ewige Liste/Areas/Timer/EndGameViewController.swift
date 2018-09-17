@@ -88,7 +88,7 @@ class EndGameViewController: ModalViewController {
         }
         game.winner = winnerSelectionSegmentedControl.selectedSegmentIndex == 0 ? game.playerTop : game.playerBottom
         game.loser = winnerSelectionSegmentedControl.selectedSegmentIndex == 0 ? game.playerBottom : game.playerTop
-        list.games.append(game)
+        list.addGame(game)
         
         if let navigationController = presentingViewController as? UINavigationController {
             dismiss(animated: false, completion: {
