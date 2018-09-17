@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     @IBOutlet weak var playerOneTextField: UITextField!
     @IBOutlet weak var playerTwoTextField: UITextField!
     @IBOutlet weak var listTableView: UITableView!
@@ -63,6 +63,23 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
             listService.removeList(atIndex: indexPath.row)
             tableView.reloadData()
         }
+    }
+    
+    // MARK: UITextFieldDelegate
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case playerOneTextField:
+            playerTwoTextField.becomeFirstResponder()
+            break
+        case playerTwoTextField:
+            createNewListTapped(textField)
+            break
+        default:
+            break
+        }
+        
+        return true
     }
     
     // MARK: Actions
