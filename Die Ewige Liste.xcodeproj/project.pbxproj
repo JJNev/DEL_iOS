@@ -23,11 +23,6 @@
 		19021383213561A5009F5E59 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19021382213561A5009F5E59 /* ListCell.swift */; };
 		1943BAB9210E1E810041ED8A /* GameHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943BAB8210E1E810041ED8A /* GameHistoryViewController.swift */; };
 		1943BABD210E1FA80041ED8A /* GameHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943BABC210E1FA80041ED8A /* GameHistoryCell.swift */; };
-		1943BAD2210E21B30041ED8A /* SecondLevelAccordionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943BACD210E21B30041ED8A /* SecondLevelAccordionCell.swift */; };
-		1943BAD3210E21B30041ED8A /* FirstLevelAccordionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943BACE210E21B30041ED8A /* FirstLevelAccordionCell.swift */; };
-		1943BAD4210E21B30041ED8A /* AccordionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943BACF210E21B30041ED8A /* AccordionViewController.swift */; };
-		1943BAD5210E21B30041ED8A /* AccordionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943BAD0210E21B30041ED8A /* AccordionData.swift */; };
-		1943BAD6210E21B30041ED8A /* AccordionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943BAD1210E21B30041ED8A /* AccordionCell.swift */; };
 		1943BAD9210E22960041ED8A /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943BAD8210E22960041ED8A /* Game.swift */; };
 		1943BADB210E238A0041ED8A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943BADA210E238A0041ED8A /* Player.swift */; };
 		19ABD6DD214AB260004F2791 /* DELView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABD6DC214AB260004F2791 /* DELView.swift */; };
@@ -80,11 +75,6 @@
 		19021382213561A5009F5E59 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
 		1943BAB8210E1E810041ED8A /* GameHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHistoryViewController.swift; sourceTree = "<group>"; };
 		1943BABC210E1FA80041ED8A /* GameHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHistoryCell.swift; sourceTree = "<group>"; };
-		1943BACD210E21B30041ED8A /* SecondLevelAccordionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondLevelAccordionCell.swift; sourceTree = "<group>"; };
-		1943BACE210E21B30041ED8A /* FirstLevelAccordionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstLevelAccordionCell.swift; sourceTree = "<group>"; };
-		1943BACF210E21B30041ED8A /* AccordionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccordionViewController.swift; sourceTree = "<group>"; };
-		1943BAD0210E21B30041ED8A /* AccordionData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccordionData.swift; sourceTree = "<group>"; };
-		1943BAD1210E21B30041ED8A /* AccordionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccordionCell.swift; sourceTree = "<group>"; };
 		1943BAD8210E22960041ED8A /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		1943BADA210E238A0041ED8A /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		19ABD6DC214AB260004F2791 /* DELView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DELView.swift; sourceTree = "<group>"; };
@@ -203,7 +193,6 @@
 		19008EC520F3925A00AADB15 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				1943BACB210E21940041ED8A /* Libs */,
 				19D776752147F4E70042F809 /* Icons.xcassets */,
 			);
 			path = Assets;
@@ -273,26 +262,6 @@
 				1943BABC210E1FA80041ED8A /* GameHistoryCell.swift */,
 			);
 			path = "Game History";
-			sourceTree = "<group>";
-		};
-		1943BACB210E21940041ED8A /* Libs */ = {
-			isa = PBXGroup;
-			children = (
-				1943BACC210E21B30041ED8A /* Accordion */,
-			);
-			path = Libs;
-			sourceTree = "<group>";
-		};
-		1943BACC210E21B30041ED8A /* Accordion */ = {
-			isa = PBXGroup;
-			children = (
-				1943BACF210E21B30041ED8A /* AccordionViewController.swift */,
-				1943BACE210E21B30041ED8A /* FirstLevelAccordionCell.swift */,
-				1943BACD210E21B30041ED8A /* SecondLevelAccordionCell.swift */,
-				1943BAD0210E21B30041ED8A /* AccordionData.swift */,
-				1943BAD1210E21B30041ED8A /* AccordionCell.swift */,
-			);
-			path = Accordion;
 			sourceTree = "<group>";
 		};
 		1943BAD7210E227F0041ED8A /* Models */ = {
@@ -550,10 +519,7 @@
 				1900FE82214BED6D0089F5D9 /* CGFloat+Util.swift in Sources */,
 				19008ECD20F3BA6500AADB15 /* RotatingLabel.swift in Sources */,
 				1943BAB9210E1E810041ED8A /* GameHistoryViewController.swift in Sources */,
-				1943BAD6210E21B30041ED8A /* AccordionCell.swift in Sources */,
-				1943BAD3210E21B30041ED8A /* FirstLevelAccordionCell.swift in Sources */,
 				1943BADB210E238A0041ED8A /* Player.swift in Sources */,
-				1943BAD2210E21B30041ED8A /* SecondLevelAccordionCell.swift in Sources */,
 				1900FE84214FE3B80089F5D9 /* GradientView.swift in Sources */,
 				19D77678214810E50042F809 /* EndGameViewController.swift in Sources */,
 				1902138121355B09009F5E59 /* MenuViewController.swift in Sources */,
@@ -564,10 +530,8 @@
 				19021383213561A5009F5E59 /* ListCell.swift in Sources */,
 				19D7767B214946510042F809 /* String+Util.swift in Sources */,
 				19008E9220F38E9800AADB15 /* AppDelegate.swift in Sources */,
-				1943BAD4210E21B30041ED8A /* AccordionViewController.swift in Sources */,
 				1900FE7D214BD92D0089F5D9 /* ModalViewController.swift in Sources */,
 				1902137C213558ED009F5E59 /* ListService.swift in Sources */,
-				1943BAD5210E21B30041ED8A /* AccordionData.swift in Sources */,
 				1943BABD210E1FA80041ED8A /* GameHistoryCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
