@@ -377,10 +377,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lQp-ed-E6O" userLabel="White Tap Area">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="410.66666666666669"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="405.66666666666669"/>
                                 <subviews>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to end turn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HNF-GR-kqh" customClass="RotatingLabel" customModule="Die_Ewige_Liste" customModuleProvider="target">
-                                        <rect key="frame" x="127" y="43.666666666666657" width="121" height="20.333333333333343"/>
+                                        <rect key="frame" x="127" y="63.666666666666664" width="121" height="20.333333333333336"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -390,7 +390,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QC2-nR-pmt" userLabel="Time White Label" customClass="RotatingLabel" customModule="Die_Ewige_Liste" customModuleProvider="target">
-                                        <rect key="frame" x="115.66666666666669" y="292.66666666666669" width="144" height="58"/>
+                                        <rect key="frame" x="115.66666666666669" y="287.66666666666669" width="144" height="58"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="49"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -400,7 +400,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Johannes" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yMU-vh-pnc" userLabel="Name Label White" customClass="RotatingLabel" customModule="Die_Ewige_Liste" customModuleProvider="target">
-                                        <rect key="frame" x="295.66666666666674" y="381" width="71.333333333333314" height="21"/>
+                                        <rect key="frame" x="295.66666666666669" y="376" width="71.333333333333314" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <nil key="highlightedColor"/>
                                         <userDefinedRuntimeAttributes>
@@ -424,17 +424,17 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d4Y-mX-cNZ" userLabel="Mid Seperator">
-                                <rect key="frame" x="0.0" y="410.66666666666669" width="375" height="1"/>
+                                <rect key="frame" x="0.0" y="405.66666666666669" width="375" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="XEc-Nk-gqq"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zt9-l4-lmU" userLabel="Black Tap Area">
-                                <rect key="frame" x="0.0" y="411.66666666666674" width="375" height="400.33333333333326"/>
+                                <rect key="frame" x="0.0" y="406.66666666666674" width="375" height="405.33333333333326"/>
                                 <subviews>
                                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to end turn" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F6x-uU-aqb">
-                                        <rect key="frame" x="127" y="346.33333333333331" width="121" height="21"/>
+                                        <rect key="frame" x="127" y="331.33333333333331" width="121" height="21"/>
                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -466,7 +466,7 @@
                                 </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6E0-6G-Rsg" userLabel="Pre-Game Controls">
-                                <rect key="frame" x="112.66666666666669" y="381.33333333333331" width="150" height="60"/>
+                                <rect key="frame" x="112.66666666666669" y="376.33333333333331" width="150" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hP-g8-eEa" userLabel="Swap Seats Button">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
@@ -510,7 +510,7 @@
                                 </constraints>
                             </view>
                             <view hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F2P-Qr-41m" userLabel="In-Game Controls">
-                                <rect key="frame" x="87.666666666666686" y="381.33333333333331" width="200" height="60"/>
+                                <rect key="frame" x="87.666666666666686" y="376.33333333333331" width="200" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofn-zU-9qf" userLabel="Pause Button">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
@@ -578,7 +578,7 @@
                             <constraint firstItem="Zt9-l4-lmU" firstAttribute="trailing" secondItem="2wh-o4-qCB" secondAttribute="trailing" id="6mT-2F-9u0"/>
                             <constraint firstItem="d4Y-mX-cNZ" firstAttribute="top" secondItem="lQp-ed-E6O" secondAttribute="bottom" id="7T1-2m-AFz"/>
                             <constraint firstItem="Zt9-l4-lmU" firstAttribute="bottom" secondItem="2wh-o4-qCB" secondAttribute="bottom" id="CnT-th-VnF"/>
-                            <constraint firstItem="d4Y-mX-cNZ" firstAttribute="centerY" secondItem="XZf-oq-OAE" secondAttribute="centerY" id="DAK-AN-CUy"/>
+                            <constraint firstItem="d4Y-mX-cNZ" firstAttribute="centerY" secondItem="2wh-o4-qCB" secondAttribute="centerY" id="DAK-AN-CUy"/>
                             <constraint firstItem="lQp-ed-E6O" firstAttribute="top" secondItem="2wh-o4-qCB" secondAttribute="top" id="E7t-q2-mTk"/>
                             <constraint firstItem="lQp-ed-E6O" firstAttribute="trailing" secondItem="2wh-o4-qCB" secondAttribute="trailing" id="Mm9-yl-jQe"/>
                             <constraint firstItem="XZf-oq-OAE" firstAttribute="trailing" secondItem="d4Y-mX-cNZ" secondAttribute="trailing" id="Mup-lR-HGl"/>
@@ -589,10 +589,10 @@
                             <constraint firstItem="lQp-ed-E6O" firstAttribute="leading" secondItem="2wh-o4-qCB" secondAttribute="leading" id="aNL-pJ-ZqC"/>
                             <constraint firstItem="d4Y-mX-cNZ" firstAttribute="leading" secondItem="XZf-oq-OAE" secondAttribute="leading" id="bYZ-4p-a9d"/>
                             <constraint firstItem="yMU-vh-pnc" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="F2P-Qr-41m" secondAttribute="trailing" constant="8" id="jiI-tz-Yhd"/>
-                            <constraint firstItem="F6x-uU-aqb" firstAttribute="top" secondItem="XZf-oq-OAE" secondAttribute="bottom" constant="-20" id="nlE-n4-hQ4"/>
+                            <constraint firstItem="F6x-uU-aqb" firstAttribute="top" secondItem="XZf-oq-OAE" secondAttribute="bottom" constant="-40" id="nlE-n4-hQ4"/>
                             <constraint firstItem="d4Y-mX-cNZ" firstAttribute="centerY" secondItem="F2P-Qr-41m" secondAttribute="centerY" id="oZ3-0M-O8e"/>
                             <constraint firstItem="6E0-6G-Rsg" firstAttribute="centerX" secondItem="XZf-oq-OAE" secondAttribute="centerX" id="tCP-tI-wtz"/>
-                            <constraint firstItem="XZf-oq-OAE" firstAttribute="top" secondItem="HNF-GR-kqh" secondAttribute="bottom" constant="-20" id="xB6-jQ-qt3"/>
+                            <constraint firstItem="XZf-oq-OAE" firstAttribute="top" secondItem="HNF-GR-kqh" secondAttribute="bottom" constant="-40" id="xB6-jQ-qt3"/>
                             <constraint firstItem="F2P-Qr-41m" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="IhX-vC-SxZ" secondAttribute="trailing" constant="8" id="y6s-6E-fbD"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="XZf-oq-OAE"/>

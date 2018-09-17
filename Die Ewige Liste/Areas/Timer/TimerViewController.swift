@@ -53,11 +53,15 @@ class TimerViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.isNavigationBarHidden = true
+        
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.isTranslucent = true
+        navigationController?.navigationBar.backgroundColor = .clear
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        
         navigationController?.isNavigationBarHidden = false
         UIApplication.shared.statusBarStyle = UIStatusBarStyle.default
     }
@@ -65,6 +69,7 @@ class TimerViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let endGameViewController = segue.destination as? EndGameViewController {
             endGame()
+            updatePauseButton(animated: false)
             endGameViewController.setGame(game, fromList: list)
         }
     }
@@ -80,16 +85,16 @@ class TimerViewController: UIViewController {
                 pauseButton.setImage(#imageLiteral(resourceName: "play.png"), for: .normal)
             }
             break
-        case .paused:
+        default:
             startTimer(reset: false)
             game.state = .running
             if let pauseButton = sender as? UIButton {
                 pauseButton.setImage(#imageLiteral(resourceName: "pause.png"), for: .normal)
             }
             break
-        default:
-            break
         }
+        
+        updateNavigationBar()
     }
     
     @IBAction func refreshTapped(_ sender: Any) {
@@ -104,6 +109,8 @@ class TimerViewController: UIViewController {
             startGame()
         }
         changeTurn()
+        updatePauseButton()
+        updateNavigationBar()
     }
     
     @IBAction func swapSeatsTapped(_ sender: Any) {
@@ -124,6 +131,7 @@ class TimerViewController: UIViewController {
         game.state = .running
         updateMidControls()
         updatePauseButton()
+        updateNavigationBar()
         
         UIView.animate(
             withDuration: defaultAnimationTime,
@@ -133,6 +141,14 @@ class TimerViewController: UIViewController {
                 self.preGameControls.layoutIfNeeded()
                 self.inGameControls.layoutIfNeeded()
         }, completion: nil)
+    }
+    
+    private func resetGame() {
+        game.playerTop.timeInSeconds = 0
+        game.playerBottom.timeInSeconds = 0
+        currentPlayer = .none
+        game.state = .new
+        updateUi()
     }
     
     private func setupGame() {
@@ -178,14 +194,6 @@ class TimerViewController: UIViewController {
         updatePlayerLabels()
     }
     
-    private func resetGame() {
-        game.playerTop.timeInSeconds = 0
-        game.playerBottom.timeInSeconds = 0
-        currentPlayer = .none
-        game.state = .new
-        updateUi()
-    }
-    
     @objc private func updateTime() {
         guard let unwrappedCurrentPlayer = currentPlayer else {
             return
@@ -214,6 +222,7 @@ class TimerViewController: UIViewController {
         updatePlayerLabels()
         updateMidSeperator()
         updateMidControls()
+        updateNavigationBar()
     }
     
     private func updateMidControls() {
@@ -250,25 +259,36 @@ class TimerViewController: UIViewController {
         }
     }
     
-    private func updatePauseButton() {
+    private func updateNavigationBar() {
+        switch game.state {
+        case .running:
+            navigationController?.setNavigationBarHidden(true, animated: true)
+            break
+        default:
+            navigationController?.setNavigationBarHidden(false, animated: false)
+            break
+        }
+    }
+    
+    private func updatePauseButton(animated: Bool = true) {
         switch game.state {
         case .running:
             pauseResumeButton.setImage(#imageLiteral(resourceName: "pause.png"), for: .normal)
             break
-        case .paused:
-            pauseResumeButton.setImage(#imageLiteral(resourceName: "play.png"), for: .normal)
-            break
         default:
+            pauseResumeButton.setImage(#imageLiteral(resourceName: "play.png"), for: .normal)
             break
         }
         
-        UIView.animate(
-            withDuration: defaultAnimationTime,
-            delay: 0.0,
-            options: .curveLinear,
-            animations: {
-                self.pauseResumeButton.layoutIfNeeded()
-        }, completion: nil)
+        if animated {
+            UIView.animate(
+                withDuration: defaultAnimationTime,
+                delay: 0.0,
+                options: .curveLinear,
+                animations: {
+                    self.pauseResumeButton.layoutIfNeeded()
+            }, completion: nil)
+        }
     }
     
     private func updateTimeLabels() {
