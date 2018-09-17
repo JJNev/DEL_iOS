@@ -25,7 +25,7 @@ class GameHistoryViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        gameHistoryTableView.reloadData()
+        updateUi()
     }
     
     // MARK: UITableViewDataSource
@@ -54,8 +54,8 @@ class GameHistoryViewController: UIViewController, UITableViewDelegate, UITableV
             return
         }
         if editingStyle == .delete {
-            list.games.remove(at: indexPath.row)
-            tableView.reloadData()
+            list.removeGame(at: indexPath.row)
+            updateUi()
         }
     }
     
@@ -77,7 +77,12 @@ class GameHistoryViewController: UIViewController, UITableViewDelegate, UITableV
         navigationItem.title = "\(list.playerOneName) vs \(list.playerTwoName)"
         namePlayerTopLabel.text = list.playerOneName
         namePlayerBottomLabel.text = list.playerTwoName
+        updateUi()
+    }
+    
+    private func updateUi() {
         pointsPlayerTopLabel.text = String(list.playerOnePoints)
         pointsPlayerBottomLabel.text = String(list.playerTwoPoints)
+        gameHistoryTableView.reloadData()
     }
 }
