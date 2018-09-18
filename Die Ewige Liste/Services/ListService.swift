@@ -57,6 +57,7 @@ class ListService {
     
     // MARK: Persistence
     
+    // TODO: Might make this private again + add an observer to the lists variable
     func saveLists() {
         if let listsData = try? PropertyListEncoder().encode(lists) {
             KeychainWrapper.standard.set(listsData, forKey: Constants.KeychainIdentifier.lists)
