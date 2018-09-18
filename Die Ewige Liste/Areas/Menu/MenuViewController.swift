@@ -13,7 +13,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var playerTwoTextField: UITextField!
     @IBOutlet weak var listTableView: UITableView!
     
-    private lazy var listService: ListService = ListService()
+    private lazy var listService: ListService = ListService.standard
     
     // MARK: Life Cycle
     

@@ -235,7 +235,7 @@
 			children = (
 				1900FE7B214BD90E0089F5D9 /* View Controller */,
 				1943BAD7210E227F0041ED8A /* Models */,
-				19D776792149463F0042F809 /* Extensions */,
+				19D776792149463F0042F809 /* Basic Type Extensions */,
 				19008ECB20F3BA2100AADB15 /* IBDesignables */,
 			);
 			path = Implementations;
@@ -270,20 +270,20 @@
 		1943BAD7210E227F0041ED8A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1902137821345A4C009F5E59 /* List.swift */,
 				1943BAD8210E22960041ED8A /* Game.swift */,
 				1943BADA210E238A0041ED8A /* Player.swift */,
-				1902137821345A4C009F5E59 /* List.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		19D776792149463F0042F809 /* Extensions */ = {
+		19D776792149463F0042F809 /* Basic Type Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				19D7767A214946510042F809 /* String+Util.swift */,
 				1900FE81214BED6D0089F5D9 /* CGFloat+Util.swift */,
 			);
-			path = Extensions;
+			path = "Basic Type Extensions";
 			sourceTree = "<group>";
 		};
 		88BC1B40912A034C861BBBAB /* Pods */ = {
