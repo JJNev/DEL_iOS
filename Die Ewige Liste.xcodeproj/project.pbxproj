@@ -25,6 +25,7 @@
 		1943BABD210E1FA80041ED8A /* GameHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943BABC210E1FA80041ED8A /* GameHistoryCell.swift */; };
 		1943BAD9210E22960041ED8A /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943BAD8210E22960041ED8A /* Game.swift */; };
 		1943BADB210E238A0041ED8A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943BADA210E238A0041ED8A /* Player.swift */; };
+		195B646821527E3500186A2F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195B646721527E3500186A2F /* SettingsViewController.swift */; };
 		19A38B752150034B00F607AB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A38B742150034B00F607AB /* Constants.swift */; };
 		19ABD6DD214AB260004F2791 /* DELView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABD6DC214AB260004F2791 /* DELView.swift */; };
 		19D776762147F4E70042F809 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19D776752147F4E70042F809 /* Icons.xcassets */; };
@@ -78,6 +79,7 @@
 		1943BABC210E1FA80041ED8A /* GameHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHistoryCell.swift; sourceTree = "<group>"; };
 		1943BAD8210E22960041ED8A /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		1943BADA210E238A0041ED8A /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		195B646721527E3500186A2F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		19A38B742150034B00F607AB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		19ABD6DC214AB260004F2791 /* DELView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DELView.swift; sourceTree = "<group>"; };
 		19D776752147F4E70042F809 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				1902137E21355AFB009F5E59 /* Main.storyboard */,
 				1902137D21355ADD009F5E59 /* Menu */,
 				1943BAB7210E1E4A0041ED8A /* Game History */,
+				195B646621527E2400186A2F /* Settings */,
 				19008EBF20F38F1800AADB15 /* Timer */,
 			);
 			path = Areas;
@@ -275,6 +278,14 @@
 				1943BADA210E238A0041ED8A /* Player.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		195B646621527E2400186A2F /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				195B646721527E3500186A2F /* SettingsViewController.swift */,
+			);
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		19D776792149463F0042F809 /* Basic Type Extensions */ = {
@@ -524,6 +535,7 @@
 				1943BAB9210E1E810041ED8A /* GameHistoryViewController.swift in Sources */,
 				1943BADB210E238A0041ED8A /* Player.swift in Sources */,
 				1900FE84214FE3B80089F5D9 /* GradientView.swift in Sources */,
+				195B646821527E3500186A2F /* SettingsViewController.swift in Sources */,
 				19D77678214810E50042F809 /* EndGameViewController.swift in Sources */,
 				1902138121355B09009F5E59 /* MenuViewController.swift in Sources */,
 				19008EC220F38F3D00AADB15 /* TimerViewController.swift in Sources */,
