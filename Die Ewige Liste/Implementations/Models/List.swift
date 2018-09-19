@@ -9,29 +9,22 @@
 import Foundation
 
 class List: Codable {
-    private (set) var games: [Game] = []
     var playerOneName: String
     var playerTwoName: String
     var playerOnePoints: Int = 0
     var playerTwoPoints: Int = 0
+    var games: [Game] = [] {
+        didSet {
+            updatePoints()
+            ListService.standard.saveLists()
+        }
+    }
     
     // MARK: Life Cycle
     
     init(playerOneName: String, playerTwoName: String) {
         self.playerOneName = playerOneName
         self.playerTwoName = playerTwoName
-    }
-    
-    // MARK: Public
-    
-    func addGame(_ game: Game) {
-        games.append(game)
-        updatePoints()
-    }
-    
-    func removeGame(at index: Int) {
-        games.remove(at: index)
-        updatePoints()
     }
     
     // MARK: Helpers

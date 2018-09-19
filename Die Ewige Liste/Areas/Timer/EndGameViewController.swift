@@ -35,7 +35,7 @@ class EndGameViewController: ModalViewController {
         finalizeGame()
     }
     
-    // MARK: Helper
+    // MARK: Public
     
     func setGame(_ game: Game, fromList list: List) {
         self.game = game
@@ -56,6 +56,8 @@ class EndGameViewController: ModalViewController {
         namePlayerBottomLabel.text = game.playerBottom.name
         updatePoints()
     }
+    
+    // MARK: Helper
     
     private func updatePoints() {
         // TODO: Consider active ruleset
@@ -88,8 +90,7 @@ class EndGameViewController: ModalViewController {
         }
         game.winner = winnerSelectionSegmentedControl.selectedSegmentIndex == 0 ? game.playerTop : game.playerBottom
         game.loser = winnerSelectionSegmentedControl.selectedSegmentIndex == 0 ? game.playerBottom : game.playerTop
-        list.addGame(game)
-        ListService.standard.saveLists()
+        list.games.append(game)
         
         if let navigationController = presentingViewController as? UINavigationController {
             dismiss(animated: false, completion: {

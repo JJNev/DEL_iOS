@@ -54,9 +54,8 @@ class GameHistoryViewController: UIViewController, UITableViewDelegate, UITableV
             return
         }
         if editingStyle == .delete {
-            list.removeGame(at: indexPath.row)
+            list.games.remove(at: indexPath.row)
             updateUi()
-            ListService.standard.saveLists()
         }
     }
     

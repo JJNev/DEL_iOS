@@ -60,7 +60,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            listService.removeList(atIndex: indexPath.row)
+            listService.lists.remove(at: indexPath.row)
             tableView.reloadData()
         }
     }
@@ -92,7 +92,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         guard playerOneTextField.text != "" && playerTwoTextField.text != "" else {
             return
         }
-        listService.addList(List(playerOneName: playerOneTextField.text!, playerTwoName: playerTwoTextField.text!))
+        listService.lists.append(List(playerOneName: playerOneTextField.text!, playerTwoName: playerTwoTextField.text!))
         view.endEditing(true)
         playerOneTextField.text = ""
         playerTwoTextField.text = ""

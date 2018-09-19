@@ -14,7 +14,12 @@ class ListService {
     // A global singleton to be used from everywhere
     static let standard = ListService()
     
-    private (set) var lists: [List] = []
+    var lists: [List] = [] {
+        didSet {
+            saveLists()
+            sendDataLoadedNotification()
+        }
+    }
     var dataLoadedNotificationIdentifier = "listDataLoaded"
     
     // MARK: Public
@@ -22,46 +27,22 @@ class ListService {
     func loadData() {
         loadListData()
     }
-
-    func addList(_ list: List) {
-        lists.append(list)
-        sendDataLoadedNotification()
-        saveLists()
-    }
     
-    func removeList(atIndex index: Int) {
-        lists.remove(at: index)
-        saveLists()
-    }
-    
-    // MARK: Private
-    
-    private func sendDataLoadedNotification() {
-        NotificationCenter.default.post(name: Notification.Name.init(dataLoadedNotificationIdentifier), object: nil)
-    }
-
-    private func loadListData() {
-        // TODO: Load data
-        lists = getLists() ?? []
-        sendDataLoadedNotification()
-    }
-    
-    // MARK: Debug
-    
-    private func addDummyData() {
-        let list = List(playerOneName: "Tom", playerTwoName: "Johannes")
-        let newGame = Game(state: .ended, dateStarted: Date(), dateEnded: Date(), totalTimeInSeconds: 178, playerTop: Player(color: .white, name: "Tom"), playerBottom: Player(color: .black, name: "Johannes"), winner: Player(color: .white, name: "Tom"), loser: Player(color: .black, name: "Johannes"), timeWinner: Player(color: .black, name: "Johannes"))
-        list.addGame(newGame)
-        lists.append(list)
-    }
-    
-    // MARK: Persistence
-    
-    // TODO: Might make this private again + add an observer to the lists variable
     func saveLists() {
         if let listsData = try? PropertyListEncoder().encode(lists) {
             KeychainWrapper.standard.set(listsData, forKey: Constants.KeychainIdentifier.lists)
         }
+    }
+    
+    // MARK: Helper
+    
+    private func loadListData() {
+        lists = getLists() ?? []
+        sendDataLoadedNotification()
+    }
+    
+    private func sendDataLoadedNotification() {
+        NotificationCenter.default.post(name: Notification.Name.init(dataLoadedNotificationIdentifier), object: nil)
     }
     
     private func getLists() -> [List]? {

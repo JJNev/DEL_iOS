@@ -47,7 +47,6 @@ class TimerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // TODO: Create new game and add to list
         setupGame()
     }
     
@@ -104,7 +103,6 @@ class TimerViewController: UIViewController {
     @IBAction func areaTapped(_ sender: UITapGestureRecognizer) {
         // Whoever taps first can start
         if currentPlayer == nil {
-            // TODO: Who plays which color?
             currentPlayer = sender == tapGestureRecognizerTop ? game.playerBottom : game.playerTop
             startGame()
         }
