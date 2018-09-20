@@ -15,7 +15,7 @@ class GameHistoryCell: UITableViewCell {
     @IBOutlet weak var timeWinnerContentLabel: UILabel!
     @IBOutlet weak var gameStateLabel: UILabel!
     
-    // MARK: Helper
+    // MARK: Public
     
     func setGame(_ game: Game) {
         timeTotalContentLabel.text = game.totalTimeInSeconds.secondsToTimeString()

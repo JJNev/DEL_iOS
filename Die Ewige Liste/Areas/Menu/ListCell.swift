@@ -15,6 +15,8 @@ class ListCell: UITableViewCell {
     @IBOutlet weak var playerTwoPointsLabel: UILabel!
     @IBOutlet weak var gamesPlayedContentLabel: UILabel!
     
+    // MARK: Public
+    
     func setList(_ list: List) {
         playerOneNameLabel.text = list.playerOneName
         playerTwoNameLabel.text = list.playerTwoName
