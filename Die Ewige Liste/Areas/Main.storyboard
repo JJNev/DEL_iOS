@@ -492,18 +492,18 @@
                                                     <rect key="frame" x="265" y="8" width="94" height="29"/>
                                                 </stepper>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XM4-22-B0U">
-                                                    <rect key="frame" x="230" y="8" width="10.333333333333343" height="31"/>
+                                                    <rect key="frame" x="226" y="8" width="10.333333333333343" height="31"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="s" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kKK-5V-rLK" userLabel="Unit Label">
-                                                    <rect key="frame" x="248.33333333333334" y="8" width="8.6666666666666572" height="31"/>
+                                                    <rect key="frame" x="240.33333333333334" y="8" width="8.6666666666666572" height="31"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Win Points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jqp-X9-0OH">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Win Points" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Jqp-X9-0OH">
                                                     <rect key="frame" x="16" y="8" width="130.66666666666666" height="31"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -514,7 +514,8 @@
                                                 <constraint firstItem="XM4-22-B0U" firstAttribute="top" secondItem="Jqp-X9-0OH" secondAttribute="top" id="0jg-Mk-VZN"/>
                                                 <constraint firstAttribute="bottom" secondItem="f7b-pY-iJg" secondAttribute="bottom" constant="8" id="1Y7-gy-1oq"/>
                                                 <constraint firstAttribute="trailing" secondItem="f7b-pY-iJg" secondAttribute="trailing" constant="16" id="AtV-gD-1W8"/>
-                                                <constraint firstItem="kKK-5V-rLK" firstAttribute="leading" secondItem="XM4-22-B0U" secondAttribute="trailing" constant="8" id="SgS-Zz-ZTT"/>
+                                                <constraint firstItem="XM4-22-B0U" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Jqp-X9-0OH" secondAttribute="trailing" constant="16" id="OjW-5E-Jy1"/>
+                                                <constraint firstItem="kKK-5V-rLK" firstAttribute="leading" secondItem="XM4-22-B0U" secondAttribute="trailing" constant="4" id="SgS-Zz-ZTT"/>
                                                 <constraint firstItem="f7b-pY-iJg" firstAttribute="top" secondItem="EEt-Rd-hB7" secondAttribute="top" constant="8" id="aR4-7Z-lAV"/>
                                                 <constraint firstItem="Jqp-X9-0OH" firstAttribute="leading" secondItem="EEt-Rd-hB7" secondAttribute="leading" constant="16" id="cT9-jz-VYg"/>
                                                 <constraint firstAttribute="bottom" secondItem="Jqp-X9-0OH" secondAttribute="bottom" constant="8" id="cgO-5H-yOZ"/>
@@ -522,7 +523,7 @@
                                                 <constraint firstItem="kKK-5V-rLK" firstAttribute="bottom" secondItem="Jqp-X9-0OH" secondAttribute="bottom" id="ddI-eh-C0z"/>
                                                 <constraint firstItem="kKK-5V-rLK" firstAttribute="top" secondItem="Jqp-X9-0OH" secondAttribute="top" id="e8I-eW-rUY"/>
                                                 <constraint firstItem="Jqp-X9-0OH" firstAttribute="top" secondItem="EEt-Rd-hB7" secondAttribute="top" constant="8" id="oNE-P6-gxY"/>
-                                                <constraint firstItem="f7b-pY-iJg" firstAttribute="leading" secondItem="kKK-5V-rLK" secondAttribute="trailing" constant="8" id="sg9-Kw-mtc"/>
+                                                <constraint firstItem="f7b-pY-iJg" firstAttribute="leading" secondItem="kKK-5V-rLK" secondAttribute="trailing" constant="16" id="sg9-Kw-mtc"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -539,7 +540,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="46.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable Challenge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOw-tY-YIB">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enable Challenge" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="wOw-tY-YIB">
                                                     <rect key="frame" x="16" y="8" width="132.33333333333334" height="31"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -550,6 +551,7 @@
                                                 </switch>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="j4h-fU-7AZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wOw-tY-YIB" secondAttribute="trailing" constant="16" id="0bj-1C-eaw"/>
                                                 <constraint firstAttribute="bottom" secondItem="j4h-fU-7AZ" secondAttribute="bottom" constant="8" id="OQp-3K-3eF"/>
                                                 <constraint firstAttribute="trailing" secondItem="j4h-fU-7AZ" secondAttribute="trailing" constant="16" id="Z8a-ZQ-bpy"/>
                                                 <constraint firstItem="j4h-fU-7AZ" firstAttribute="top" secondItem="rwA-a7-mmW" secondAttribute="top" constant="8" id="fS2-0B-MUP"/>
