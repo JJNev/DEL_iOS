@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SettingsElement {
+struct SettingsElement {
     enum SettingType: String {
         case stepper, switchControl
     }
@@ -18,7 +18,7 @@ class SettingsElement {
     var title: String!
     var type: SettingType = .stepper
     var level: Int = 0
-    var unit: String = ""
+    var unit: String?
     var defaultValue: Any?
     var maximum: Double?
     var minimum: Double?

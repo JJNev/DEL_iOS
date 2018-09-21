@@ -9,32 +9,14 @@
 import UIKit
 
 class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    let settingsElementsRoot = [
-        [
-            "title": "Game Win Points",
-            "type": "stepper"
-        ],
-        [
-            "title": "Time Win Points",
-            "type": "stepper"
-        ],
-        [
-            "title": "Enable Challenge",
-            "type": "Bool",
-            "children": [
-                [
-                    "title": "Challenge Win Penalty",
-                    "type": "Stepper"
-                ],
-                [
-                    "title": "Challenge Loss Penalty",
-                    "type": "Stepper"
-                ]
-            ]
-        ]
-    ]
+    var settingElements: [[SettingsElement]] = []
     
-    let settingElements: [[SettingsElement]] = []
+    // MARK: Life Cycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        loadSettings()
+    }
     
     // MARK: UITableViewDataSource
     
@@ -46,16 +28,27 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         switch (settingElements[indexPath.section][indexPath.row]).type {
         case .stepper:
             if let stepperCell = tableView.dequeueReusableCell(withIdentifier: "stepperCell") as? StepperTableViewCell {
-                // TODO: Init cell
+                stepperCell.setElement(settingElements[indexPath.section][indexPath.row])
                 return stepperCell
             }
         case .switchControl:
             if let switchCell = tableView.dequeueReusableCell(withIdentifier: "switchCell") as? SwitchTableViewCell {
-                // TODO: Init cell
+                switchCell.setElement(settingElements[indexPath.section][indexPath.row])
                 return switchCell
             }
         }
         
         return UITableViewCell()
+    }
+    
+    // MARK: Helper
+    
+    private func loadSettings() {
+        let sectionOne = [
+            SettingsElement(title: "Game Win Points", type: .stepper, level: 0, unit: nil, defaultValue: 3, maximum: 99, minimum: 1),
+            SettingsElement(title: "Time Win Points", type: .stepper, level: 0, unit: nil, defaultValue: 1, maximum: 99, minimum: 0),
+            SettingsElement(title: "Enable Challenge", type: .switchControl, level: 0, unit: nil, defaultValue: nil, maximum: nil, minimum: nil)
+        ]
+        settingElements.append(sectionOne)
     }
 }

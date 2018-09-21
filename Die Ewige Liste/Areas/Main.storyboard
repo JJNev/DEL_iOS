@@ -433,14 +433,25 @@
                                     <outlet property="delegate" destination="BB8-I9-ZMP" id="nlz-2t-VlV"/>
                                 </connections>
                             </tableView>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yQt-vP-aaI">
+                                <rect key="frame" x="0.0" y="729" width="375" height="49"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <items>
+                                    <tabBarItem systemItem="favorites" id="qwi-8V-skp"/>
+                                    <tabBarItem systemItem="more" id="fih-W2-Wa8"/>
+                                </items>
+                            </tabBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Tm4-Pz-YD8" firstAttribute="top" secondItem="9wm-2v-7I9" secondAttribute="top" constant="20" id="BNs-xU-0IF"/>
+                            <constraint firstItem="9wm-2v-7I9" firstAttribute="bottom" secondItem="yQt-vP-aaI" secondAttribute="bottom" id="Bzq-DC-40z"/>
                             <constraint firstAttribute="bottom" secondItem="IKF-UJ-oRw" secondAttribute="bottom" id="CF9-Re-NEW"/>
                             <constraint firstItem="9wm-2v-7I9" firstAttribute="trailing" secondItem="IKF-UJ-oRw" secondAttribute="trailing" id="CSh-LO-VwJ"/>
                             <constraint firstAttribute="trailing" secondItem="i4H-i4-VzP" secondAttribute="trailing" constant="20" id="GXA-b2-Rch"/>
                             <constraint firstItem="Tm4-Pz-YD8" firstAttribute="leading" secondItem="9wm-2v-7I9" secondAttribute="leading" id="dEf-kb-ete"/>
+                            <constraint firstItem="yQt-vP-aaI" firstAttribute="leading" secondItem="9wm-2v-7I9" secondAttribute="leading" id="dZq-Mc-u31"/>
+                            <constraint firstItem="yQt-vP-aaI" firstAttribute="trailing" secondItem="9wm-2v-7I9" secondAttribute="trailing" id="fIe-nr-QNo"/>
                             <constraint firstItem="i4H-i4-VzP" firstAttribute="leading" secondItem="iGz-GD-RnF" secondAttribute="leading" constant="20" id="fy8-Kh-i96"/>
                             <constraint firstItem="IKF-UJ-oRw" firstAttribute="top" secondItem="i4H-i4-VzP" secondAttribute="bottom" constant="20" id="gKI-7o-h0R"/>
                             <constraint firstItem="9wm-2v-7I9" firstAttribute="trailing" secondItem="Tm4-Pz-YD8" secondAttribute="trailing" id="mii-A8-f24"/>
@@ -477,7 +488,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DOS-PI-7Z7" userLabel="Settings Table View">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="DOS-PI-7Z7" userLabel="Settings Table View">
                                 <rect key="frame" x="0.0" y="88" width="375" height="724"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -566,6 +577,10 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="ebO-Rv-Npo" id="bFr-sR-aPG"/>
+                                    <outlet property="delegate" destination="ebO-Rv-Npo" id="cZX-VX-lyy"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
