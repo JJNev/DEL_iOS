@@ -48,9 +48,15 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-        if let gameHistoryViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "gameHistoryViewController") as? GameHistoryViewController {
-            gameHistoryViewController.list = listService.lists[indexPath.row]
-            navigationController?.pushViewController(gameHistoryViewController, animated: true)
+        if let listTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "listTabBarController") as? UITabBarController {
+            for viewController in listTabBarController.viewControllers! {
+                if let gameHistoryViewController = viewController as? GameHistoryViewController {
+                    gameHistoryViewController.list = listService.lists[indexPath.row]
+                } else if let settingsViewController = viewController as? SettingsViewController {
+                    settingsViewController.list = listService.lists[indexPath.row]
+                }
+            }
+            navigationController?.pushViewController(listTabBarController, animated: true)
         }
     }
     

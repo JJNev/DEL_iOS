@@ -9,7 +9,14 @@
 import UIKit
 
 class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    var settingElements: [[SettingsElement]] = []
+    @IBOutlet weak var settingsTableView: UITableView!
+    
+    private var settingElements: [[SettingsElement]] = []
+    var list: List! {
+        didSet {
+            // TODO: Init
+        }
+    }
     
     // MARK: Life Cycle
     
@@ -50,5 +57,6 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
             SettingsElement(title: "Enable Challenge", type: .switchControl, level: 0, unit: nil, defaultValue: nil, maximum: nil, minimum: nil)
         ]
         settingElements.append(sectionOne)
+        settingsTableView.reloadData()
     }
 }
