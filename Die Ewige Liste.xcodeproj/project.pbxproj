@@ -34,6 +34,7 @@
 		195B6476215517FB00186A2F /* SwitchElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195B6475215517FB00186A2F /* SwitchElement.swift */; };
 		195B6479215529F200186A2F /* Double+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195B6478215529F200186A2F /* Double+Util.swift */; };
 		195B647B21552A0800186A2F /* Bool+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195B647A21552A0800186A2F /* Bool+Util.swift */; };
+		195B64812155507B00186A2F /* MatchOverviewTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195B64802155507B00186A2F /* MatchOverviewTabBarController.swift */; };
 		19A38B752150034B00F607AB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A38B742150034B00F607AB /* Constants.swift */; };
 		19ABD6DD214AB260004F2791 /* DELView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABD6DC214AB260004F2791 /* DELView.swift */; };
 		19D776762147F4E70042F809 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19D776752147F4E70042F809 /* Icons.xcassets */; };
@@ -96,6 +97,7 @@
 		195B6475215517FB00186A2F /* SwitchElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchElement.swift; sourceTree = "<group>"; };
 		195B6478215529F200186A2F /* Double+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Util.swift"; sourceTree = "<group>"; };
 		195B647A21552A0800186A2F /* Bool+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Util.swift"; sourceTree = "<group>"; };
+		195B64802155507B00186A2F /* MatchOverviewTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchOverviewTabBarController.swift; sourceTree = "<group>"; };
 		19A38B742150034B00F607AB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		19ABD6DC214AB260004F2791 /* DELView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DELView.swift; sourceTree = "<group>"; };
 		19D776752147F4E70042F809 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
@@ -241,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				1902137E21355AFB009F5E59 /* Main.storyboard */,
+				195B64802155507B00186A2F /* MatchOverviewTabBarController.swift */,
 				1902137D21355ADD009F5E59 /* Menu */,
 				1943BAB7210E1E4A0041ED8A /* Game History */,
 				195B646621527E2400186A2F /* Settings */,
@@ -564,6 +567,7 @@
 			files = (
 				1900FE82214BED6D0089F5D9 /* CGFloat+Util.swift in Sources */,
 				195B6476215517FB00186A2F /* SwitchElement.swift in Sources */,
+				195B64812155507B00186A2F /* MatchOverviewTabBarController.swift in Sources */,
 				195B646E2153A73500186A2F /* SettingsElement.swift in Sources */,
 				19008ECD20F3BA6500AADB15 /* RotatingLabel.swift in Sources */,
 				195B646C2153A43B00186A2F /* SwitchTableViewCell.swift in Sources */,

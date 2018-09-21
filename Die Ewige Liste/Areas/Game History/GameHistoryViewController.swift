@@ -59,22 +59,12 @@ class GameHistoryViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
-    // MARK: Actions
-    
-    @IBAction func newGameTapped(_ sender: Any) {
-        if let timerViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "timerViewController") as? TimerViewController {
-            timerViewController.list = list
-            show(timerViewController, sender: self)
-        }
-    }
-    
     // MARK: Helper
     
     private func setupUi() {
         // Necessary hack to load view hierarchy.
         _ = view
         
-        navigationItem.title = "\(list.playerOneName) vs \(list.playerTwoName)"
         namePlayerTopLabel.text = list.playerOneName
         namePlayerBottomLabel.text = list.playerTwoName
         updateUi()
