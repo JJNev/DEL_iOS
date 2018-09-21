@@ -24,5 +24,5 @@ struct Game: Codable {
     var winner: Player?
     var loser: Player?
     var timeWinner: Player?
-//    var settings: Dictionary<String, Any>?
+//    var settingsVersion: Double!
 }

@@ -27,22 +27,28 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     // MARK: UITableViewDataSource
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return settingElements.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return settingElements[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch (settingElements[indexPath.section][indexPath.row]).type {
-        case .stepper:
+        switch settingElements[indexPath.section][indexPath.row].self {
+        case is StepperElement:
             if let stepperCell = tableView.dequeueReusableCell(withIdentifier: "stepperCell") as? StepperTableViewCell {
                 stepperCell.setElement(settingElements[indexPath.section][indexPath.row])
                 return stepperCell
             }
-        case .switchControl:
+        case is SwitchElement:
             if let switchCell = tableView.dequeueReusableCell(withIdentifier: "switchCell") as? SwitchTableViewCell {
                 switchCell.setElement(settingElements[indexPath.section][indexPath.row])
                 return switchCell
             }
+        default:
+            break
         }
         
         return UITableViewCell()
@@ -52,11 +58,14 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     private func loadSettings() {
         let sectionOne = [
-            SettingsElement(title: "Game Win Points", type: .stepper, level: 0, unit: nil, defaultValue: 3, maximum: 99, minimum: 1),
-            SettingsElement(title: "Time Win Points", type: .stepper, level: 0, unit: nil, defaultValue: 1, maximum: 99, minimum: 0),
-            SettingsElement(title: "Enable Challenge", type: .switchControl, level: 0, unit: nil, defaultValue: nil, maximum: nil, minimum: nil)
+            StepperElement(title: "Game Win Points", defaultValue: 3, maximum: 99, minimum: 1),
+            StepperElement(title: "Time Win Points", defaultValue: 1, maximum: 99, minimum: 0),
+        ]
+        let sectionTwo = [
+            SwitchElement(title: "Enable Challenge", defaultValue: true)
         ]
         settingElements.append(sectionOne)
+        settingElements.append(sectionTwo)
         settingsTableView.reloadData()
     }
 }

@@ -13,6 +13,7 @@ class List: Codable {
     var playerTwoName: String
     var playerOnePoints: Int = 0
     var playerTwoPoints: Int = 0
+    var settingsVersions: [Int : [SettingsElement]] = [:]
     var games: [Game] = [] {
         didSet {
             updatePoints()

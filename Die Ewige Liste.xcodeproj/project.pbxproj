@@ -30,6 +30,8 @@
 		195B646C2153A43B00186A2F /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195B646B2153A43B00186A2F /* SwitchTableViewCell.swift */; };
 		195B646E2153A73500186A2F /* SettingsElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195B646D2153A73500186A2F /* SettingsElement.swift */; };
 		195B64722153C40300186A2F /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195B64712153C40300186A2F /* SettingsTableViewCell.swift */; };
+		195B6474215517F100186A2F /* StepperElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195B6473215517F100186A2F /* StepperElement.swift */; };
+		195B6476215517FB00186A2F /* SwitchElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195B6475215517FB00186A2F /* SwitchElement.swift */; };
 		19A38B752150034B00F607AB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A38B742150034B00F607AB /* Constants.swift */; };
 		19ABD6DD214AB260004F2791 /* DELView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABD6DC214AB260004F2791 /* DELView.swift */; };
 		19D776762147F4E70042F809 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19D776752147F4E70042F809 /* Icons.xcassets */; };
@@ -88,6 +90,8 @@
 		195B646B2153A43B00186A2F /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		195B646D2153A73500186A2F /* SettingsElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsElement.swift; sourceTree = "<group>"; };
 		195B64712153C40300186A2F /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		195B6473215517F100186A2F /* StepperElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperElement.swift; sourceTree = "<group>"; };
+		195B6475215517FB00186A2F /* SwitchElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchElement.swift; sourceTree = "<group>"; };
 		19A38B742150034B00F607AB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		19ABD6DC214AB260004F2791 /* DELView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DELView.swift; sourceTree = "<group>"; };
 		19D776752147F4E70042F809 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
@@ -284,7 +288,7 @@
 				1902137821345A4C009F5E59 /* List.swift */,
 				1943BAD8210E22960041ED8A /* Game.swift */,
 				1943BADA210E238A0041ED8A /* Player.swift */,
-				195B646D2153A73500186A2F /* SettingsElement.swift */,
+				195B64772155180200186A2F /* Settings */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -296,6 +300,16 @@
 				195B64712153C40300186A2F /* SettingsTableViewCell.swift */,
 				195B64692153A39A00186A2F /* StepperTableViewCell.swift */,
 				195B646B2153A43B00186A2F /* SwitchTableViewCell.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		195B64772155180200186A2F /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				195B646D2153A73500186A2F /* SettingsElement.swift */,
+				195B6473215517F100186A2F /* StepperElement.swift */,
+				195B6475215517FB00186A2F /* SwitchElement.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -543,9 +557,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1900FE82214BED6D0089F5D9 /* CGFloat+Util.swift in Sources */,
+				195B6476215517FB00186A2F /* SwitchElement.swift in Sources */,
 				195B646E2153A73500186A2F /* SettingsElement.swift in Sources */,
 				19008ECD20F3BA6500AADB15 /* RotatingLabel.swift in Sources */,
 				195B646C2153A43B00186A2F /* SwitchTableViewCell.swift in Sources */,
+				195B6474215517F100186A2F /* StepperElement.swift in Sources */,
 				1943BAB9210E1E810041ED8A /* GameHistoryViewController.swift in Sources */,
 				1943BADB210E238A0041ED8A /* Player.swift in Sources */,
 				1900FE84214FE3B80089F5D9 /* GradientView.swift in Sources */,

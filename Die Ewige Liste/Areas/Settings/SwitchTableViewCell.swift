@@ -15,8 +15,8 @@ class SwitchTableViewCell: SettingsTableViewCell {
     
     override func setElement(_ element: SettingsElement) {
         super.setElement(element)
-        if let isOn = element.defaultValue as? Bool {
-            switchControl.setOn(isOn, animated: false)
+        if let switchElement = element as? SwitchElement {
+            switchControl.setOn(switchElement.defaultValue, animated: false)
         }
     }
 }
