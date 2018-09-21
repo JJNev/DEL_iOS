@@ -10,14 +10,12 @@ import Foundation
 
 class SwitchElement: SettingsElement {
     var defaultValue: Bool
+    var userValue: Bool?
+    
+    // MARK: Life Cycle
     
     init(title: String, level: Int = 0, defaultValue: Bool) {
         self.defaultValue = defaultValue
         super.init(title: title, level: level)
-    }
-    
-    required init(from decoder: Decoder) throws {
-        fatalError("init(from:) has not been implemented")
-        // TODO: Implement
     }
 }

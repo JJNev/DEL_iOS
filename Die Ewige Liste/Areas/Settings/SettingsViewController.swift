@@ -11,40 +11,38 @@ import UIKit
 class SettingsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var settingsTableView: UITableView!
     
-    private var settingElements: [[SettingsElement]] = []
+    private var settingsElements: [[SettingsElement]] = []
     var list: List! {
         didSet {
-            // TODO: Init
+            // Necessary hack to load view hierarchy.
+            _ = view
+            
+            loadSettingElements()
         }
-    }
-    
-    // MARK: Life Cycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        loadSettings()
     }
     
     // MARK: UITableViewDataSource
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return settingElements.count
+        return settingsElements.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return settingElements[section].count
+        return settingsElements[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        switch settingElements[indexPath.section][indexPath.row].self {
+        switch settingsElements[indexPath.section][indexPath.row].self {
         case is StepperElement:
             if let stepperCell = tableView.dequeueReusableCell(withIdentifier: "stepperCell") as? StepperTableViewCell {
-                stepperCell.setElement(settingElements[indexPath.section][indexPath.row])
+                stepperCell.list = list
+                stepperCell.setElement(settingsElements[indexPath.section][indexPath.row])
                 return stepperCell
             }
         case is SwitchElement:
             if let switchCell = tableView.dequeueReusableCell(withIdentifier: "switchCell") as? SwitchTableViewCell {
-                switchCell.setElement(settingElements[indexPath.section][indexPath.row])
+                switchCell.list = list
+                switchCell.setElement(settingsElements[indexPath.section][indexPath.row])
                 return switchCell
             }
         default:
@@ -56,7 +54,7 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     // MARK: Helper
     
-    private func loadSettings() {
+    private func loadSettingElements() {
         let sectionOne = [
             StepperElement(title: "Game Win Points", defaultValue: 3, maximum: 99, minimum: 1),
             StepperElement(title: "Time Win Points", defaultValue: 1, maximum: 99, minimum: 0),
@@ -64,8 +62,8 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
         let sectionTwo = [
             SwitchElement(title: "Enable Challenge", defaultValue: true)
         ]
-        settingElements.append(sectionOne)
-        settingElements.append(sectionTwo)
+        settingsElements.append(sectionOne)
+        settingsElements.append(sectionTwo)
         settingsTableView.reloadData()
     }
 }

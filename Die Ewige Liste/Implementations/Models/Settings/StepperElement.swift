@@ -10,9 +10,12 @@ import Foundation
 
 class StepperElement: SettingsElement {
     var unit: String?
-    var defaultValue: Double = 0.0
     var maximum: Double
     var minimum: Double
+    var defaultValue: Double = 0.0
+    var userValue: Double?
+    
+    // MARK: Life Cycle
     
     init(title: String, level: Int = 0, unit: String? = nil, defaultValue: Double, maximum: Double, minimum: Double) {
         self.unit = unit
@@ -20,10 +23,5 @@ class StepperElement: SettingsElement {
         self.maximum = maximum
         self.minimum = minimum
         super.init(title: title, level: level)
-    }
-    
-    required init(from decoder: Decoder) throws {
-        fatalError("init(from:) has not been implemented")
-        // TODO: Implement
     }
 }

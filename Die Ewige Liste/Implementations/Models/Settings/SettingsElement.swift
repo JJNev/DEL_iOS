@@ -8,9 +8,11 @@
 
 import Foundation
 
-class SettingsElement: Codable {
+class SettingsElement {
     var title: String
     var level: Int
+    
+    // MARK: Life Cycle
     
     init(title: String, level: Int = 0) {
         self.title = title

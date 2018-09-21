@@ -13,13 +13,20 @@ class List: Codable {
     var playerTwoName: String
     var playerOnePoints: Int = 0
     var playerTwoPoints: Int = 0
-    var settingsVersions: [Int : [SettingsElement]] = [:]
+//    var settingsVersions: [Int : [SettingsElement]] = [:]
     var games: [Game] = [] {
         didSet {
             updatePoints()
             ListService.standard.saveLists()
         }
     }
+    
+    // TODO: Load this
+    private (set) var userSettings: [String : Double] = [
+        "Game Win Points" : 4,
+        "Time Win Points" : 0,
+        "Enable Challenge" : false.toDouble()
+    ]
     
     // MARK: Life Cycle
     

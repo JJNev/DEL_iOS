@@ -11,6 +11,8 @@ import UIKit
 class SettingsTableViewCell: UITableViewCell {
     @IBOutlet var titleLabel: UILabel!
     
+    var list: List!
+    
     // MARK: Public
     
     func setElement(_ element: SettingsElement) {
