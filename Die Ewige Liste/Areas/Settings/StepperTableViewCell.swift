@@ -17,9 +17,18 @@ class StepperTableViewCell: SettingsTableViewCell {
     
     override func setElement(_ element: SettingsElement) {
         super.setElement(element)
-        valueLabel.text = element.defaultValue as? String ?? ""
+        if let defaultValue = element.defaultValue as? Int {
+            valueLabel.text = String(defaultValue)
+            stepper.value = Double(defaultValue)
+        }
         unitLabel.text = element.unit
         stepper.maximumValue = element.maximum ?? 10
         stepper.minimumValue = element.minimum ?? 0
+    }
+    
+    // MARK: Actions
+    
+    @IBAction func stepperValueChanged(_ sender: Any) {
+        valueLabel.text = String(Int(stepper.value))
     }
 }
