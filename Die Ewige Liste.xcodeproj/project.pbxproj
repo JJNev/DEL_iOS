@@ -28,10 +28,10 @@
 		195B646821527E3500186A2F /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195B646721527E3500186A2F /* SettingsViewController.swift */; };
 		195B646A2153A39A00186A2F /* StepperTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195B64692153A39A00186A2F /* StepperTableViewCell.swift */; };
 		195B646C2153A43B00186A2F /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195B646B2153A43B00186A2F /* SwitchTableViewCell.swift */; };
-		195B646E2153A73500186A2F /* SettingsElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195B646D2153A73500186A2F /* SettingsElement.swift */; };
+		195B646E2153A73500186A2F /* SettingsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195B646D2153A73500186A2F /* SettingsItem.swift */; };
 		195B64722153C40300186A2F /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195B64712153C40300186A2F /* SettingsTableViewCell.swift */; };
-		195B6474215517F100186A2F /* StepperElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195B6473215517F100186A2F /* StepperElement.swift */; };
-		195B6476215517FB00186A2F /* SwitchElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195B6475215517FB00186A2F /* SwitchElement.swift */; };
+		195B6474215517F100186A2F /* StepperItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195B6473215517F100186A2F /* StepperItem.swift */; };
+		195B6476215517FB00186A2F /* SwitchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195B6475215517FB00186A2F /* SwitchItem.swift */; };
 		195B6479215529F200186A2F /* Double+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195B6478215529F200186A2F /* Double+Util.swift */; };
 		195B647B21552A0800186A2F /* Bool+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195B647A21552A0800186A2F /* Bool+Util.swift */; };
 		195B64812155507B00186A2F /* MatchOverviewTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195B64802155507B00186A2F /* MatchOverviewTabBarController.swift */; };
@@ -91,10 +91,10 @@
 		195B646721527E3500186A2F /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		195B64692153A39A00186A2F /* StepperTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperTableViewCell.swift; sourceTree = "<group>"; };
 		195B646B2153A43B00186A2F /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
-		195B646D2153A73500186A2F /* SettingsElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsElement.swift; sourceTree = "<group>"; };
+		195B646D2153A73500186A2F /* SettingsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsItem.swift; sourceTree = "<group>"; };
 		195B64712153C40300186A2F /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
-		195B6473215517F100186A2F /* StepperElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperElement.swift; sourceTree = "<group>"; };
-		195B6475215517FB00186A2F /* SwitchElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchElement.swift; sourceTree = "<group>"; };
+		195B6473215517F100186A2F /* StepperItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepperItem.swift; sourceTree = "<group>"; };
+		195B6475215517FB00186A2F /* SwitchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchItem.swift; sourceTree = "<group>"; };
 		195B6478215529F200186A2F /* Double+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Util.swift"; sourceTree = "<group>"; };
 		195B647A21552A0800186A2F /* Bool+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Util.swift"; sourceTree = "<group>"; };
 		195B64802155507B00186A2F /* MatchOverviewTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchOverviewTabBarController.swift; sourceTree = "<group>"; };
@@ -304,9 +304,9 @@
 		195B64772155180200186A2F /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				195B646D2153A73500186A2F /* SettingsElement.swift */,
-				195B6473215517F100186A2F /* StepperElement.swift */,
-				195B6475215517FB00186A2F /* SwitchElement.swift */,
+				195B646D2153A73500186A2F /* SettingsItem.swift */,
+				195B6473215517F100186A2F /* StepperItem.swift */,
+				195B6475215517FB00186A2F /* SwitchItem.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -574,12 +574,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				1900FE82214BED6D0089F5D9 /* CGFloat+Util.swift in Sources */,
-				195B6476215517FB00186A2F /* SwitchElement.swift in Sources */,
+				195B6476215517FB00186A2F /* SwitchItem.swift in Sources */,
 				195B64812155507B00186A2F /* MatchOverviewTabBarController.swift in Sources */,
-				195B646E2153A73500186A2F /* SettingsElement.swift in Sources */,
+				195B646E2153A73500186A2F /* SettingsItem.swift in Sources */,
 				19008ECD20F3BA6500AADB15 /* RotatingLabel.swift in Sources */,
 				195B646C2153A43B00186A2F /* SwitchTableViewCell.swift in Sources */,
-				195B6474215517F100186A2F /* StepperElement.swift in Sources */,
+				195B6474215517F100186A2F /* StepperItem.swift in Sources */,
 				1943BAB9210E1E810041ED8A /* GameHistoryViewController.swift in Sources */,
 				1943BADB210E238A0041ED8A /* Player.swift in Sources */,
 				1900FE84214FE3B80089F5D9 /* GradientView.swift in Sources */,

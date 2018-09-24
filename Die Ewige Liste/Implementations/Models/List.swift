@@ -13,7 +13,7 @@ class List: Codable {
     var playerTwoName: String
     var playerOnePoints: Int = 0
     var playerTwoPoints: Int = 0
-//    var settingsVersions: [Int : [SettingsElement]] = [:]
+//    var settingsVersions: [Int : [SettingsItem]] = [:]
     var games: [Game] = [] {
         didSet {
             updatePoints()
@@ -23,9 +23,9 @@ class List: Codable {
     
     // TODO: Load this
     private (set) var userSettings: [String : Double] = [
-        "Game Win Points" : 4,
-        "Time Win Points" : 0,
-        "Enable Challenge" : false.toDouble()
+        "gameWinPoints" : 4,
+        "timeWinPoints" : 0,
+        "enableChallenge" : false.toDouble()
     ]
     
     // MARK: Life Cycle
@@ -37,11 +37,11 @@ class List: Codable {
     
     // MARK: Public
     
-    func getValue<T>(for settingsElement: SettingsElement) -> T? {
-        if let stepperElement = settingsElement as? StepperElement {
-            return userSettings[stepperElement.key] != nil ? (userSettings[stepperElement.key] as! T) : (stepperElement.defaultValue as! T)
-        } else if let switchElement = settingsElement as? SwitchElement {
-            return userSettings[switchElement.key] != nil ? (userSettings[switchElement.key]!.toBool() as! T) : (switchElement.defaultValue as! T)
+    func getValue<T>(for settingsItem: SettingsItem) -> T? {
+        if let stepperItem = settingsItem as? StepperItem {
+            return userSettings[stepperItem.key] != nil ? (userSettings[stepperItem.key] as! T) : (stepperItem.defaultValue as! T)
+        } else if let switchItem = settingsItem as? SwitchItem {
+            return userSettings[switchItem.key] != nil ? (userSettings[switchItem.key]!.toBool() as! T) : (switchItem.defaultValue as! T)
         }
         return nil
     }

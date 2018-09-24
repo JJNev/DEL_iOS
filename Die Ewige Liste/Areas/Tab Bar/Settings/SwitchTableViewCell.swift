@@ -11,15 +11,15 @@ import UIKit
 class SwitchTableViewCell: SettingsTableViewCell {
     @IBOutlet weak var switchControl: UISwitch!
     
-    private var element: SwitchElement!
+    private var item: SwitchItem!
     
     // MARK: Public
     
-    override func setElement(_ element: SettingsElement) {
-        super.setElement(element)
-        if let switchElement = element as? SwitchElement {
-            self.element = switchElement
-            switchControl.setOn(list.getValue(for: switchElement)!, animated: false)
+    override func setItem(_ item: SettingsItem) {
+        super.setItem(item)
+        if let switchItem = item as? SwitchItem {
+            self.item = switchItem
+            switchControl.setOn(list.getValue(for: switchItem)!, animated: false)
         }
     }
     

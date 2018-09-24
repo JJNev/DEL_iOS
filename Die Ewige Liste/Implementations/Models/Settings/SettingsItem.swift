@@ -1,5 +1,5 @@
 //
-//  SettingsElement.swift
+//  SettingsItem.swift
 //  Die Ewige Liste
 //
 //  Created by Johannes Bagge on 20.09.18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SettingsElement {
+class SettingsItem {
     var title: String
     let key: String
     let indentationLevel: Int

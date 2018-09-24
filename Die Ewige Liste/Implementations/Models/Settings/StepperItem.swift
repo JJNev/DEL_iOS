@@ -1,5 +1,5 @@
 //
-//  StepperElement.swift
+//  StepperItem.swift
 //  Die Ewige Liste
 //
 //  Created by Johannes Bagge on 21.09.18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class StepperElement: SettingsElement {
+class StepperItem: SettingsItem {
     var unit: String?
     var maximum: Double
     var minimum: Double

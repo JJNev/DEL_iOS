@@ -13,18 +13,18 @@ class StepperTableViewCell: SettingsTableViewCell {
     @IBOutlet weak var unitLabel: UILabel!
     @IBOutlet weak var stepper: UIStepper!
     
-    private var element: StepperElement!
+    private var item: StepperItem!
     
     // MARK: Public
     
-    override func setElement(_ element: SettingsElement) {
-        super.setElement(element)
-        if let stepperElement = element as? StepperElement {
-            self.element = stepperElement
-            unitLabel.text = stepperElement.unit
-            stepper.maximumValue = stepperElement.maximum
-            stepper.minimumValue = stepperElement.minimum
-            let value: Double = list.getValue(for: stepperElement)!
+    override func setItem(_ item: SettingsItem) {
+        super.setItem(item)
+        if let stepperItem = item as? StepperItem {
+            self.item = stepperItem
+            unitLabel.text = stepperItem.unit
+            stepper.maximumValue = stepperItem.maximum
+            stepper.minimumValue = stepperItem.minimum
+            let value: Double = list.getValue(for: stepperItem)!
             valueLabel.text = String(Int(value))
             stepper.value = value
         }

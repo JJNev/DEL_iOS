@@ -1,5 +1,5 @@
 //
-//  SwitchElement.swift
+//  SwitchItem.swift
 //  Die Ewige Liste
 //
 //  Created by Johannes Bagge on 21.09.18.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SwitchElement: SettingsElement {
+class SwitchItem: SettingsItem {
     var defaultValue: Bool
     var userValue: Bool?
     

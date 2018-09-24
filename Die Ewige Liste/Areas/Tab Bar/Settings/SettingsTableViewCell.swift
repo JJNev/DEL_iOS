@@ -15,7 +15,7 @@ class SettingsTableViewCell: UITableViewCell {
     
     // MARK: Public
     
-    func setElement(_ element: SettingsElement) {
-        titleLabel.text = element.title
+    func setItem(_ item: SettingsItem) {
+        titleLabel.text = item.title
     }
 }
