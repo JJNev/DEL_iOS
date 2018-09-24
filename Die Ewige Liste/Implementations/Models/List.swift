@@ -22,10 +22,11 @@ class List: Codable {
     }
     
     // TODO: Load this
+    // Initiated with default values.
     private (set) var userSettings: [String : Double] = [
-        Constants.SettingsIdentifier.gameWinPoints : 4,
-        Constants.SettingsIdentifier.timeWinPoints : 0,
-        Constants.SettingsIdentifier.enableChallenge : false.toDouble()
+        Constants.SettingsIdentifier.gameWinPoints : 3,
+        Constants.SettingsIdentifier.timeWinPoints : 1,
+        Constants.SettingsIdentifier.enableChallenge : true.toDouble()
     ]
     
     // MARK: Life Cycle
@@ -37,6 +38,7 @@ class List: Codable {
     
     // MARK: Public
     
+    // TODO: Might remove arguments (/whole function?) here if defaults are kept in userSettings array
     func getValue<T>(for settingsItem: SettingsItem) -> T? {
         if let stepperItem = settingsItem as? StepperItem {
             return userSettings[stepperItem.key] != nil ? (userSettings[stepperItem.key] as! T) : (stepperItem.defaultValue as! T)
@@ -53,9 +55,8 @@ class List: Codable {
         playerTwoPoints = 0
         
         for game in games {
-            // TODO: Consider points from ruleset
-            let pointsForGameWin = 3
-            let pointsForTimeWin = 1
+            let pointsForGameWin = Int(userSettings[Constants.SettingsIdentifier.gameWinPoints] ?? 3)
+            let pointsForTimeWin = Int(userSettings[Constants.SettingsIdentifier.timeWinPoints] ?? 1)
             
             if let winner = game.winner {
                 if winner.name == playerOneName {

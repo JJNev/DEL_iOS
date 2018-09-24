@@ -60,9 +60,8 @@ class EndGameViewController: ModalViewController {
     // MARK: Helper
     
     private func updatePoints() {
-        // TODO: Consider active ruleset
-        let pointsForGameWin = 3
-        let pointsForTimeWin = 1
+        let pointsForGameWin = Int(list?.userSettings[Constants.SettingsIdentifier.gameWinPoints] ?? 3)
+        let pointsForTimeWin = Int(list?.userSettings[Constants.SettingsIdentifier.timeWinPoints] ?? 1)
         var pointsPlayerTop = 0
         var pointsPlayerBottom = 0
         
