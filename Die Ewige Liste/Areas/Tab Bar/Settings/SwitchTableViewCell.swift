@@ -19,7 +19,7 @@ class SwitchTableViewCell: SettingsTableViewCell {
         super.setElement(element)
         if let switchElement = element as? SwitchElement {
             self.element = switchElement
-            switchControl.setOn(getValue(), animated: false)
+            switchControl.setOn(list.getValue(for: switchElement)!, animated: false)
         }
     }
     
@@ -27,15 +27,5 @@ class SwitchTableViewCell: SettingsTableViewCell {
     
     @IBAction func buttonValueChanged(_ sender: Any) {
         // TODO: Adjust settings
-    }
-    
-    // MARK: Helper
-    
-    private func getValue() -> Bool {
-        if let userSetting = list.userSettings[element.title] {
-            return userSetting.toBool()
-        } else {
-            return element.defaultValue
-        }
     }
 }

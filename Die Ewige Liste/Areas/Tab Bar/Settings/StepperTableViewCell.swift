@@ -24,7 +24,7 @@ class StepperTableViewCell: SettingsTableViewCell {
             unitLabel.text = stepperElement.unit
             stepper.maximumValue = stepperElement.maximum
             stepper.minimumValue = stepperElement.minimum
-            let value = getValue()
+            let value: Double = list.getValue(for: stepperElement)!
             valueLabel.text = String(Int(value))
             stepper.value = value
         }
@@ -35,15 +35,5 @@ class StepperTableViewCell: SettingsTableViewCell {
     @IBAction func stepperValueChanged(_ sender: Any) {
         valueLabel.text = String(Int(stepper.value))
         // TODO: Adjust settings
-    }
-    
-    // MARK: Helper
-    
-    private func getValue() -> Double {
-        if let userSetting = list.userSettings[element.title] {
-            return userSetting
-        } else {
-            return element.defaultValue
-        }
     }
 }

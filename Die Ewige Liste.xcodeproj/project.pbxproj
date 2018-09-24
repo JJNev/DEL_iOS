@@ -231,22 +231,13 @@
 			path = IBDesignables;
 			sourceTree = "<group>";
 		};
-		1900FE7B214BD90E0089F5D9 /* View Controller */ = {
-			isa = PBXGroup;
-			children = (
-				1900FE7C214BD92D0089F5D9 /* ModalViewController.swift */,
-			);
-			path = "View Controller";
-			sourceTree = "<group>";
-		};
 		1900FE7E214BD9460089F5D9 /* Areas */ = {
 			isa = PBXGroup;
 			children = (
 				1902137E21355AFB009F5E59 /* Main.storyboard */,
-				195B64802155507B00186A2F /* MatchOverviewTabBarController.swift */,
+				195B64822155593400186A2F /* Global */,
 				1902137D21355ADD009F5E59 /* Menu */,
-				1943BAB7210E1E4A0041ED8A /* Game History */,
-				195B646621527E2400186A2F /* Settings */,
+				195B6483215559DC00186A2F /* Tab Bar */,
 				19008EBF20F38F1800AADB15 /* Timer */,
 			);
 			path = Areas;
@@ -255,7 +246,6 @@
 		1900FE80214BDA060089F5D9 /* Implementations */ = {
 			isa = PBXGroup;
 			children = (
-				1900FE7B214BD90E0089F5D9 /* View Controller */,
 				1943BAD7210E227F0041ED8A /* Models */,
 				19D776792149463F0042F809 /* Basic Type Extensions */,
 				19008ECB20F3BA2100AADB15 /* IBDesignables */,
@@ -319,6 +309,24 @@
 				195B6475215517FB00186A2F /* SwitchElement.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		195B64822155593400186A2F /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				1900FE7C214BD92D0089F5D9 /* ModalViewController.swift */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		195B6483215559DC00186A2F /* Tab Bar */ = {
+			isa = PBXGroup;
+			children = (
+				195B64802155507B00186A2F /* MatchOverviewTabBarController.swift */,
+				1943BAB7210E1E4A0041ED8A /* Game History */,
+				195B646621527E2400186A2F /* Settings */,
+			);
+			path = "Tab Bar";
 			sourceTree = "<group>";
 		};
 		19D776792149463F0042F809 /* Basic Type Extensions */ = {

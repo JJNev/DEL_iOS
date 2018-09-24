@@ -25,7 +25,7 @@ class List: Codable {
     private (set) var userSettings: [String : Double] = [
         "Game Win Points" : 4,
         "Time Win Points" : 0,
-        "Enable Challenge" : false.toDouble()
+        "Enable Challenge" : true.toDouble()
     ]
     
     // MARK: Life Cycle
@@ -33,6 +33,19 @@ class List: Codable {
     init(playerOneName: String, playerTwoName: String) {
         self.playerOneName = playerOneName
         self.playerTwoName = playerTwoName
+    }
+    
+    // MARK: Public
+    
+    func getValue<T>(for settingsElement: SettingsElement) -> T? {
+        if let stepperElement = settingsElement as? StepperElement {
+            print("stepperElement \"\(stepperElement.title)\": \(userSettings[stepperElement.title])")
+            return userSettings[stepperElement.title] != nil ? (userSettings[stepperElement.title] as! T) : (stepperElement.defaultValue as! T)
+        } else if let switchElement = settingsElement as? SwitchElement {
+            print("switchElement \"\(switchElement.title)\": \(userSettings[switchElement.title])")
+            return userSettings[switchElement.title] != nil ? (userSettings[switchElement.title]!.toBool() as! T) : (switchElement.defaultValue as! T)
+        }
+        return nil
     }
     
     // MARK: Helpers
