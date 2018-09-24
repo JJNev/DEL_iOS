@@ -23,9 +23,9 @@ class List: Codable {
     
     // TODO: Load this
     private (set) var userSettings: [String : Double] = [
-        "gameWinPoints" : 4,
-        "timeWinPoints" : 0,
-        "enableChallenge" : false.toDouble()
+        Constants.SettingsIdentifier.gameWinPoints : 4,
+        Constants.SettingsIdentifier.timeWinPoints : 0,
+        Constants.SettingsIdentifier.enableChallenge : false.toDouble()
     ]
     
     // MARK: Life Cycle

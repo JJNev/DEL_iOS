@@ -12,4 +12,10 @@ struct Constants {
     struct KeychainIdentifier {
         static let lists = "lists"
     }
+    
+    struct SettingsIdentifier {
+        static let gameWinPoints = "gameWinPoints"
+        static let timeWinPoints = "timeWinPoints"
+        static let enableChallenge = "enableChallenge"
+    }
 }
