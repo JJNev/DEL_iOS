@@ -25,7 +25,7 @@ class List: Codable {
     private (set) var userSettings: [String : Double] = [
         "Game Win Points" : 4,
         "Time Win Points" : 0,
-        "Enable Challenge" : true.toDouble()
+        "Enable Challenge" : false.toDouble()
     ]
     
     // MARK: Life Cycle
@@ -39,11 +39,9 @@ class List: Codable {
     
     func getValue<T>(for settingsElement: SettingsElement) -> T? {
         if let stepperElement = settingsElement as? StepperElement {
-            print("stepperElement \"\(stepperElement.title)\": \(userSettings[stepperElement.title])")
-            return userSettings[stepperElement.title] != nil ? (userSettings[stepperElement.title] as! T) : (stepperElement.defaultValue as! T)
+            return userSettings[stepperElement.key] != nil ? (userSettings[stepperElement.key] as! T) : (stepperElement.defaultValue as! T)
         } else if let switchElement = settingsElement as? SwitchElement {
-            print("switchElement \"\(switchElement.title)\": \(userSettings[switchElement.title])")
-            return userSettings[switchElement.title] != nil ? (userSettings[switchElement.title]!.toBool() as! T) : (switchElement.defaultValue as! T)
+            return userSettings[switchElement.key] != nil ? (userSettings[switchElement.key]!.toBool() as! T) : (switchElement.defaultValue as! T)
         }
         return nil
     }

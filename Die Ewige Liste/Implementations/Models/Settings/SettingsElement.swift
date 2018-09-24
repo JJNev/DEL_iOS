@@ -10,12 +10,14 @@ import Foundation
 
 class SettingsElement {
     var title: String
-    var level: Int
+    let key: String
+    let indentationLevel: Int
     
     // MARK: Life Cycle
     
-    init(title: String, level: Int = 0) {
+    init(title: String, key: String, indentationLevel: Int = 0) {
         self.title = title
-        self.level = level
+        self.key = key
+        self.indentationLevel = indentationLevel
     }
 }

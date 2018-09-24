@@ -17,11 +17,11 @@ class StepperElement: SettingsElement {
     
     // MARK: Life Cycle
     
-    init(title: String, level: Int = 0, unit: String? = nil, defaultValue: Double, maximum: Double, minimum: Double) {
+    init(title: String, key: String, indentationLevel: Int = 0, unit: String? = nil, defaultValue: Double, maximum: Double, minimum: Double) {
         self.unit = unit
         self.defaultValue = defaultValue
         self.maximum = maximum
         self.minimum = minimum
-        super.init(title: title, level: level)
+        super.init(title: title, key: key, indentationLevel: indentationLevel)
     }
 }

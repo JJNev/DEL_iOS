@@ -14,8 +14,8 @@ class SwitchElement: SettingsElement {
     
     // MARK: Life Cycle
     
-    init(title: String, level: Int = 0, defaultValue: Bool) {
+    init(title: String, key: String, indentationLevel: Int = 0, defaultValue: Bool) {
         self.defaultValue = defaultValue
-        super.init(title: title, level: level)
+        super.init(title: title, key: key, indentationLevel: indentationLevel)
     }
 }
