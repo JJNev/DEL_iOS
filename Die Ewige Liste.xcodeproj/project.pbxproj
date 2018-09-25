@@ -237,7 +237,7 @@
 				1902137E21355AFB009F5E59 /* Main.storyboard */,
 				195B64822155593400186A2F /* Global */,
 				1902137D21355ADD009F5E59 /* Menu */,
-				195B6483215559DC00186A2F /* Tab Bar */,
+				195B6483215559DC00186A2F /* Match Overview */,
 				19008EBF20F38F1800AADB15 /* Timer */,
 			);
 			path = Areas;
@@ -319,14 +319,14 @@
 			path = Global;
 			sourceTree = "<group>";
 		};
-		195B6483215559DC00186A2F /* Tab Bar */ = {
+		195B6483215559DC00186A2F /* Match Overview */ = {
 			isa = PBXGroup;
 			children = (
 				195B64802155507B00186A2F /* MatchOverviewTabBarController.swift */,
 				1943BAB7210E1E4A0041ED8A /* Game History */,
 				195B646621527E2400186A2F /* Settings */,
 			);
-			path = "Tab Bar";
+			path = "Match Overview";
 			sourceTree = "<group>";
 		};
 		19D776792149463F0042F809 /* Basic Type Extensions */ = {
