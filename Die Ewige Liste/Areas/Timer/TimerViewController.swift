@@ -119,6 +119,9 @@ class TimerViewController: UIViewController {
         swapColors()
     }
     
+    @IBAction func flagTapped(_ sender: Any) {
+        // TODO: Flag
+    }
     
     // MARK: Helper
     

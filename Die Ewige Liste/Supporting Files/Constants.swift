@@ -18,12 +18,14 @@ struct Constants {
             static let gameWinPoints = "gameWinPoints"
             static let timeWinPoints = "timeWinPoints"
             static let enableChallenge = "enableChallenge"
+            static let challengePenalty = "challengePenalty"
         }
         
         static let defaults = [
             Keys.gameWinPoints : 3.0,
             Keys.timeWinPoints : 1.0,
-            Keys.enableChallenge : true.toDouble()
+            Keys.enableChallenge : true.toDouble(),
+            Keys.challengePenalty : 3.0
         ]
     }
 }
