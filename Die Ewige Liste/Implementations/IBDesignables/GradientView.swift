@@ -114,7 +114,7 @@ class GradientView: UIView {
             colors.append(gradientColor!.cgColor)
         }
         
-        // Make sure to only add a location if a corresponding color exists.
+        // Make sure to only add a location if a corresponding color exists (and vice versa).
         if colors.count != locations.count {
             let minValues = min(colors.count, locations.count)
             
