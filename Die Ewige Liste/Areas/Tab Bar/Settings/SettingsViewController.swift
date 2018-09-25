@@ -56,11 +56,11 @@ class SettingsViewController: UIViewController, UITableViewDelegate, UITableView
     
     private func loadSettingItems() {
         let sectionOne = [
-            StepperItem(title: "Game Win Points", key: Constants.SettingsIdentifier.gameWinPoints, defaultValue: 3, maximum: 99, minimum: 1),
-            StepperItem(title: "Time Win Points", key: Constants.SettingsIdentifier.timeWinPoints, defaultValue: 1, maximum: 99, minimum: 0),
+            StepperItem(title: "Game Win Points", key: Constants.Settings.Keys.gameWinPoints, maximum: 99, minimum: 1),
+            StepperItem(title: "Time Win Points", key: Constants.Settings.Keys.timeWinPoints, maximum: 99, minimum: 0),
         ]
         let sectionTwo = [
-            SwitchItem(title: "Enable Challenge", key: Constants.SettingsIdentifier.enableChallenge, defaultValue: true)
+            SwitchItem(title: "Enable Challenge", key: Constants.Settings.Keys.enableChallenge)
         ]
         settingsItems.append(sectionOne)
         settingsItems.append(sectionTwo)

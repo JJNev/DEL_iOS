@@ -9,13 +9,8 @@
 import Foundation
 
 class SwitchItem: SettingsItem {
-    var defaultValue: Bool
     var userValue: Bool?
     
     // MARK: Life Cycle
     
-    init(title: String, key: String, indentationLevel: Int = 0, defaultValue: Bool) {
-        self.defaultValue = defaultValue
-        super.init(title: title, key: key, indentationLevel: indentationLevel)
-    }
 }

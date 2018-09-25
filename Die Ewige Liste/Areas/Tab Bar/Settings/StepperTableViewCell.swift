@@ -24,7 +24,7 @@ class StepperTableViewCell: SettingsTableViewCell {
             unitLabel.text = stepperItem.unit
             stepper.maximumValue = stepperItem.maximum
             stepper.minimumValue = stepperItem.minimum
-            let value: Double = list.getValue(for: stepperItem)!
+            let value: Double = list.getSettingValue(for: item.key)
             valueLabel.text = String(Int(value))
             stepper.value = value
         }

@@ -22,11 +22,10 @@ class List: Codable {
     }
     
     // TODO: Load this
-    // Initiated with default values.
     private (set) var userSettings: [String : Double] = [
-        Constants.SettingsIdentifier.gameWinPoints : 3,
-        Constants.SettingsIdentifier.timeWinPoints : 1,
-        Constants.SettingsIdentifier.enableChallenge : true.toDouble()
+        Constants.Settings.Keys.gameWinPoints : 5,
+        Constants.Settings.Keys.timeWinPoints : 0,
+        Constants.Settings.Keys.enableChallenge : false.toDouble()
     ]
     
     // MARK: Life Cycle
@@ -38,14 +37,8 @@ class List: Codable {
     
     // MARK: Public
     
-    // TODO: Might remove arguments (/whole function?) here if defaults are kept in userSettings array
-    func getValue<T>(for settingsItem: SettingsItem) -> T? {
-        if let stepperItem = settingsItem as? StepperItem {
-            return userSettings[stepperItem.key] != nil ? (userSettings[stepperItem.key] as! T) : (stepperItem.defaultValue as! T)
-        } else if let switchItem = settingsItem as? SwitchItem {
-            return userSettings[switchItem.key] != nil ? (userSettings[switchItem.key]!.toBool() as! T) : (switchItem.defaultValue as! T)
-        }
-        return nil
+    func getSettingValue(for key: String) -> Double {
+        return userSettings[key] ?? Constants.Settings.defaults[key] ?? 0
     }
     
     // MARK: Helpers
@@ -55,22 +48,22 @@ class List: Codable {
         playerTwoPoints = 0
         
         for game in games {
-            let pointsForGameWin = Int(userSettings[Constants.SettingsIdentifier.gameWinPoints] ?? 3)
-            let pointsForTimeWin = Int(userSettings[Constants.SettingsIdentifier.timeWinPoints] ?? 1)
+            let gameWinPoints = Int(getSettingValue(for: Constants.Settings.Keys.gameWinPoints))
+            let timeWinPoints = Int(getSettingValue(for: Constants.Settings.Keys.timeWinPoints))
             
             if let winner = game.winner {
                 if winner.name == playerOneName {
-                    playerOnePoints += pointsForGameWin
+                    playerOnePoints += gameWinPoints
                 } else if winner.name == playerTwoName {
-                    playerTwoPoints += pointsForGameWin
+                    playerTwoPoints += gameWinPoints
                 }
             }
             
             if let timeWinner = game.timeWinner {
                 if timeWinner.name == playerOneName {
-                    playerOnePoints += pointsForTimeWin
+                    playerOnePoints += timeWinPoints
                 } else if timeWinner.name == playerTwoName {
-                    playerTwoPoints += pointsForTimeWin
+                    playerTwoPoints += timeWinPoints
                 }
             }
         }

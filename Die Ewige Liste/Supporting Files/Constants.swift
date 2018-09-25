@@ -13,9 +13,17 @@ struct Constants {
         static let lists = "lists"
     }
     
-    struct SettingsIdentifier {
-        static let gameWinPoints = "gameWinPoints"
-        static let timeWinPoints = "timeWinPoints"
-        static let enableChallenge = "enableChallenge"
+    struct Settings {
+        struct Keys {
+            static let gameWinPoints = "gameWinPoints"
+            static let timeWinPoints = "timeWinPoints"
+            static let enableChallenge = "enableChallenge"
+        }
+        
+        static let defaults = [
+            Keys.gameWinPoints : 3.0,
+            Keys.timeWinPoints : 1.0,
+            Keys.enableChallenge : true.toDouble()
+        ]
     }
 }

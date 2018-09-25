@@ -19,7 +19,8 @@ class SwitchTableViewCell: SettingsTableViewCell {
         super.setItem(item)
         if let switchItem = item as? SwitchItem {
             self.item = switchItem
-            switchControl.setOn(list.getValue(for: switchItem)!, animated: false)
+            let value = list.getSettingValue(for: item.key).toBool()
+            switchControl.setOn(value, animated: false)
         }
     }
     

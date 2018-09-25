@@ -60,22 +60,26 @@ class EndGameViewController: ModalViewController {
     // MARK: Helper
     
     private func updatePoints() {
-        let pointsForGameWin = Int(list?.userSettings[Constants.SettingsIdentifier.gameWinPoints] ?? 3)
-        let pointsForTimeWin = Int(list?.userSettings[Constants.SettingsIdentifier.timeWinPoints] ?? 1)
+        guard let list = list else {
+            return
+        }
+        
+        let gameWinPoints = Int(list.getSettingValue(for: Constants.Settings.Keys.gameWinPoints))
+        let timeWinPoints = Int(list.getSettingValue(for: Constants.Settings.Keys.timeWinPoints))
         var pointsPlayerTop = 0
         var pointsPlayerBottom = 0
         
         if winnerSelectionSegmentedControl.selectedSegmentIndex == 0 {
-            pointsPlayerTop += pointsForGameWin
+            pointsPlayerTop += gameWinPoints
         } else {
-            pointsPlayerBottom += pointsForGameWin
+            pointsPlayerBottom += gameWinPoints
         }
         
         if let timeWinner = game.timeWinner {
             if timeWinner == game.playerTop {
-                pointsPlayerTop += pointsForTimeWin
+                pointsPlayerTop += timeWinPoints
             } else {
-                pointsPlayerBottom += pointsForTimeWin
+                pointsPlayerBottom += timeWinPoints
             }
         }
         
