@@ -13,20 +13,18 @@ class List: Codable {
     var playerTwoName: String
     var pointsPlayerTop: Int = 0
     var pointsPlayerBottom: Int = 0
-//    var settingsVersions: [Int : [SettingsItem]] = [:]
-    var games: [Game] = [] {
+    //    var settingsVersions: [Int : [SettingsItem]] = [:]
+    // TODO: Load this
+    private var userSettings: [String : Double] = [:] {
         didSet {
-            updatePoints()
-            ListService.standard.saveLists()
+            dataChanged()
         }
     }
-    
-    // TODO: Load this
-    private (set) var userSettings: [String : Double] = [
-        Constants.Settings.Keys.gameWinPoints : 5,
-        Constants.Settings.Keys.timeWinPoints : 0,
-        Constants.Settings.Keys.enableChallenge : false.toDouble()
-    ]
+    var games: [Game] = [] {
+        didSet {
+            dataChanged()
+        }
+    }
     
     // MARK: Life Cycle
     
@@ -39,6 +37,10 @@ class List: Codable {
     
     func getSettingValue(for key: String) -> Double {
         return userSettings[key] ?? Constants.Settings.defaults[key] ?? 0
+    }
+    
+    func updateSetting(for key: String, to value: Double) {
+        userSettings[key] = value
     }
     
     // MARK: Helpers
@@ -66,5 +68,10 @@ class List: Codable {
                 }
             }
         }
+    }
+    
+    private func dataChanged() {
+        updatePoints()
+        ListService.standard.saveLists()
     }
 }

@@ -34,6 +34,6 @@ class StepperTableViewCell: SettingsTableViewCell {
     
     @IBAction func stepperValueChanged(_ sender: Any) {
         valueLabel.text = String(Int(stepper.value))
-        // TODO: Adjust settings
+        list.updateSetting(for: item.key, to: stepper.value)
     }
 }

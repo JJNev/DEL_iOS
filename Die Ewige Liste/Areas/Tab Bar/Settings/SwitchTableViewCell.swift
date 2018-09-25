@@ -27,6 +27,6 @@ class SwitchTableViewCell: SettingsTableViewCell {
     // MARK: Actions
     
     @IBAction func buttonValueChanged(_ sender: Any) {
-        // TODO: Adjust settings
+        list.updateSetting(for: item.key, to: switchControl.isOn.toDouble())
     }
 }
