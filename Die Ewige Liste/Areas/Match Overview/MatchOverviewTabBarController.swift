@@ -39,7 +39,6 @@ class MatchOverviewTabBarController: UITabBarController {
     
     private func setupUi() {
         title = "\(list.playerOneName) vs \(list.playerTwoName)"
-        let newGameButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(newGameTapped))
-        navigationItem.rightBarButtonItem = newGameButton
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(newGameTapped))
     }
 }
