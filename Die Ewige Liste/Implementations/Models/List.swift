@@ -11,8 +11,8 @@ import Foundation
 class List: Codable {
     var playerOneName: String
     var playerTwoName: String
-    var playerOnePoints: Int = 0
-    var playerTwoPoints: Int = 0
+    var pointsPlayerTop: Int = 0
+    var pointsPlayerBottom: Int = 0
 //    var settingsVersions: [Int : [SettingsItem]] = [:]
     var games: [Game] = [] {
         didSet {
@@ -44,26 +44,25 @@ class List: Codable {
     // MARK: Helpers
     
     private func updatePoints() {
-        playerOnePoints = 0
-        playerTwoPoints = 0
+        pointsPlayerTop = 0
+        pointsPlayerBottom = 0
+        let gameWinPoints = Int(getSettingValue(for: Constants.Settings.Keys.gameWinPoints))
+        let timeWinPoints = Int(getSettingValue(for: Constants.Settings.Keys.timeWinPoints))
         
         for game in games {
-            let gameWinPoints = Int(getSettingValue(for: Constants.Settings.Keys.gameWinPoints))
-            let timeWinPoints = Int(getSettingValue(for: Constants.Settings.Keys.timeWinPoints))
-            
             if let winner = game.winner {
                 if winner.name == playerOneName {
-                    playerOnePoints += gameWinPoints
+                    pointsPlayerTop += gameWinPoints
                 } else if winner.name == playerTwoName {
-                    playerTwoPoints += gameWinPoints
+                    pointsPlayerBottom += gameWinPoints
                 }
             }
             
             if let timeWinner = game.timeWinner {
                 if timeWinner.name == playerOneName {
-                    playerOnePoints += timeWinPoints
+                    pointsPlayerTop += timeWinPoints
                 } else if timeWinner.name == playerTwoName {
-                    playerTwoPoints += timeWinPoints
+                    pointsPlayerBottom += timeWinPoints
                 }
             }
         }

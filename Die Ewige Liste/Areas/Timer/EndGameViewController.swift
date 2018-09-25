@@ -64,10 +64,10 @@ class EndGameViewController: ModalViewController {
             return
         }
         
-        let gameWinPoints = Int(list.getSettingValue(for: Constants.Settings.Keys.gameWinPoints))
-        let timeWinPoints = Int(list.getSettingValue(for: Constants.Settings.Keys.timeWinPoints))
         var pointsPlayerTop = 0
         var pointsPlayerBottom = 0
+        let gameWinPoints = Int(list.getSettingValue(for: Constants.Settings.Keys.gameWinPoints))
+        let timeWinPoints = Int(list.getSettingValue(for: Constants.Settings.Keys.timeWinPoints))
         
         if winnerSelectionSegmentedControl.selectedSegmentIndex == 0 {
             pointsPlayerTop += gameWinPoints

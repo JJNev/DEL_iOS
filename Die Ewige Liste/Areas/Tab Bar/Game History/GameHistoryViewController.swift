@@ -71,8 +71,8 @@ class GameHistoryViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     private func updateUi() {
-        pointsPlayerTopLabel.text = String(list.playerOnePoints)
-        pointsPlayerBottomLabel.text = String(list.playerTwoPoints)
+        pointsPlayerTopLabel.text = String(list.pointsPlayerTop)
+        pointsPlayerBottomLabel.text = String(list.pointsPlayerBottom)
         gameHistoryTableView.reloadData()
     }
 }
