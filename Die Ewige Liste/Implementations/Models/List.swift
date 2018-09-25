@@ -14,16 +14,11 @@ class List: Codable {
     var pointsPlayerTop: Int = 0
     var pointsPlayerBottom: Int = 0
     //    var settingsVersions: [Int : [SettingsItem]] = [:]
-    // TODO: Load this
     private var userSettings: [String : Double] = [:] {
-        didSet {
-            dataChanged()
-        }
+        didSet { dataChanged() }
     }
     var games: [Game] = [] {
-        didSet {
-            dataChanged()
-        }
+        didSet { dataChanged() }
     }
     
     // MARK: Life Cycle
