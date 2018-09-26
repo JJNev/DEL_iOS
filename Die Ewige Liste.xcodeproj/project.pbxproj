@@ -36,7 +36,7 @@
 		195B647B21552A0800186A2F /* Bool+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195B647A21552A0800186A2F /* Bool+Util.swift */; };
 		195B64812155507B00186A2F /* MatchOverviewTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195B64802155507B00186A2F /* MatchOverviewTabBarController.swift */; };
 		19A38B752150034B00F607AB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A38B742150034B00F607AB /* Constants.swift */; };
-		19ABD6DD214AB260004F2791 /* DELView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABD6DC214AB260004F2791 /* DELView.swift */; };
+		19ABD6DD214AB260004F2791 /* BorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABD6DC214AB260004F2791 /* BorderView.swift */; };
 		19D776762147F4E70042F809 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19D776752147F4E70042F809 /* Icons.xcassets */; };
 		19D77678214810E50042F809 /* EndGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D77677214810E50042F809 /* EndGameViewController.swift */; };
 		19D7767B214946510042F809 /* String+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7767A214946510042F809 /* String+Util.swift */; };
@@ -99,7 +99,7 @@
 		195B647A21552A0800186A2F /* Bool+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Util.swift"; sourceTree = "<group>"; };
 		195B64802155507B00186A2F /* MatchOverviewTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchOverviewTabBarController.swift; sourceTree = "<group>"; };
 		19A38B742150034B00F607AB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		19ABD6DC214AB260004F2791 /* DELView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DELView.swift; sourceTree = "<group>"; };
+		19ABD6DC214AB260004F2791 /* BorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderView.swift; sourceTree = "<group>"; };
 		19D776752147F4E70042F809 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		19D77677214810E50042F809 /* EndGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGameViewController.swift; sourceTree = "<group>"; };
 		19D7767A214946510042F809 /* String+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Util.swift"; sourceTree = "<group>"; };
@@ -226,7 +226,7 @@
 			children = (
 				19008ECC20F3BA6400AADB15 /* RotatingLabel.swift */,
 				1900FE83214FE3B80089F5D9 /* GradientView.swift */,
-				19ABD6DC214AB260004F2791 /* DELView.swift */,
+				19ABD6DC214AB260004F2791 /* BorderView.swift */,
 			);
 			path = IBDesignables;
 			sourceTree = "<group>";
@@ -590,7 +590,7 @@
 				195B646A2153A39A00186A2F /* StepperTableViewCell.swift in Sources */,
 				1902138121355B09009F5E59 /* MenuViewController.swift in Sources */,
 				19008EC220F38F3D00AADB15 /* TimerViewController.swift in Sources */,
-				19ABD6DD214AB260004F2791 /* DELView.swift in Sources */,
+				19ABD6DD214AB260004F2791 /* BorderView.swift in Sources */,
 				1943BAD9210E22960041ED8A /* Game.swift in Sources */,
 				1902137921345A4C009F5E59 /* List.swift in Sources */,
 				19021383213561A5009F5E59 /* ListCell.swift in Sources */,

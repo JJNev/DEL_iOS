@@ -1,5 +1,5 @@
 //
-//  DELView.swift
+//  BorderView.swift
 //  Die Ewige Liste
 //
 //  Created by Johannes Bagge on 13.09.18.
@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-class DELView: UIView {
+class BorderView: UIView {
     @IBInspectable var cornerRadius: CGFloat = 0 {
         didSet {
             layer.cornerRadius = cornerRadius
