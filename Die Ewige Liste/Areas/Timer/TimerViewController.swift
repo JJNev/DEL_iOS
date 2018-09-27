@@ -48,6 +48,9 @@ class TimerViewController: UIViewController {
         super.viewDidLoad()
         
         setupGame()
+        
+        // DEBUG
+        prepareAnimation()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -368,35 +371,48 @@ class TimerViewController: UIViewController {
     private var challengeBottomLabelHeight: CGFloat = 0
     
     private func showChallengeAnimation() {
-        prepareAnimation()
         animateTopLabel()
-        animateBottomLabel()
-        animateButtonContainer()
+//        animateBottomLabel()
+//        animateButtonContainer()
     }
     
     private func prepareAnimation() {
-        setMultiplier(for: challengeSeparatorProportionalWidthConstraint, of: challengeSeparator, to: 0.0)
-        challengeButtonContainer.alpha = 0.0
-        challengeTopLabelHeight = challengeTopLabel.frame.height
-        challengeBottomLabelHeight = challengeBottomLabel.frame.height
-        challengeTopLabel.frame = CGRect(x: challengeTopLabel.frame.origin.x, y: challengeTopLabel.frame.origin.y, width: challengeTopLabel.frame.width, height: 0)
-        challengeBottomLabel.frame = CGRect(x: challengeBottomLabel.frame.origin.x, y: challengeBottomLabel.frame.origin.y, width: challengeBottomLabel.frame.width, height: 0)
+//        setMultiplier(for: challengeSeparatorProportionalWidthConstraint, of: challengeSeparator, to: 0.0)
+//        challengeButtonContainer.alpha = 0.0
+//        challengeBottomLabelHeight = challengeBottomLabel.frame.height
+//        challengeBottomLabel.frame = CGRect(x: challengeBottomLabel.frame.origin.x, y: challengeBottomLabel.frame.origin.y, width: challengeBottomLabel.frame.width, height: 0)
     }
     
     private func animateSeparator() {
         setMultiplier(for: challengeSeparatorProportionalWidthConstraint, of: challengeSeparator, to: 0.6)
+        
+        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveLinear, animations: {
+            self.challengeSeparator.layoutIfNeeded()
+        }, completion: nil)
     }
     
     private func animateTopLabel() {
-        challengeTopLabel.frame = CGRect(x: challengeTopLabel.frame.origin.x, y: challengeTopLabel.frame.origin.y, width: challengeTopLabel.frame.width, height: challengeTopLabelHeight)
+        
+        
+        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveLinear, animations: {
+            self.challengeTopLabel.layoutIfNeeded()
+        }, completion: nil)
     }
     
     private func animateBottomLabel() {
         challengeBottomLabel.frame = CGRect(x: challengeBottomLabel.frame.origin.x, y: challengeBottomLabel.frame.origin.y, width: challengeBottomLabel.frame.width, height: challengeBottomLabelHeight)
+        
+        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveLinear, animations: {
+            self.challengeBottomLabel.layoutIfNeeded()
+        }, completion: nil)
     }
     
     private func animateButtonContainer() {
         challengeButtonContainer.alpha = 1.0
+        
+        UIView.animate(withDuration: 1.2, delay: 0.0, options: .curveLinear, animations: {
+            self.challengeButtonContainer.layoutIfNeeded()
+        }, completion: nil)
     }
     
     private func setMultiplier(for constraint: NSLayoutConstraint, of view: UIView, to value: CGFloat) {
