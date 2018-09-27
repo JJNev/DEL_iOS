@@ -1,15 +1,15 @@
 //
-//  BorderView.swift
+//  BorderButton.swift
 //  Die Ewige Liste
 //
-//  Created by Johannes Bagge on 13.09.18.
+//  Created by Johannes Bagge on 26.09.18.
 //  Copyright © 2018 jmb. All rights reserved.
 //
 
 import UIKit
 
 @IBDesignable
-class BorderView: UIView {
+class BorderButton: UIButton {
     @IBInspectable var cornerRadius: CGFloat = 0 {
         didSet {
             layer.cornerRadius = cornerRadius

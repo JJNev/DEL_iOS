@@ -8,7 +8,7 @@
 
 import UIKit
 
-fileprivate enum SeperatorConstraintConstants: CGFloat {
+fileprivate enum SeparatorConstraintConstants: CGFloat {
     case neutral = 0
     case whitePlaying = 100
     case blackPlaying = -100
@@ -26,7 +26,7 @@ class TimerViewController: UIViewController {
     
     @IBOutlet weak var preGameControls: UIView!
     @IBOutlet weak var inGameControls: UIView!
-    @IBOutlet var midSeperatorYConstraint: NSLayoutConstraint!
+    @IBOutlet var midSeparatorYConstraint: NSLayoutConstraint!
     @IBOutlet var pauseResumeButton: UIButton!
     @IBOutlet var resetButton: UIButton!
     @IBOutlet weak var endGameButton: UIButton!
@@ -191,7 +191,7 @@ class TimerViewController: UIViewController {
         
         startTimer(reset: true)
         updateTapGestureRecognizers()
-        updateMidSeperator()
+        updateMidSeparator()
         updatePlayerLabels()
     }
     
@@ -221,7 +221,7 @@ class TimerViewController: UIViewController {
         updatePauseButton()
         updateTimeLabels()
         updatePlayerLabels()
-        updateMidSeperator()
+        updateMidSeparator()
         updateMidControls()
         updateNavigationBar()
     }
@@ -333,15 +333,15 @@ class TimerViewController: UIViewController {
         }, completion: nil)
     }
     
-    private func updateMidSeperator() {
+    private func updateMidSeparator() {
         if let unwrappedCurrentPlayer = currentPlayer {
             if unwrappedCurrentPlayer.color == .white {
-                midSeperatorYConstraint.constant = SeperatorConstraintConstants.whitePlaying.rawValue
+                midSeparatorYConstraint.constant = SeparatorConstraintConstants.whitePlaying.rawValue
             } else if unwrappedCurrentPlayer.color == .black {
-                midSeperatorYConstraint.constant = SeperatorConstraintConstants.blackPlaying.rawValue
+                midSeparatorYConstraint.constant = SeparatorConstraintConstants.blackPlaying.rawValue
             }
         } else {
-            midSeperatorYConstraint.constant = SeperatorConstraintConstants.neutral.rawValue
+            midSeparatorYConstraint.constant = SeparatorConstraintConstants.neutral.rawValue
         }
         
         UIView.animate(
