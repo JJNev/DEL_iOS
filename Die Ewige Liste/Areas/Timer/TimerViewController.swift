@@ -101,14 +101,17 @@ class TimerViewController: UIViewController {
     }
     
     @IBAction func areaTapped(_ sender: UITapGestureRecognizer) {
-        // Whoever taps first can start
-        if currentPlayer == nil {
-            currentPlayer = sender == tapGestureRecognizerTop ? game.playerBottom : game.playerTop
-            startGame()
-        }
-        changeTurn()
-        updatePauseButton()
-        updateNavigationBar()
+        // DEBUG
+        showChallengeAnimation()
+        
+//        // Whoever taps first can start
+//        if currentPlayer == nil {
+//            currentPlayer = sender == tapGestureRecognizerTop ? game.playerBottom : game.playerTop
+//            startGame()
+//        }
+//        changeTurn()
+//        updatePauseButton()
+//        updateNavigationBar()
     }
     
     @IBAction func swapSeatsTapped(_ sender: Any) {
@@ -351,5 +354,54 @@ class TimerViewController: UIViewController {
             animations: {
                 self.view.layoutIfNeeded()
         }, completion: nil)
+    }
+    
+    // MARK: Challenges
+    
+    @IBOutlet weak var challengeTopLabel: UILabel!;
+    @IBOutlet weak var challengeSeparator: GradientView!;
+    @IBOutlet weak var challengeSeparatorProportionalWidthConstraint: NSLayoutConstraint!;
+    @IBOutlet weak var challengeBottomLabel: UILabel!;
+    @IBOutlet weak var challengeButtonContainer: UIView!;
+    
+    private var challengeTopLabelHeight: CGFloat = 0
+    private var challengeBottomLabelHeight: CGFloat = 0
+    
+    private func showChallengeAnimation() {
+        prepareAnimation()
+        animateTopLabel()
+        animateBottomLabel()
+        animateButtonContainer()
+    }
+    
+    private func prepareAnimation() {
+        setMultiplier(for: challengeSeparatorProportionalWidthConstraint, of: challengeSeparator, to: 0.0)
+        challengeButtonContainer.alpha = 0.0
+        challengeTopLabelHeight = challengeTopLabel.frame.height
+        challengeBottomLabelHeight = challengeBottomLabel.frame.height
+        challengeTopLabel.frame = CGRect(x: challengeTopLabel.frame.origin.x, y: challengeTopLabel.frame.origin.y, width: challengeTopLabel.frame.width, height: 0)
+        challengeBottomLabel.frame = CGRect(x: challengeBottomLabel.frame.origin.x, y: challengeBottomLabel.frame.origin.y, width: challengeBottomLabel.frame.width, height: 0)
+    }
+    
+    private func animateSeparator() {
+        setMultiplier(for: challengeSeparatorProportionalWidthConstraint, of: challengeSeparator, to: 0.6)
+    }
+    
+    private func animateTopLabel() {
+        challengeTopLabel.frame = CGRect(x: challengeTopLabel.frame.origin.x, y: challengeTopLabel.frame.origin.y, width: challengeTopLabel.frame.width, height: challengeTopLabelHeight)
+    }
+    
+    private func animateBottomLabel() {
+        challengeBottomLabel.frame = CGRect(x: challengeBottomLabel.frame.origin.x, y: challengeBottomLabel.frame.origin.y, width: challengeBottomLabel.frame.width, height: challengeBottomLabelHeight)
+    }
+    
+    private func animateButtonContainer() {
+        challengeButtonContainer.alpha = 1.0
+    }
+    
+    private func setMultiplier(for constraint: NSLayoutConstraint, of view: UIView, to value: CGFloat) {
+        let newConstraint = constraint.constraintWithMultiplier(value)
+        view.removeConstraint(constraint)
+        view.addConstraint(newConstraint)
     }
 }

@@ -736,21 +736,22 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zko-2U-Fft" userLabel="Challenge Container Black">
-                                        <rect key="frame" x="0.0" y="117.99999999999996" width="375" height="213.33333333333337"/>
+                                        <rect key="frame" x="75" y="147.99999999999994" width="225" height="110"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHALLENGED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ox-Xa-szG" userLabel="Challenged Label">
-                                                <rect key="frame" x="107.66666666666669" y="36" width="160" height="30"/>
+                                                <rect key="frame" x="32.666666666666671" y="0.0" width="160" height="30"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TIh-en-d7C" userLabel="Separator" customClass="GradientView" customModule="Die_Ewige_Liste" customModuleProvider="target">
-                                                <rect key="frame" x="75" y="74" width="225" height="1"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <rect key="frame" x="0.0" y="38" width="225" height="1"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="5zh-lw-gAn"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHorizontal" value="YES"/>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="gradientColor1">
                                                         <color key="value" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </userDefinedRuntimeAttribute>
@@ -775,17 +776,16 @@
                                                     <userDefinedRuntimeAttribute type="number" keyPath="gradientLocation4">
                                                         <real key="value" value="1"/>
                                                     </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isHorizontal" value="YES"/>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Did you do a mistake?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LxH-lM-FVA" userLabel="Question Label">
-                                                <rect key="frame" x="104.00000000000001" y="83" width="167.33333333333337" height="20.333333333333329"/>
+                                                <rect key="frame" x="29" y="47" width="167.33333333333334" height="25"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dqj-PA-gyU" userLabel="Button Container">
-                                                <rect key="frame" x="147.66666666666666" y="111.33333333333337" width="80" height="30"/>
+                                                <rect key="frame" x="72.666666666666657" y="80" width="80" height="30"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3w-rh-SED" userLabel="Yes Button" customClass="BorderButton" customModule="Die_Ewige_Liste" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
@@ -839,26 +839,28 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="LxH-lM-FVA" firstAttribute="top" secondItem="TIh-en-d7C" secondAttribute="bottom" constant="8" id="DcC-Ae-Kin"/>
+                                            <constraint firstItem="TIh-en-d7C" firstAttribute="leading" secondItem="zko-2U-Fft" secondAttribute="leading" id="JnM-zM-20E"/>
                                             <constraint firstItem="TIh-en-d7C" firstAttribute="centerY" secondItem="zko-2U-Fft" secondAttribute="centerY" multiplier="0.7" id="Rao-G2-SUw"/>
                                             <constraint firstItem="dqj-PA-gyU" firstAttribute="top" secondItem="LxH-lM-FVA" secondAttribute="bottom" constant="8" id="S2b-9j-jG3"/>
                                             <constraint firstItem="4Ox-Xa-szG" firstAttribute="centerX" secondItem="TIh-en-d7C" secondAttribute="centerX" id="SjR-aK-AXy"/>
+                                            <constraint firstAttribute="bottom" secondItem="dqj-PA-gyU" secondAttribute="bottom" id="bTf-bl-5y9"/>
+                                            <constraint firstItem="4Ox-Xa-szG" firstAttribute="top" secondItem="zko-2U-Fft" secondAttribute="top" id="fwo-Qq-Qbp"/>
                                             <constraint firstItem="TIh-en-d7C" firstAttribute="centerX" secondItem="zko-2U-Fft" secondAttribute="centerX" id="pVi-Ju-7yJ"/>
                                             <constraint firstItem="TIh-en-d7C" firstAttribute="top" secondItem="4Ox-Xa-szG" secondAttribute="bottom" constant="8" id="udb-PT-y4g"/>
                                             <constraint firstItem="LxH-lM-FVA" firstAttribute="centerX" secondItem="TIh-en-d7C" secondAttribute="centerX" id="uwU-ts-v69"/>
                                             <constraint firstItem="dqj-PA-gyU" firstAttribute="centerX" secondItem="TIh-en-d7C" secondAttribute="centerX" id="v3f-YU-qeX"/>
+                                            <constraint firstAttribute="trailing" secondItem="TIh-en-d7C" secondAttribute="trailing" id="v5s-RH-y06"/>
                                         </constraints>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
+                                    <constraint firstItem="zko-2U-Fft" firstAttribute="centerX" secondItem="Zt9-l4-lmU" secondAttribute="centerX" id="ApA-aW-Tor"/>
                                     <constraint firstItem="IhX-vC-SxZ" firstAttribute="leading" secondItem="Zt9-l4-lmU" secondAttribute="leading" constant="8" id="FKj-25-DNX"/>
-                                    <constraint firstItem="zko-2U-Fft" firstAttribute="leading" secondItem="Zt9-l4-lmU" secondAttribute="leading" id="H0H-qA-s2Q"/>
                                     <constraint firstItem="vVN-9J-00g" firstAttribute="top" secondItem="Zt9-l4-lmU" secondAttribute="top" constant="60" id="Med-RW-2Dh"/>
-                                    <constraint firstItem="F6x-uU-aqb" firstAttribute="top" secondItem="zko-2U-Fft" secondAttribute="bottom" id="ZxC-b9-E3V"/>
-                                    <constraint firstAttribute="trailing" secondItem="zko-2U-Fft" secondAttribute="trailing" id="hpc-zM-GXL"/>
+                                    <constraint firstItem="zko-2U-Fft" firstAttribute="top" secondItem="vVN-9J-00g" secondAttribute="bottom" constant="30" id="XFM-NH-bRg"/>
                                     <constraint firstItem="vVN-9J-00g" firstAttribute="centerX" secondItem="Zt9-l4-lmU" secondAttribute="centerX" id="jQW-HY-aZD"/>
-                                    <constraint firstItem="zko-2U-Fft" firstAttribute="top" secondItem="vVN-9J-00g" secondAttribute="bottom" id="s4z-ff-hp3"/>
                                     <constraint firstItem="IhX-vC-SxZ" firstAttribute="top" secondItem="Zt9-l4-lmU" secondAttribute="top" constant="8" id="tna-Ux-aIr"/>
                                     <constraint firstItem="F6x-uU-aqb" firstAttribute="centerX" secondItem="Zt9-l4-lmU" secondAttribute="centerX" id="zrM-bo-1Z7"/>
                                 </constraints>
@@ -1000,6 +1002,11 @@
                         <viewLayoutGuide key="safeArea" id="XZf-oq-OAE"/>
                     </view>
                     <connections>
+                        <outlet property="challengeBottomLabel" destination="LxH-lM-FVA" id="FiW-Zr-ta3"/>
+                        <outlet property="challengeButtonContainer" destination="dqj-PA-gyU" id="FQ1-5n-Fxo"/>
+                        <outlet property="challengeSeparator" destination="TIh-en-d7C" id="Urx-SP-0nW"/>
+                        <outlet property="challengeSeparatorProportionalWidthConstraint" destination="SOf-OV-KVN" id="uZA-jC-5wz"/>
+                        <outlet property="challengeTopLabel" destination="4Ox-Xa-szG" id="DYU-g0-uFc"/>
                         <outlet property="endGameButton" destination="MfU-kE-ms1" id="kQq-Sq-gL9"/>
                         <outlet property="inGameControls" destination="F2P-Qr-41m" id="lav-E5-RIt"/>
                         <outlet property="midSeparatorYConstraint" destination="DAK-AN-CUy" id="T6f-TQ-Gdq"/>

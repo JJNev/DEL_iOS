@@ -21,6 +21,7 @@
 		1902137F21355AFB009F5E59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1902137E21355AFB009F5E59 /* Main.storyboard */; };
 		1902138121355B09009F5E59 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1902138021355B09009F5E59 /* MenuViewController.swift */; };
 		19021383213561A5009F5E59 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19021382213561A5009F5E59 /* ListCell.swift */; };
+		192A5B78215CF38000BA78B1 /* NSLayoutConstraint+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192A5B77215CF38000BA78B1 /* NSLayoutConstraint+Util.swift */; };
 		193D363D215BCC0000E876E9 /* BorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193D363C215BCC0000E876E9 /* BorderButton.swift */; };
 		1943BAB9210E1E810041ED8A /* GameHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943BAB8210E1E810041ED8A /* GameHistoryViewController.swift */; };
 		1943BABD210E1FA80041ED8A /* GameHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943BABC210E1FA80041ED8A /* GameHistoryCell.swift */; };
@@ -85,6 +86,7 @@
 		1902137E21355AFB009F5E59 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1902138021355B09009F5E59 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		19021382213561A5009F5E59 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
+		192A5B77215CF38000BA78B1 /* NSLayoutConstraint+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSLayoutConstraint+Util.swift"; sourceTree = "<group>"; };
 		193D363C215BCC0000E876E9 /* BorderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderButton.swift; sourceTree = "<group>"; };
 		1943BAB8210E1E810041ED8A /* GameHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHistoryViewController.swift; sourceTree = "<group>"; };
 		1943BABC210E1FA80041ED8A /* GameHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHistoryCell.swift; sourceTree = "<group>"; };
@@ -339,6 +341,7 @@
 				1900FE81214BED6D0089F5D9 /* CGFloat+Util.swift */,
 				195B6478215529F200186A2F /* Double+Util.swift */,
 				195B647A21552A0800186A2F /* Bool+Util.swift */,
+				192A5B77215CF38000BA78B1 /* NSLayoutConstraint+Util.swift */,
 			);
 			path = "Basic Type Extensions";
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 				195B64812155507B00186A2F /* MatchOverviewTabBarController.swift in Sources */,
 				195B646E2153A73500186A2F /* SettingsItem.swift in Sources */,
 				19008ECD20F3BA6500AADB15 /* RotatingLabel.swift in Sources */,
+				192A5B78215CF38000BA78B1 /* NSLayoutConstraint+Util.swift in Sources */,
 				195B646C2153A43B00186A2F /* SwitchTableViewCell.swift in Sources */,
 				195B6474215517F100186A2F /* StepperItem.swift in Sources */,
 				1943BAB9210E1E810041ED8A /* GameHistoryViewController.swift in Sources */,
