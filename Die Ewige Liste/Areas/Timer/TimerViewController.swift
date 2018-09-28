@@ -361,63 +361,57 @@ class TimerViewController: UIViewController {
     
     // MARK: Challenges
     
-    @IBOutlet weak var challengeTopLabel: UILabel!;
-    @IBOutlet weak var challengeSeparator: GradientView!;
-    @IBOutlet weak var challengeSeparatorProportionalWidthConstraint: NSLayoutConstraint!;
-    @IBOutlet weak var challengeBottomLabel: UILabel!;
-    @IBOutlet weak var challengeButtonContainer: UIView!;
-    
-    private var challengeTopLabelHeight: CGFloat = 0
-    private var challengeBottomLabelHeight: CGFloat = 0
-    
-    private func showChallengeAnimation() {
-        animateTopLabel()
-//        animateBottomLabel()
-//        animateButtonContainer()
-    }
+    @IBOutlet weak var separatorStaticContainer: UIView!
+    @IBOutlet weak var separatorWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var topStaticContainer: UIView!
+    @IBOutlet weak var topSlideConstraint: NSLayoutConstraint!
+    @IBOutlet weak var bottomStaticContainer: UIView!
+    @IBOutlet weak var bottomSlideConstraint: NSLayoutConstraint!
+    @IBOutlet weak var buttonContainer: UIView!
     
     private func prepareAnimation() {
-//        setMultiplier(for: challengeSeparatorProportionalWidthConstraint, of: challengeSeparator, to: 0.0)
-//        challengeButtonContainer.alpha = 0.0
-//        challengeBottomLabelHeight = challengeBottomLabel.frame.height
-//        challengeBottomLabel.frame = CGRect(x: challengeBottomLabel.frame.origin.x, y: challengeBottomLabel.frame.origin.y, width: challengeBottomLabel.frame.width, height: 0)
+        // TODO: Move this to init
+        separatorWidthConstraint.constant = 0
+        topSlideConstraint.constant = topStaticContainer.frame.height
+        bottomSlideConstraint.constant = bottomStaticContainer.frame.height
+        topStaticContainer.alpha = 0
+        bottomStaticContainer.alpha = 0
+        buttonContainer.alpha = 0
+    }
+    
+    private func showChallengeAnimation() {
+        animateSeparator()
+        animateTopLabel()
+        animateBottomLabel()
+        animateButtonContainer()
     }
     
     private func animateSeparator() {
-        setMultiplier(for: challengeSeparatorProportionalWidthConstraint, of: challengeSeparator, to: 0.6)
-        
-        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveLinear, animations: {
-            self.challengeSeparator.layoutIfNeeded()
+        separatorWidthConstraint.constant = separatorStaticContainer.frame.width
+        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {
+            self.separatorStaticContainer.layoutIfNeeded()
         }, completion: nil)
     }
     
     private func animateTopLabel() {
-        
-        
-        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveLinear, animations: {
-            self.challengeTopLabel.layoutIfNeeded()
+        topSlideConstraint.constant = 0
+        UIView.animate(withDuration: 0.3, delay: 0.2, options: .curveEaseOut, animations: {
+            self.topStaticContainer.layoutIfNeeded()
+            self.topStaticContainer.alpha = 1.0
         }, completion: nil)
     }
     
     private func animateBottomLabel() {
-        challengeBottomLabel.frame = CGRect(x: challengeBottomLabel.frame.origin.x, y: challengeBottomLabel.frame.origin.y, width: challengeBottomLabel.frame.width, height: challengeBottomLabelHeight)
-        
-        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveLinear, animations: {
-            self.challengeBottomLabel.layoutIfNeeded()
+        bottomSlideConstraint.constant = 0
+        UIView.animate(withDuration: 0.3, delay: 0.65, options: .curveEaseOut, animations: {
+            self.bottomStaticContainer.layoutIfNeeded()
+            self.bottomStaticContainer.alpha = 1.0
         }, completion: nil)
     }
     
     private func animateButtonContainer() {
-        challengeButtonContainer.alpha = 1.0
-        
-        UIView.animate(withDuration: 1.2, delay: 0.0, options: .curveLinear, animations: {
-            self.challengeButtonContainer.layoutIfNeeded()
+        UIView.animate(withDuration: 0.3, delay: 1.2, options: .curveLinear, animations: {
+            self.buttonContainer.alpha = 1.0
         }, completion: nil)
-    }
-    
-    private func setMultiplier(for constraint: NSLayoutConstraint, of view: UIView, to value: CGFloat) {
-        let newConstraint = constraint.constraintWithMultiplier(value)
-        view.removeConstraint(constraint)
-        view.addConstraint(newConstraint)
     }
 }

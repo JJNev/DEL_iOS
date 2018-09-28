@@ -88,10 +88,10 @@ class GradientView: UIView {
             locations.append(gradientLocation)
         }
         
+        // TODO: Check if this is still needed!
         // Gather gradient colors.
         var colors = [CGColor]()
         for var gradientColor in [gradientColor1, gradientColor2, gradientColor3, gradientColor4] where gradientColor != nil {
-            // TODO: Check if this is still needed!
             // Replace the clearColor from interface builder with one that doesn't have a black channel which would lead to a grayish gradience otherwise.
             if let unwrappedGradientColor = gradientColor {
                 // Get color components R G B A from the chosen color.
