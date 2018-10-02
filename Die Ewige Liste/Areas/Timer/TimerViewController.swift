@@ -80,24 +80,7 @@ class TimerViewController: UIViewController, ChallengeDelegate {
     // MARK: Actions
     
     @IBAction func pauseResumeTapped(_ sender: Any) {
-        switch game.state {
-        case .running:
-            timer.invalidate()
-            game.state = .paused
-            if let pauseButton = sender as? UIButton {
-                pauseButton.setImage(#imageLiteral(resourceName: "play.png"), for: .normal)
-            }
-            break
-        default:
-            startTimer(reset: false)
-            game.state = .running
-            if let pauseButton = sender as? UIButton {
-                pauseButton.setImage(#imageLiteral(resourceName: "pause.png"), for: .normal)
-            }
-            break
-        }
-        
-        updateNavigationBar()
+        togglePauseResumeGame()
     }
     
     @IBAction func refreshTapped(_ sender: Any) {
@@ -138,7 +121,9 @@ class TimerViewController: UIViewController, ChallengeDelegate {
             let otherPlayer = challengedPlayer == game.playerTop ? game.playerBottom! : game.playerTop!
             otherPlayer.timeInSeconds += penalty
         }
+        resumeGame()
         updateTimeLabels(both: true)
+        updateMidControls()
     }
     
     // MARK: Helper
@@ -151,6 +136,7 @@ class TimerViewController: UIViewController, ChallengeDelegate {
         updateMidControls()
         updatePauseButton()
         updateNavigationBar()
+        updateFlagButtons()
         
         UIView.animate(
             withDuration: defaultAnimationTime,
@@ -160,6 +146,33 @@ class TimerViewController: UIViewController, ChallengeDelegate {
                 self.preGameControls.layoutIfNeeded()
                 self.inGameControls.layoutIfNeeded()
         }, completion: nil)
+    }
+    
+    private func togglePauseResumeGame() {
+        switch game.state {
+        case .running:
+            pauseGame()
+            break
+        default:
+            resumeGame()
+            break
+        }
+    }
+    
+    private func pauseGame() {
+        timer.invalidate()
+        game.state = .paused
+        updatePauseButton()
+        updateNavigationBar()
+    }
+    
+    private func resumeGame() {
+        startTimer(reset: false)
+        game.state = .running
+        updatePauseButton()
+        updateNavigationBar()
+        updateFlagButtons()
+        updateTapGestureRecognizers()
     }
     
     private func resetGame() {
@@ -241,6 +254,11 @@ class TimerViewController: UIViewController, ChallengeDelegate {
             container.addSubview(challengeView)
             challengeView.startAnimation()
         }
+        game.state = .challenged
+        timer.invalidate()
+        updateMidControls()
+        updateFlagButtons()
+        updateTapGestureRecognizers()
     }
     
     // MARK: Update UI
@@ -253,6 +271,7 @@ class TimerViewController: UIViewController, ChallengeDelegate {
         updateMidSeparator()
         updateMidControls()
         updateNavigationBar()
+        updateFlagButtons()
     }
     
     private func updateMidControls() {
@@ -261,32 +280,18 @@ class TimerViewController: UIViewController, ChallengeDelegate {
             fallthrough
         case .running:
             preGameControls.isHidden = true
-            preGameControls.isUserInteractionEnabled = false
             inGameControls.isHidden = false
-            inGameControls.isUserInteractionEnabled = true
             break
+        case .challenged:
+            preGameControls.isHidden = true
+            inGameControls.isHidden = true
         default:
             preGameControls.isHidden = false
-            preGameControls.isUserInteractionEnabled = true
             inGameControls.isHidden = true
-            inGameControls.isUserInteractionEnabled = false
             break
         }
-    }
-    
-    private func updateTapGestureRecognizers() {
-        if let unwrappedCurrentPlayer = currentPlayer {
-            if unwrappedCurrentPlayer.color == .white {
-                tapGestureRecognizerTop.isEnabled = true
-                tapGestureRecognizerBottom.isEnabled = false
-            } else if unwrappedCurrentPlayer.color == .black {
-                tapGestureRecognizerTop.isEnabled = false
-                tapGestureRecognizerBottom.isEnabled = true
-            }
-        } else {
-            tapGestureRecognizerTop.isEnabled = true
-            tapGestureRecognizerBottom.isEnabled = true
-        }
+        preGameControls.isUserInteractionEnabled = !preGameControls.isHidden
+        inGameControls.isUserInteractionEnabled = !inGameControls.isHidden
     }
     
     private func updateNavigationBar() {
@@ -296,6 +301,49 @@ class TimerViewController: UIViewController, ChallengeDelegate {
             break
         default:
             navigationController?.setNavigationBarHidden(false, animated: false)
+            break
+        }
+    }
+    
+    private func updateMidSeparator() {
+        if let unwrappedCurrentPlayer = currentPlayer {
+            if unwrappedCurrentPlayer.color == .white {
+                midSeparatorYConstraint.constant = SeparatorConstraintConstants.whitePlaying.rawValue
+            } else if unwrappedCurrentPlayer.color == .black {
+                midSeparatorYConstraint.constant = SeparatorConstraintConstants.blackPlaying.rawValue
+            }
+        } else {
+            midSeparatorYConstraint.constant = SeparatorConstraintConstants.neutral.rawValue
+        }
+        
+        UIView.animate(
+            withDuration: defaultAnimationTime,
+            delay: 0.0,
+            options: [.curveEaseInOut, .allowUserInteraction, .beginFromCurrentState],
+            animations: {
+                self.view.layoutIfNeeded()
+        }, completion: nil)
+    }
+    
+    private func updateTapGestureRecognizers() {
+        switch game.state {
+        case .new:
+            tapGestureRecognizerTop.isEnabled = true
+            tapGestureRecognizerBottom.isEnabled = true
+            break
+        case .challenged:
+            tapGestureRecognizerTop.isEnabled = false
+            tapGestureRecognizerBottom.isEnabled = false
+        default:
+            if let unwrappedCurrentPlayer = currentPlayer {
+                if unwrappedCurrentPlayer.color == .white {
+                    tapGestureRecognizerTop.isEnabled = true
+                    tapGestureRecognizerBottom.isEnabled = false
+                } else if unwrappedCurrentPlayer.color == .black {
+                    tapGestureRecognizerTop.isEnabled = false
+                    tapGestureRecognizerBottom.isEnabled = true
+                }
+            }
             break
         }
     }
@@ -362,23 +410,25 @@ class TimerViewController: UIViewController, ChallengeDelegate {
         }, completion: nil)
     }
     
-    private func updateMidSeparator() {
-        if let unwrappedCurrentPlayer = currentPlayer {
-            if unwrappedCurrentPlayer.color == .white {
-                midSeparatorYConstraint.constant = SeparatorConstraintConstants.whitePlaying.rawValue
-            } else if unwrappedCurrentPlayer.color == .black {
-                midSeparatorYConstraint.constant = SeparatorConstraintConstants.blackPlaying.rawValue
-            }
-        } else {
-            midSeparatorYConstraint.constant = SeparatorConstraintConstants.neutral.rawValue
+    private func updateFlagButtons() {
+        switch game.state {
+        case .running:
+            flagButtonTop.isHidden = false
+            flagButtonBottom.isHidden = false
+            break
+        default:
+            flagButtonTop.isHidden = true
+            flagButtonBottom.isHidden = true
+            break
         }
         
         UIView.animate(
             withDuration: defaultAnimationTime,
             delay: 0.0,
-            options: [.curveEaseInOut, .allowUserInteraction, .beginFromCurrentState],
+            options: .curveLinear,
             animations: {
-                self.view.layoutIfNeeded()
+                self.flagButtonTop.layoutIfNeeded()
+                self.flagButtonBottom.layoutIfNeeded()
         }, completion: nil)
     }
 }

@@ -71,6 +71,7 @@ class ChallengeView: UIView {
         if let delegate = delegate, let challengedPlayer = challengedPlayer {
             let challengeAccepted = (sender as! UIButton).tag == 1
             delegate.challengeAccepted(accepted: challengeAccepted, by: challengedPlayer)
+            self.removeFromSuperview()
         }
     }
     

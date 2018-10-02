@@ -66,6 +66,7 @@ class List: Codable {
     }
     
     private func dataChanged() {
+        // TODO: Update time winner
         updatePoints()
         ListService.standard.saveLists()
     }
