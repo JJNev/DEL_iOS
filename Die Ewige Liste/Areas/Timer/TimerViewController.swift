@@ -14,7 +14,7 @@ fileprivate enum SeparatorConstraintConstants: CGFloat {
     case blackPlaying = -100
 }
 
-class TimerViewController: UIViewController {
+class TimerViewController: UIViewController, ChallengeDelegate {
     @IBOutlet var timeLabelTop: RotatingLabel!
     @IBOutlet var timeLabelBottom: UILabel!
     @IBOutlet var tapGestureRecognizerTop: UITapGestureRecognizer!
@@ -128,6 +128,19 @@ class TimerViewController: UIViewController {
         showChallengeUi(for: challengedPlayer!)
     }
     
+    // MARK: Challenge Delegate
+    
+    func challengeAccepted(accepted: Bool, by challengedPlayer: Player) {
+        let penalty = CGFloat(list.getSettingValue(for: Constants.Settings.Keys.challengePenalty))
+        if accepted {
+            challengedPlayer.timeInSeconds += penalty
+        } else {
+            let otherPlayer = challengedPlayer == game.playerTop ? game.playerBottom! : game.playerTop!
+            otherPlayer.timeInSeconds += penalty
+        }
+        updateTimeLabels(both: true)
+    }
+    
     // MARK: Helper
     
     private func startGame() {
@@ -222,6 +235,8 @@ class TimerViewController: UIViewController {
     private func showChallengeUi(for challengedPlayer: Player) {
         if let container = challengedPlayer == game.playerTop ? challengeContainerTop : challengeContainerBottom {
             let challengeView: ChallengeView! = ChallengeView(frame: container.bounds)
+            challengeView.delegate = self
+            challengeView.challengedPlayer = challengedPlayer
             challengeView.colorScheme = challengedPlayer.color == .white ? .black : .white
             container.addSubview(challengeView)
             challengeView.startAnimation()
@@ -306,8 +321,8 @@ class TimerViewController: UIViewController {
         }
     }
     
-    private func updateTimeLabels() {
-        if let unwrappedCurrentPlayer = currentPlayer {
+    private func updateTimeLabels(both: Bool = false) {
+        if let unwrappedCurrentPlayer = currentPlayer, !both {
             if unwrappedCurrentPlayer.color == .white {
                 timeLabelTop.text = game.playerTop.timeInSeconds.secondsToTimeString()
             } else if unwrappedCurrentPlayer.color == .black {

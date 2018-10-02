@@ -37,6 +37,7 @@
 		195B647B21552A0800186A2F /* Bool+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195B647A21552A0800186A2F /* Bool+Util.swift */; };
 		195B64812155507B00186A2F /* MatchOverviewTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195B64802155507B00186A2F /* MatchOverviewTabBarController.swift */; };
 		197003DE2163E6F2007982C8 /* RotatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197003DD2163E6F2007982C8 /* RotatingView.swift */; };
+		197003E12163EF79007982C8 /* ChallengeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197003E02163EF79007982C8 /* ChallengeDelegate.swift */; };
 		19A38B752150034B00F607AB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A38B742150034B00F607AB /* Constants.swift */; };
 		19ABD6DD214AB260004F2791 /* BorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABD6DC214AB260004F2791 /* BorderView.swift */; };
 		19CBD7FF21637BA400CFCBB5 /* ChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CBD7FE21637BA400CFCBB5 /* ChallengeView.swift */; };
@@ -104,6 +105,7 @@
 		195B647A21552A0800186A2F /* Bool+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Util.swift"; sourceTree = "<group>"; };
 		195B64802155507B00186A2F /* MatchOverviewTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchOverviewTabBarController.swift; sourceTree = "<group>"; };
 		197003DD2163E6F2007982C8 /* RotatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingView.swift; sourceTree = "<group>"; };
+		197003E02163EF79007982C8 /* ChallengeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDelegate.swift; sourceTree = "<group>"; };
 		19A38B742150034B00F607AB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		19ABD6DC214AB260004F2791 /* BorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderView.swift; sourceTree = "<group>"; };
 		19CBD7FE21637BA400CFCBB5 /* ChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeView.swift; sourceTree = "<group>"; };
@@ -207,8 +209,7 @@
 			children = (
 				19008EC120F38F3D00AADB15 /* TimerViewController.swift */,
 				19D77677214810E50042F809 /* EndGameViewController.swift */,
-				19CBD7FE21637BA400CFCBB5 /* ChallengeView.swift */,
-				19F20DA821637A7D005A4587 /* ChallengeView.xib */,
+				197003DF2163EF47007982C8 /* Challenge */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -339,6 +340,16 @@
 				195B646621527E2400186A2F /* Settings */,
 			);
 			path = "Match Overview";
+			sourceTree = "<group>";
+		};
+		197003DF2163EF47007982C8 /* Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				19CBD7FE21637BA400CFCBB5 /* ChallengeView.swift */,
+				19F20DA821637A7D005A4587 /* ChallengeView.xib */,
+				197003E02163EF79007982C8 /* ChallengeDelegate.swift */,
+			);
+			path = Challenge;
 			sourceTree = "<group>";
 		};
 		19D776792149463F0042F809 /* Basic Type Extensions */ = {
@@ -602,6 +613,7 @@
 				19D77678214810E50042F809 /* EndGameViewController.swift in Sources */,
 				193D363D215BCC0000E876E9 /* UtilButton.swift in Sources */,
 				195B646A2153A39A00186A2F /* StepperTableViewCell.swift in Sources */,
+				197003E12163EF79007982C8 /* ChallengeDelegate.swift in Sources */,
 				1902138121355B09009F5E59 /* MenuViewController.swift in Sources */,
 				19008EC220F38F3D00AADB15 /* TimerViewController.swift in Sources */,
 				19ABD6DD214AB260004F2791 /* BorderView.swift in Sources */,

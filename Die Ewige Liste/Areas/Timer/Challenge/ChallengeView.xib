@@ -148,7 +148,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yzx-uk-p8n" userLabel="Button Container">
                             <rect key="frame" x="72.5" y="113.5" width="80" height="30"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQJ-8t-0EK" userLabel="Yes Button" customClass="UtilButton" customModule="Die_Ewige_Liste" customModuleProvider="target">
+                                <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQJ-8t-0EK" userLabel="Yes Button" customClass="UtilButton" customModule="Die_Ewige_Liste" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="ZQJ-8t-0EK" secondAttribute="height" multiplier="1:1" id="fla-rl-wFr"/>
@@ -166,6 +166,9 @@
                                             <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="solveChallenge:" destination="-1" eventType="touchUpInside" id="aww-OD-hoz"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k5S-AE-f2k" userLabel="No Button" customClass="UtilButton" customModule="Die_Ewige_Liste" customModuleProvider="target">
                                     <rect key="frame" x="50" y="0.0" width="30" height="30"/>
@@ -181,6 +184,9 @@
                                             <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="solveChallenge:" destination="-1" eventType="touchUpInside" id="EA1-0M-5Zw"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

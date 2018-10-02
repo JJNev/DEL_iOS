@@ -23,6 +23,12 @@ class ChallengeView: UIView {
     @IBOutlet var buttons: [UtilButton]!
     @IBOutlet weak var separatorView: GradientView!
     
+    var delegate: ChallengeDelegate?
+    var challengedPlayer: Player? {
+        didSet {
+            
+        }
+    }
     var colorScheme: Color = .black {
         didSet {
             adjustColorScheme()
@@ -57,6 +63,15 @@ class ChallengeView: UIView {
         animateTopLabel()
         animateBottomLabel()
         animateButtonContainer()
+    }
+    
+    // MARK: Actions
+    
+    @IBAction func solveChallenge(_ sender: Any) {
+        if let delegate = delegate, let challengedPlayer = challengedPlayer {
+            let challengeAccepted = (sender as! UIButton).tag == 1
+            delegate.challengeAccepted(accepted: challengeAccepted, by: challengedPlayer)
+        }
     }
     
     // MARK: Helper
