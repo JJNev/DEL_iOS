@@ -36,6 +36,9 @@ class GameHistoryCell: UITableViewCell {
         case .paused:
             gameStateLabel.text = "paused".uppercased()
             break
+        case .challenged:
+            gameStateLabel.text = "challenged".uppercased()
+            break
         case .ended:
             gameStateLabel.text = "ended".uppercased()
             winnerContentLabel.text = game.winner?.name

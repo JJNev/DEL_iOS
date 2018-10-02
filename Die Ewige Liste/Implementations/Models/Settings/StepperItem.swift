@@ -16,7 +16,7 @@ class StepperItem: SettingsItem {
     
     // MARK: Life Cycle
     
-    init(title: String, key: String, indentationLevel: Int = 0, unit: String? = nil, maximum: Double, minimum: Double) {
+    init(title: String, key: String, indentationLevel: Int = 0, unit: String? = nil, minimum: Double, maximum: Double) {
         self.unit = unit
         self.maximum = maximum
         self.minimum = minimum

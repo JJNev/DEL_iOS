@@ -9,7 +9,7 @@
 import UIKit
 
 enum State: String, Codable {
-    case new, running, paused, ended
+    case new, running, paused, challenged, ended
 }
 
 // MARK: -

@@ -21,6 +21,7 @@
 		1902137F21355AFB009F5E59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1902137E21355AFB009F5E59 /* Main.storyboard */; };
 		1902138121355B09009F5E59 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1902138021355B09009F5E59 /* MenuViewController.swift */; };
 		19021383213561A5009F5E59 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19021382213561A5009F5E59 /* ListCell.swift */; };
+		193D363D215BCC0000E876E9 /* UtilButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193D363C215BCC0000E876E9 /* UtilButton.swift */; };
 		1943BAB9210E1E810041ED8A /* GameHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943BAB8210E1E810041ED8A /* GameHistoryViewController.swift */; };
 		1943BABD210E1FA80041ED8A /* GameHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943BABC210E1FA80041ED8A /* GameHistoryCell.swift */; };
 		1943BAD9210E22960041ED8A /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943BAD8210E22960041ED8A /* Game.swift */; };
@@ -35,11 +36,15 @@
 		195B6479215529F200186A2F /* Double+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195B6478215529F200186A2F /* Double+Util.swift */; };
 		195B647B21552A0800186A2F /* Bool+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195B647A21552A0800186A2F /* Bool+Util.swift */; };
 		195B64812155507B00186A2F /* MatchOverviewTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195B64802155507B00186A2F /* MatchOverviewTabBarController.swift */; };
+		197003DE2163E6F2007982C8 /* RotatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197003DD2163E6F2007982C8 /* RotatingView.swift */; };
+		197003E12163EF79007982C8 /* ChallengeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 197003E02163EF79007982C8 /* ChallengeDelegate.swift */; };
 		19A38B752150034B00F607AB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A38B742150034B00F607AB /* Constants.swift */; };
-		19ABD6DD214AB260004F2791 /* DELView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABD6DC214AB260004F2791 /* DELView.swift */; };
+		19ABD6DD214AB260004F2791 /* BorderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19ABD6DC214AB260004F2791 /* BorderView.swift */; };
+		19CBD7FF21637BA400CFCBB5 /* ChallengeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19CBD7FE21637BA400CFCBB5 /* ChallengeView.swift */; };
 		19D776762147F4E70042F809 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19D776752147F4E70042F809 /* Icons.xcassets */; };
 		19D77678214810E50042F809 /* EndGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D77677214810E50042F809 /* EndGameViewController.swift */; };
 		19D7767B214946510042F809 /* String+Util.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D7767A214946510042F809 /* String+Util.swift */; };
+		19F20DA921637A7D005A4587 /* ChallengeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 19F20DA821637A7D005A4587 /* ChallengeView.xib */; };
 		AC9FDDEBB32828C65A1097F4 /* Pods_Die_Ewige_Liste.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25AD98E0BE9FB62091CBA9C3 /* Pods_Die_Ewige_Liste.framework */; };
 		E0948F9917EC631F6E712713 /* Pods_Die_Ewige_ListeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 626C055EEED1DB4DDBFE5BB2 /* Pods_Die_Ewige_ListeTests.framework */; };
 		FABB41B2D5D41434C64E8E01 /* Pods_Die_Ewige_ListeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D7F43C546CC027286AF6146 /* Pods_Die_Ewige_ListeUITests.framework */; };
@@ -84,6 +89,7 @@
 		1902137E21355AFB009F5E59 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1902138021355B09009F5E59 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		19021382213561A5009F5E59 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
+		193D363C215BCC0000E876E9 /* UtilButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UtilButton.swift; sourceTree = "<group>"; };
 		1943BAB8210E1E810041ED8A /* GameHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHistoryViewController.swift; sourceTree = "<group>"; };
 		1943BABC210E1FA80041ED8A /* GameHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHistoryCell.swift; sourceTree = "<group>"; };
 		1943BAD8210E22960041ED8A /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -98,11 +104,15 @@
 		195B6478215529F200186A2F /* Double+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Util.swift"; sourceTree = "<group>"; };
 		195B647A21552A0800186A2F /* Bool+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bool+Util.swift"; sourceTree = "<group>"; };
 		195B64802155507B00186A2F /* MatchOverviewTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchOverviewTabBarController.swift; sourceTree = "<group>"; };
+		197003DD2163E6F2007982C8 /* RotatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotatingView.swift; sourceTree = "<group>"; };
+		197003E02163EF79007982C8 /* ChallengeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeDelegate.swift; sourceTree = "<group>"; };
 		19A38B742150034B00F607AB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		19ABD6DC214AB260004F2791 /* DELView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DELView.swift; sourceTree = "<group>"; };
+		19ABD6DC214AB260004F2791 /* BorderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderView.swift; sourceTree = "<group>"; };
+		19CBD7FE21637BA400CFCBB5 /* ChallengeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeView.swift; sourceTree = "<group>"; };
 		19D776752147F4E70042F809 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 		19D77677214810E50042F809 /* EndGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndGameViewController.swift; sourceTree = "<group>"; };
 		19D7767A214946510042F809 /* String+Util.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Util.swift"; sourceTree = "<group>"; };
+		19F20DA821637A7D005A4587 /* ChallengeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChallengeView.xib; sourceTree = "<group>"; };
 		1CCEA02E3F79C8F381E11BB3 /* Pods-Die Ewige Liste.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Die Ewige Liste.release.xcconfig"; path = "Pods/Target Support Files/Pods-Die Ewige Liste/Pods-Die Ewige Liste.release.xcconfig"; sourceTree = "<group>"; };
 		25AD98E0BE9FB62091CBA9C3 /* Pods_Die_Ewige_Liste.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Die_Ewige_Liste.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3E20D9DD47D540EBCFBBA3CD /* Pods-Die Ewige Liste.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Die Ewige Liste.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Die Ewige Liste/Pods-Die Ewige Liste.debug.xcconfig"; sourceTree = "<group>"; };
@@ -199,6 +209,7 @@
 			children = (
 				19008EC120F38F3D00AADB15 /* TimerViewController.swift */,
 				19D77677214810E50042F809 /* EndGameViewController.swift */,
+				197003DF2163EF47007982C8 /* Challenge */,
 			);
 			path = Timer;
 			sourceTree = "<group>";
@@ -226,7 +237,9 @@
 			children = (
 				19008ECC20F3BA6400AADB15 /* RotatingLabel.swift */,
 				1900FE83214FE3B80089F5D9 /* GradientView.swift */,
-				19ABD6DC214AB260004F2791 /* DELView.swift */,
+				19ABD6DC214AB260004F2791 /* BorderView.swift */,
+				193D363C215BCC0000E876E9 /* UtilButton.swift */,
+				197003DD2163E6F2007982C8 /* RotatingView.swift */,
 			);
 			path = IBDesignables;
 			sourceTree = "<group>";
@@ -327,6 +340,16 @@
 				195B646621527E2400186A2F /* Settings */,
 			);
 			path = "Match Overview";
+			sourceTree = "<group>";
+		};
+		197003DF2163EF47007982C8 /* Challenge */ = {
+			isa = PBXGroup;
+			children = (
+				19CBD7FE21637BA400CFCBB5 /* ChallengeView.swift */,
+				19F20DA821637A7D005A4587 /* ChallengeView.xib */,
+				197003E02163EF79007982C8 /* ChallengeDelegate.swift */,
+			);
+			path = Challenge;
 			sourceTree = "<group>";
 		};
 		19D776792149463F0042F809 /* Basic Type Extensions */ = {
@@ -472,6 +495,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1902137F21355AFB009F5E59 /* Main.storyboard in Resources */,
+				19F20DA921637A7D005A4587 /* ChallengeView.xib in Resources */,
 				19D776762147F4E70042F809 /* Icons.xcassets in Resources */,
 				19008E9C20F38EA800AADB15 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -587,18 +611,22 @@
 				195B647B21552A0800186A2F /* Bool+Util.swift in Sources */,
 				195B6479215529F200186A2F /* Double+Util.swift in Sources */,
 				19D77678214810E50042F809 /* EndGameViewController.swift in Sources */,
+				193D363D215BCC0000E876E9 /* UtilButton.swift in Sources */,
 				195B646A2153A39A00186A2F /* StepperTableViewCell.swift in Sources */,
+				197003E12163EF79007982C8 /* ChallengeDelegate.swift in Sources */,
 				1902138121355B09009F5E59 /* MenuViewController.swift in Sources */,
 				19008EC220F38F3D00AADB15 /* TimerViewController.swift in Sources */,
-				19ABD6DD214AB260004F2791 /* DELView.swift in Sources */,
+				19ABD6DD214AB260004F2791 /* BorderView.swift in Sources */,
 				1943BAD9210E22960041ED8A /* Game.swift in Sources */,
 				1902137921345A4C009F5E59 /* List.swift in Sources */,
+				19CBD7FF21637BA400CFCBB5 /* ChallengeView.swift in Sources */,
 				19021383213561A5009F5E59 /* ListCell.swift in Sources */,
 				19D7767B214946510042F809 /* String+Util.swift in Sources */,
 				19008E9220F38E9800AADB15 /* AppDelegate.swift in Sources */,
 				1900FE7D214BD92D0089F5D9 /* ModalViewController.swift in Sources */,
 				1902137C213558ED009F5E59 /* ListService.swift in Sources */,
 				195B64722153C40300186A2F /* SettingsTableViewCell.swift in Sources */,
+				197003DE2163E6F2007982C8 /* RotatingView.swift in Sources */,
 				1943BABD210E1FA80041ED8A /* GameHistoryCell.swift in Sources */,
 				19A38B752150034B00F607AB /* Constants.swift in Sources */,
 			);

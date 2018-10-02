@@ -88,6 +88,7 @@ class GradientView: UIView {
             locations.append(gradientLocation)
         }
         
+        // TODO: Check if this is still needed!
         // Gather gradient colors.
         var colors = [CGColor]()
         for var gradientColor in [gradientColor1, gradientColor2, gradientColor3, gradientColor4] where gradientColor != nil {
