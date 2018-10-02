@@ -23,6 +23,12 @@ class TimerViewController: UIViewController {
     @IBOutlet var tapToEndLabelBottom: UILabel!
     @IBOutlet weak var nameLabelTop: RotatingLabel!
     @IBOutlet weak var nameLabelBottom: UILabel!
+    @IBOutlet weak var flagButtonTop: UIView!
+    @IBOutlet weak var flagButtonBottom: UIButton!
+    @IBOutlet weak var challengeContainerTop: UIView!
+    @IBOutlet weak var challengeContainerBottom: UIView!
+    
+//    @IBOutlet var challengeView: ChallengeView!
     
     @IBOutlet weak var preGameControls: UIView!
     @IBOutlet weak var inGameControls: UIView!
@@ -48,9 +54,7 @@ class TimerViewController: UIViewController {
         super.viewDidLoad()
         
         setupGame()
-        
-        // DEBUG
-        prepareAnimation()
+//        challengeView.prepare()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -104,17 +108,14 @@ class TimerViewController: UIViewController {
     }
     
     @IBAction func areaTapped(_ sender: UITapGestureRecognizer) {
-        // DEBUG
-        showChallengeAnimation()
-        
-//        // Whoever taps first can start
-//        if currentPlayer == nil {
-//            currentPlayer = sender == tapGestureRecognizerTop ? game.playerBottom : game.playerTop
-//            startGame()
-//        }
-//        changeTurn()
-//        updatePauseButton()
-//        updateNavigationBar()
+        // Whoever taps first can start
+        if currentPlayer == nil {
+            currentPlayer = sender == tapGestureRecognizerTop ? game.playerBottom : game.playerTop
+            startGame()
+        }
+        changeTurn()
+        updatePauseButton()
+        updateNavigationBar()
     }
     
     @IBAction func swapSeatsTapped(_ sender: Any) {
@@ -126,7 +127,8 @@ class TimerViewController: UIViewController {
     }
     
     @IBAction func flagTapped(_ sender: Any) {
-        // TODO: Flag
+        let challengedPlayer = ((sender as! UIButton) == flagButtonTop) ? game.playerBottom : game.playerTop
+        showChallengeUi(for: challengedPlayer!)
     }
     
     // MARK: Helper
@@ -218,6 +220,15 @@ class TimerViewController: UIViewController {
         // TODO: game.playerTop.time == game.playerBottom.time
         let timeWinner = game.playerTop.timeInSeconds > game.playerBottom.timeInSeconds ? game.playerBottom : game.playerTop
         game.timeWinner = timeWinner
+    }
+    
+    private func showChallengeUi(for challengedPlayer: Player) {
+        if let container = challengedPlayer == game.playerTop ? challengeContainerTop : challengeContainerBottom {
+            let challengeView: ChallengeView! = ChallengeView(frame: container.bounds)
+            challengeView.colorScheme = challengedPlayer.color == .white ? .black : .white
+            container.addSubview(challengeView)
+            challengeView.startAnimation()
+        }
     }
     
     // MARK: Update UI
@@ -356,62 +367,6 @@ class TimerViewController: UIViewController {
             options: [.curveEaseInOut, .allowUserInteraction, .beginFromCurrentState],
             animations: {
                 self.view.layoutIfNeeded()
-        }, completion: nil)
-    }
-    
-    // MARK: Challenges
-    
-    @IBOutlet weak var separatorStaticContainer: UIView!
-    @IBOutlet weak var separatorWidthConstraint: NSLayoutConstraint!
-    @IBOutlet weak var topStaticContainer: UIView!
-    @IBOutlet weak var topSlideConstraint: NSLayoutConstraint!
-    @IBOutlet weak var bottomStaticContainer: UIView!
-    @IBOutlet weak var bottomSlideConstraint: NSLayoutConstraint!
-    @IBOutlet weak var buttonContainer: UIView!
-    
-    private func prepareAnimation() {
-        // TODO: Move this to init
-        separatorWidthConstraint.constant = 0
-        topSlideConstraint.constant = topStaticContainer.frame.height
-        bottomSlideConstraint.constant = bottomStaticContainer.frame.height
-        topStaticContainer.alpha = 0
-        bottomStaticContainer.alpha = 0
-        buttonContainer.alpha = 0
-    }
-    
-    private func showChallengeAnimation() {
-        animateSeparator()
-        animateTopLabel()
-        animateBottomLabel()
-        animateButtonContainer()
-    }
-    
-    private func animateSeparator() {
-        separatorWidthConstraint.constant = separatorStaticContainer.frame.width
-        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseIn, animations: {
-            self.separatorStaticContainer.layoutIfNeeded()
-        }, completion: nil)
-    }
-    
-    private func animateTopLabel() {
-        topSlideConstraint.constant = 0
-        UIView.animate(withDuration: 0.3, delay: 0.2, options: .curveEaseOut, animations: {
-            self.topStaticContainer.layoutIfNeeded()
-            self.topStaticContainer.alpha = 1.0
-        }, completion: nil)
-    }
-    
-    private func animateBottomLabel() {
-        bottomSlideConstraint.constant = 0
-        UIView.animate(withDuration: 0.3, delay: 0.65, options: .curveEaseOut, animations: {
-            self.bottomStaticContainer.layoutIfNeeded()
-            self.bottomStaticContainer.alpha = 1.0
-        }, completion: nil)
-    }
-    
-    private func animateButtonContainer() {
-        UIView.animate(withDuration: 0.3, delay: 1.2, options: .curveLinear, animations: {
-            self.buttonContainer.alpha = 1.0
         }, completion: nil)
     }
 }

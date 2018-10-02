@@ -21,7 +21,6 @@
 		1902137F21355AFB009F5E59 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1902137E21355AFB009F5E59 /* Main.storyboard */; };
 		1902138121355B09009F5E59 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1902138021355B09009F5E59 /* MenuViewController.swift */; };
 		19021383213561A5009F5E59 /* ListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19021382213561A5009F5E59 /* ListCell.swift */; };
-		192A5B7C215E802700BA78B1 /* ChallengeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192A5B7B215E802700BA78B1 /* ChallengeViewController.swift */; };
 		193D363D215BCC0000E876E9 /* BorderButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 193D363C215BCC0000E876E9 /* BorderButton.swift */; };
 		1943BAB9210E1E810041ED8A /* GameHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943BAB8210E1E810041ED8A /* GameHistoryViewController.swift */; };
 		1943BABD210E1FA80041ED8A /* GameHistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1943BABC210E1FA80041ED8A /* GameHistoryCell.swift */; };
@@ -88,7 +87,6 @@
 		1902137E21355AFB009F5E59 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		1902138021355B09009F5E59 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		19021382213561A5009F5E59 /* ListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCell.swift; sourceTree = "<group>"; };
-		192A5B7B215E802700BA78B1 /* ChallengeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChallengeViewController.swift; sourceTree = "<group>"; };
 		193D363C215BCC0000E876E9 /* BorderButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BorderButton.swift; sourceTree = "<group>"; };
 		1943BAB8210E1E810041ED8A /* GameHistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHistoryViewController.swift; sourceTree = "<group>"; };
 		1943BABC210E1FA80041ED8A /* GameHistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameHistoryCell.swift; sourceTree = "<group>"; };
@@ -207,7 +205,6 @@
 			children = (
 				19008EC120F38F3D00AADB15 /* TimerViewController.swift */,
 				19D77677214810E50042F809 /* EndGameViewController.swift */,
-				192A5B7B215E802700BA78B1 /* ChallengeViewController.swift */,
 				19CBD7FE21637BA400CFCBB5 /* ChallengeView.swift */,
 				19F20DA821637A7D005A4587 /* ChallengeView.xib */,
 			);
@@ -602,7 +599,6 @@
 				19D77678214810E50042F809 /* EndGameViewController.swift in Sources */,
 				193D363D215BCC0000E876E9 /* BorderButton.swift in Sources */,
 				195B646A2153A39A00186A2F /* StepperTableViewCell.swift in Sources */,
-				192A5B7C215E802700BA78B1 /* ChallengeViewController.swift in Sources */,
 				1902138121355B09009F5E59 /* MenuViewController.swift in Sources */,
 				19008EC220F38F3D00AADB15 /* TimerViewController.swift in Sources */,
 				19ABD6DD214AB260004F2791 /* BorderView.swift in Sources */,

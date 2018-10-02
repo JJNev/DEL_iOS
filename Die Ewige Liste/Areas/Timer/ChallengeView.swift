@@ -9,6 +9,8 @@
 import UIKit
 
 class ChallengeView: UIView {
+    @IBOutlet var contentView: UIView!
+    
     @IBOutlet weak var separatorStaticContainer: UIView!
     @IBOutlet weak var separatorWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var topStaticContainer: UIView!
@@ -29,8 +31,22 @@ class ChallengeView: UIView {
     
     // MARK: Life Cycle
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        commonInit()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        commonInit()
+    }
+    
+    private func commonInit() {
+        Bundle.main.loadNibNamed(String(describing: ChallengeView.self), owner: self, options: nil)
+        addSubview(contentView)
+        contentView.frame = self.bounds
+        contentView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        
         prepareAnimation()
     }
     

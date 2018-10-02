@@ -15,6 +15,7 @@
                 <outlet property="bottomSlideConstraint" destination="zHf-Q2-dMc" id="Qhm-VI-Nd2"/>
                 <outlet property="bottomStaticContainer" destination="blg-1x-7zZ" id="XhP-CG-6c4"/>
                 <outlet property="buttonContainer" destination="Yzx-uk-p8n" id="tfz-Md-JtN"/>
+                <outlet property="contentView" destination="iN0-l3-epB" id="WeF-Yj-jF0"/>
                 <outlet property="separatorStaticContainer" destination="Gcz-De-kTO" id="lKV-HD-xNF"/>
                 <outlet property="separatorView" destination="t6I-ti-oVx" id="5IW-x5-srH"/>
                 <outlet property="separatorWidthConstraint" destination="NTO-FE-cSZ" id="Gls-ze-h8N"/>
@@ -212,7 +213,7 @@
                     </constraints>
                 </view>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="Qsa-8S-h9K" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="Nyp-Td-YIt"/>
                 <constraint firstItem="Qsa-8S-h9K" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Ytk-jB-QlH"/>
