@@ -28,8 +28,6 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var challengeContainerTop: UIView!
     @IBOutlet weak var challengeContainerBottom: UIView!
     
-//    @IBOutlet var challengeView: ChallengeView!
-    
     @IBOutlet weak var preGameControls: UIView!
     @IBOutlet weak var inGameControls: UIView!
     @IBOutlet var midSeparatorYConstraint: NSLayoutConstraint!
@@ -54,7 +52,6 @@ class TimerViewController: UIViewController {
         super.viewDidLoad()
         
         setupGame()
-//        challengeView.prepare()
     }
     
     override func viewWillAppear(_ animated: Bool) {
