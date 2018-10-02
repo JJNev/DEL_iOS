@@ -20,7 +20,7 @@ class ChallengeView: UIView {
     @IBOutlet weak var buttonContainer: UIView!
     
     @IBOutlet var labels: [UILabel]!
-    @IBOutlet var buttons: [BorderButton]!
+    @IBOutlet var buttons: [UtilButton]!
     @IBOutlet weak var separatorView: GradientView!
     
     var colorScheme: Color = .black {
@@ -62,7 +62,7 @@ class ChallengeView: UIView {
     // MARK: Helper
     
     private func adjustColorScheme() {
-        let newColor = UIColor.white
+        let newColor: UIColor = colorScheme == .white ? .white : .black
         
         for label in labels {
             label.textColor = newColor
@@ -70,8 +70,6 @@ class ChallengeView: UIView {
         
         for button in buttons {
             button.borderColor = newColor
-            // TODO: Which one?
-            //            button.imageView?.tintColor = newColor
             button.tintColor = newColor
         }
         
@@ -86,6 +84,7 @@ class ChallengeView: UIView {
         topStaticContainer.alpha = 0
         bottomStaticContainer.alpha = 0
         buttonContainer.alpha = 0
+        layoutIfNeeded()
     }
     
     private func animateSeparator() {

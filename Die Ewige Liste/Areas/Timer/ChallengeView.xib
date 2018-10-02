@@ -148,7 +148,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yzx-uk-p8n" userLabel="Button Container">
                             <rect key="frame" x="72.5" y="113.5" width="80" height="30"/>
                             <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQJ-8t-0EK" userLabel="Yes Button" customClass="BorderButton" customModule="Die_Ewige_Liste" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQJ-8t-0EK" userLabel="Yes Button" customClass="UtilButton" customModule="Die_Ewige_Liste" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
                                     <constraints>
                                         <constraint firstAttribute="width" secondItem="ZQJ-8t-0EK" secondAttribute="height" multiplier="1:1" id="fla-rl-wFr"/>
@@ -167,7 +167,7 @@
                                         </userDefinedRuntimeAttribute>
                                     </userDefinedRuntimeAttributes>
                                 </button>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k5S-AE-f2k" userLabel="No Button" customClass="BorderButton" customModule="Die_Ewige_Liste" customModuleProvider="target">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k5S-AE-f2k" userLabel="No Button" customClass="UtilButton" customModule="Die_Ewige_Liste" customModuleProvider="target">
                                     <rect key="frame" x="50" y="0.0" width="30" height="30"/>
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <inset key="imageEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
@@ -208,7 +208,6 @@
                         <constraint firstItem="Yzx-uk-p8n" firstAttribute="centerX" secondItem="Gcz-De-kTO" secondAttribute="centerX" id="hOG-ot-GoB"/>
                         <constraint firstItem="Gcz-De-kTO" firstAttribute="top" secondItem="UKW-xu-HT5" secondAttribute="bottom" id="lXP-2O-OEK"/>
                         <constraint firstAttribute="trailing" secondItem="Gcz-De-kTO" secondAttribute="trailing" id="n4U-AJ-3qc"/>
-                        <constraint firstAttribute="width" constant="225" id="pO1-e0-8gF"/>
                         <constraint firstItem="Gcz-De-kTO" firstAttribute="centerY" secondItem="Qsa-8S-h9K" secondAttribute="centerY" multiplier="0.7" id="rqt-b0-Ox1"/>
                     </constraints>
                 </view>

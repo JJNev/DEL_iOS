@@ -1,5 +1,5 @@
 //
-//  BorderButton.swift
+//  UtilButton.swift
 //  Die Ewige Liste
 //
 //  Created by Johannes Bagge on 26.09.18.
@@ -9,7 +9,7 @@
 import UIKit
 
 @IBDesignable
-class BorderButton: UIButton {
+class UtilButton: UIButton {
     @IBInspectable var cornerRadius: CGFloat = 0 {
         didSet {
             layer.cornerRadius = cornerRadius
@@ -32,6 +32,13 @@ class BorderButton: UIButton {
     @IBInspectable var circular: Bool = false {
         didSet {
             checkCircular()
+        }
+    }
+    
+    @IBInspectable var rotation: CGFloat = 0 {
+        didSet {
+            let radians = rotation / 180.0 * CGFloat(Double.pi)
+            self.transform = CGAffineTransform(rotationAngle: radians)
         }
     }
     
