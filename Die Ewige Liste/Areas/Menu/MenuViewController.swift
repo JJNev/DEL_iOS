@@ -82,6 +82,10 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         return true
     }
     
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        textField.text = textField.text?.trimmingWhitespaceFromBeginningAndEnd()
+    }
+    
     // MARK: Actions
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -89,7 +93,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @IBAction func createNewListTapped(_ sender: Any) {
-        guard playerOneTextField.text != "" && playerTwoTextField.text != "" else {
+        guard playerOneTextField.text?.trimmingWhitespaceFromBeginningAndEnd() != "" && playerTwoTextField.text?.trimmingWhitespaceFromBeginningAndEnd() != "" else {
             return
         }
         listService.lists.append(List(playerOneName: playerOneTextField.text!, playerTwoName: playerTwoTextField.text!))
