@@ -96,7 +96,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         guard playerOneTextField.text?.trimmingWhitespaceFromBeginningAndEnd() != "" && playerTwoTextField.text?.trimmingWhitespaceFromBeginningAndEnd() != "" else {
             return
         }
-        listService.lists.append(List(playerOneName: playerOneTextField.text!, playerTwoName: playerTwoTextField.text!))
+        listService.lists.append(List(playerOneName: playerOneTextField.text!.trimmingWhitespaceFromBeginningAndEnd(), playerTwoName: playerTwoTextField.text!.trimmingWhitespaceFromBeginningAndEnd()))
         view.endEditing(true)
         playerOneTextField.text = ""
         playerTwoTextField.text = ""
