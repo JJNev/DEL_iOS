@@ -8,13 +8,16 @@
 
 import UIKit
 
-fileprivate enum SeparatorConstraintConstants: CGFloat {
-    case neutral = 0
-    case topPlaying = 100
-    case bottomPlaying = -100
-}
-
 class TimerViewController: UIViewController, ChallengeDelegate {
+    
+    enum ActivePlayer {
+        case neutral
+        case topPlaying
+        case bottomPlaying
+    }
+    
+    // MARK: -
+    
     @IBOutlet var timeLabelTop: RotatingLabel!
     @IBOutlet var timeLabelBottom: UILabel!
     @IBOutlet var tapGestureRecognizerTop: UITapGestureRecognizer!
@@ -45,6 +48,11 @@ class TimerViewController: UIViewController, ChallengeDelegate {
     private var game: Game!
 
     var list: List!
+    var separatorConstraintConstants: [ActivePlayer : CGFloat] = [
+        .neutral : 0,
+        .topPlaying : 100,
+        .bottomPlaying : -100
+    ]
     
     // MARK: Life Cycle
     
@@ -52,6 +60,8 @@ class TimerViewController: UIViewController, ChallengeDelegate {
         super.viewDidLoad()
         
         setupGame()
+        separatorConstraintConstants[.topPlaying] = view.frame.height * 0.1
+        separatorConstraintConstants[.bottomPlaying] = view.frame.height * 0.1 * -1
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -316,12 +326,12 @@ class TimerViewController: UIViewController, ChallengeDelegate {
     private func updateMidSeparator() {
         if let unwrappedCurrentPlayer = currentPlayer {
             if unwrappedCurrentPlayer == game.playerTop {
-                midSeparatorYConstraint.constant = SeparatorConstraintConstants.topPlaying.rawValue
+                midSeparatorYConstraint.constant = separatorConstraintConstants[.topPlaying]!
             } else if unwrappedCurrentPlayer == game.playerBottom {
-                midSeparatorYConstraint.constant = SeparatorConstraintConstants.bottomPlaying.rawValue
+                midSeparatorYConstraint.constant = separatorConstraintConstants[.bottomPlaying]!
             }
         } else {
-            midSeparatorYConstraint.constant = SeparatorConstraintConstants.neutral.rawValue
+            midSeparatorYConstraint.constant = separatorConstraintConstants[.neutral]!
         }
         
         UIView.animate(
