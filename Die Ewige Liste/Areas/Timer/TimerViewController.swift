@@ -10,8 +10,8 @@ import UIKit
 
 fileprivate enum SeparatorConstraintConstants: CGFloat {
     case neutral = 0
-    case whitePlaying = 100
-    case blackPlaying = -100
+    case topPlaying = 100
+    case bottomPlaying = -100
 }
 
 class TimerViewController: UIViewController, ChallengeDelegate {
@@ -178,7 +178,7 @@ class TimerViewController: UIViewController, ChallengeDelegate {
     private func resetGame() {
         game.playerTop.timeInSeconds = 0
         game.playerBottom.timeInSeconds = 0
-        currentPlayer = .none
+        currentPlayer = nil
         game.state = .new
         updateUi()
     }
@@ -315,10 +315,10 @@ class TimerViewController: UIViewController, ChallengeDelegate {
     
     private func updateMidSeparator() {
         if let unwrappedCurrentPlayer = currentPlayer {
-            if unwrappedCurrentPlayer.color == .white {
-                midSeparatorYConstraint.constant = SeparatorConstraintConstants.whitePlaying.rawValue
-            } else if unwrappedCurrentPlayer.color == .black {
-                midSeparatorYConstraint.constant = SeparatorConstraintConstants.blackPlaying.rawValue
+            if unwrappedCurrentPlayer == game.playerTop {
+                midSeparatorYConstraint.constant = SeparatorConstraintConstants.topPlaying.rawValue
+            } else if unwrappedCurrentPlayer == game.playerBottom {
+                midSeparatorYConstraint.constant = SeparatorConstraintConstants.bottomPlaying.rawValue
             }
         } else {
             midSeparatorYConstraint.constant = SeparatorConstraintConstants.neutral.rawValue
@@ -344,10 +344,10 @@ class TimerViewController: UIViewController, ChallengeDelegate {
             tapGestureRecognizerBottom.isEnabled = false
         default:
             if let unwrappedCurrentPlayer = currentPlayer {
-                if unwrappedCurrentPlayer.color == .white {
+                if unwrappedCurrentPlayer == game.playerTop {
                     tapGestureRecognizerTop.isEnabled = true
                     tapGestureRecognizerBottom.isEnabled = false
-                } else if unwrappedCurrentPlayer.color == .black {
+                } else if unwrappedCurrentPlayer == game.playerBottom {
                     tapGestureRecognizerTop.isEnabled = false
                     tapGestureRecognizerBottom.isEnabled = true
                 }
@@ -379,9 +379,9 @@ class TimerViewController: UIViewController, ChallengeDelegate {
     
     private func updateTimeLabels(both: Bool = false) {
         if let unwrappedCurrentPlayer = currentPlayer, !both {
-            if unwrappedCurrentPlayer.color == .white {
+            if unwrappedCurrentPlayer == game.playerTop {
                 timeLabelTop.text = game.playerTop.timeInSeconds.secondsToTimeString()
-            } else if unwrappedCurrentPlayer.color == .black {
+            } else if unwrappedCurrentPlayer == game.playerBottom {
                 timeLabelBottom.text = game.playerBottom.timeInSeconds.secondsToTimeString()
             }
         } else {
@@ -397,10 +397,10 @@ class TimerViewController: UIViewController, ChallengeDelegate {
     
     private func updatePlayerLabels() {
         if let unwrappedCurrentPlayer = currentPlayer {
-            if unwrappedCurrentPlayer.color == .white {
+            if unwrappedCurrentPlayer == game.playerTop {
                 tapToEndLabelTop.isHidden = false
                 tapToEndLabelBottom.isHidden = true
-            } else if unwrappedCurrentPlayer.color == .black {
+            } else if unwrappedCurrentPlayer == game.playerBottom {
                 tapToEndLabelTop.isHidden = true
                 tapToEndLabelBottom.isHidden = false
             }
