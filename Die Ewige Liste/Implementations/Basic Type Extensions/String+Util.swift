@@ -16,4 +16,8 @@ extension String {
     func contains(_ s: String) -> Bool {
         return (self.range(of: s) != nil) ? true : false
     }
+    
+    func trimmingWhitespaceFromBeginningAndEnd() -> String {
+        return self.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+    }
 }
