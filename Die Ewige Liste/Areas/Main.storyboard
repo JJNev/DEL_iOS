@@ -909,14 +909,16 @@
                         <outlet property="tapToEndLabelTop" destination="HNF-GR-kqh" id="3V0-5s-ilm"/>
                         <outlet property="timeLabelBottom" destination="vVN-9J-00g" id="Bo6-eR-yy7"/>
                         <outlet property="timeLabelTop" destination="QC2-nR-pmt" id="1zJ-PG-CKN"/>
-                        <outletCollection property="defaultBlackViews" destination="yMU-vh-pnc" collectionClass="NSMutableArray" id="wms-NZ-Jmq"/>
-                        <outletCollection property="defaultBlackViews" destination="QC2-nR-pmt" collectionClass="NSMutableArray" id="v17-r6-dF2"/>
-                        <outletCollection property="defaultBlackViews" destination="HNF-GR-kqh" collectionClass="NSMutableArray" id="N4V-Zt-ba3"/>
-                        <outletCollection property="defaultWhiteViews" destination="vVN-9J-00g" collectionClass="NSMutableArray" id="g1a-7r-aJ4"/>
-                        <outletCollection property="defaultWhiteViews" destination="IhX-vC-SxZ" collectionClass="NSMutableArray" id="U71-To-zjl"/>
-                        <outletCollection property="defaultWhiteViews" destination="F6x-uU-aqb" collectionClass="NSMutableArray" id="T8n-wZ-wur"/>
-                        <outletCollection property="defaultWhiteViews" destination="lQp-ed-E6O" collectionClass="NSMutableArray" id="vZJ-Sm-HAc"/>
-                        <outletCollection property="defaultBlackViews" destination="Zt9-l4-lmU" collectionClass="NSMutableArray" id="eBG-Dx-MyX"/>
+                        <outletCollection property="bottomPlayerColorViews" destination="yMU-vh-pnc" collectionClass="NSMutableArray" id="wms-NZ-Jmq"/>
+                        <outletCollection property="bottomPlayerColorViews" destination="QC2-nR-pmt" collectionClass="NSMutableArray" id="v17-r6-dF2"/>
+                        <outletCollection property="bottomPlayerColorViews" destination="HNF-GR-kqh" collectionClass="NSMutableArray" id="N4V-Zt-ba3"/>
+                        <outletCollection property="topPlayerColorViews" destination="vVN-9J-00g" collectionClass="NSMutableArray" id="g1a-7r-aJ4"/>
+                        <outletCollection property="topPlayerColorViews" destination="IhX-vC-SxZ" collectionClass="NSMutableArray" id="U71-To-zjl"/>
+                        <outletCollection property="topPlayerColorViews" destination="F6x-uU-aqb" collectionClass="NSMutableArray" id="T8n-wZ-wur"/>
+                        <outletCollection property="topPlayerColorViews" destination="lQp-ed-E6O" collectionClass="NSMutableArray" id="vZJ-Sm-HAc"/>
+                        <outletCollection property="bottomPlayerColorViews" destination="Zt9-l4-lmU" collectionClass="NSMutableArray" id="eBG-Dx-MyX"/>
+                        <outletCollection property="bottomPlayerColorViews" destination="kAT-b7-go7" collectionClass="NSMutableArray" id="QVa-hv-Orl"/>
+                        <outletCollection property="topPlayerColorViews" destination="VkH-O0-iTf" collectionClass="NSMutableArray" id="CVM-01-gkj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EzS-t1-Bbx" userLabel="First Responder" sceneMemberID="firstResponder"/>

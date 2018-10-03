@@ -35,10 +35,10 @@ class TimerViewController: UIViewController, ChallengeDelegate {
     @IBOutlet var resetButton: UIButton!
     @IBOutlet weak var endGameButton: UIButton!
     
-    @IBOutlet var defaultBlackViews: [UIView]!
-    @IBOutlet var defaultWhiteViews: [UIView]!
+    @IBOutlet var topPlayerColorViews: [UIView]!
+    @IBOutlet var bottomPlayerColorViews: [UIView]!
     
-    private let defaultAnimationTime: TimeInterval = 0.1
+    private let defaultAnimationTime: TimeInterval = 0.2
     
     private lazy var timer = Timer()
     private var currentPlayer: Player?
@@ -198,13 +198,21 @@ class TimerViewController: UIViewController, ChallengeDelegate {
     
     private func swapColors() {
         UIApplication.shared.statusBarStyle = UIApplication.shared.statusBarStyle == .lightContent ? .default : .lightContent
-        for view in defaultBlackViews + defaultWhiteViews {
+        for view in topPlayerColorViews + bottomPlayerColorViews {
             if let label = view as? UILabel {
                 label.textColor = label.textColor == .white ? .black : .white
+            } else if let button = view as? UtilButton {
+                button.borderColor = button.borderColor == .white ? .black : .white
+                button.tintColor = button.tintColor == .white ? .black : .white
             } else {
                 view.backgroundColor = view.backgroundColor == .white ? .black : .white
             }
         }
+        
+        let newPlayerTop = Player(color: game.playerBottom.color, name: game.playerTop.name)
+        let newPlayerBottom = Player(color: game.playerTop.color, name: game.playerBottom.name)
+        game.playerTop = newPlayerTop
+        game.playerBottom = newPlayerBottom
     }
     
     private func startTimer(reset: Bool) {
