@@ -16,6 +16,14 @@ class MatchOverviewTabBarController: UITabBarController {
         }
     }
     
+    // MARK: Life Cycle
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        selectedIndex = 0
+    }
+    
     // MARK: Actions
     
     @objc private func newGameTapped() {
