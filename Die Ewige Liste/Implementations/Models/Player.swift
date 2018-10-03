@@ -8,13 +8,13 @@
 
 import UIKit
 
-class Player: Equatable {
-    enum Color {
-        case white, black
-    }
-    
-    // MARK: -
-    
+enum Color: String, Codable {
+    case white, black
+}
+
+// MARK: -
+
+class Player: Equatable, Codable {
     var color: Color
     var name: String
     var timeInSeconds: CGFloat = 0.0
@@ -26,9 +26,11 @@ class Player: Equatable {
         self.name = name
     }
     
-    // MARK: Equatable protocol
+    // MARK: Equatable
     
     static func == (lhs: Player, rhs: Player) -> Bool {
         return lhs.color == rhs.color && lhs.name == rhs.name
     }
 }
+
+

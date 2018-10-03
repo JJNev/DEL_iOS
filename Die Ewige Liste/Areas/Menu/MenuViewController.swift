@@ -8,12 +8,12 @@
 
 import UIKit
 
-class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class MenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     @IBOutlet weak var playerOneTextField: UITextField!
     @IBOutlet weak var playerTwoTextField: UITextField!
     @IBOutlet weak var listTableView: UITableView!
     
-    private lazy var listService: ListService = ListService()
+    private lazy var listService: ListService = ListService.standard
     
     // MARK: Life Cycle
     
@@ -22,6 +22,11 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         NotificationCenter.default.addObserver(self, selector: #selector(listDataLoaded), name: Notification.Name.init(listService.dataLoadedNotificationIdentifier), object: nil)
         listService.loadData()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        listTableView.reloadData()
     }
     
     // MARK: UITableViewDataSource
@@ -43,10 +48,38 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-        if let gameHistoryViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "gameHistoryViewController") as? GameHistoryViewController {
-            gameHistoryViewController.list = listService.lists[indexPath.row]
-            navigationController?.pushViewController(gameHistoryViewController, animated: true)
+        if let matchOverviewTabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "matchOverviewTabBarController") as? MatchOverviewTabBarController {
+            matchOverviewTabBarController.list = listService.lists[indexPath.row]
+            navigationController?.pushViewController(matchOverviewTabBarController, animated: true)
         }
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            listService.lists.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
+    }
+    
+    // MARK: UITextFieldDelegate
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case playerOneTextField:
+            playerTwoTextField.becomeFirstResponder()
+            break
+        case playerTwoTextField:
+            createNewListTapped(textField)
+            break
+        default:
+            break
+        }
+        
+        return true
     }
     
     // MARK: Actions
@@ -59,7 +92,7 @@ class MenuViewController: UIViewController, UITableViewDelegate, UITableViewData
         guard playerOneTextField.text != "" && playerTwoTextField.text != "" else {
             return
         }
-        listService.addList(list: List(playerOneName: playerOneTextField.text!, playerTwoName: playerTwoTextField.text!))
+        listService.lists.append(List(playerOneName: playerOneTextField.text!, playerTwoName: playerTwoTextField.text!))
         view.endEditing(true)
         playerOneTextField.text = ""
         playerTwoTextField.text = ""

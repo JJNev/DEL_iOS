@@ -7,9 +7,19 @@
 //
 
 import Foundation
+import SwiftKeychainWrapper
 
 class ListService {
-    private (set) var lists: [List] = []
+    // TODO: Might replace this with dependency injection structure
+    // A global singleton to be used from everywhere
+    static let standard = ListService()
+    
+    var lists: [List] = [] {
+        didSet {
+            saveLists()
+            sendDataLoadedNotification()
+        }
+    }
     var dataLoadedNotificationIdentifier = "listDataLoaded"
     
     // MARK: Public
@@ -17,30 +27,31 @@ class ListService {
     func loadData() {
         loadListData()
     }
-
-    func addList(list: List) {
-        lists.append(list)
-        sendDataLoadedNotification()
+    
+    func saveLists() {
+        if let listsData = try? PropertyListEncoder().encode(lists) {
+            KeychainWrapper.standard.set(listsData, forKey: Constants.KeychainIdentifier.lists)
+        }
     }
     
-    // MARK: Private
+    // MARK: Helper
+    
+    private func loadListData() {
+        lists = getLists() ?? []
+        sendDataLoadedNotification()
+    }
     
     private func sendDataLoadedNotification() {
         NotificationCenter.default.post(name: Notification.Name.init(dataLoadedNotificationIdentifier), object: nil)
     }
-
-    private func loadListData() {
-        // TODO: Load data
-        addDummyData()
-        sendDataLoadedNotification()
-    }
     
-    // MARK: Debug
-    
-    private func addDummyData() {
-        let list = List(playerOneName: "Tom", playerTwoName: "Johannes")
-        let newGame = Game(state: .ended, dateStarted: Date(), dateEnded: Date(), totalTimeInSeconds: 178, playerTop: Player(color: .white, name: "Tom"), playerBottom: Player(color: .black, name: "Johannes"), winner: Player(color: .white, name: "Tom"), loser: Player(color: .black, name: "Johannes"), timeWinner: Player(color: .black, name: "Johannes"), settings: nil)
-        list.games.append(newGame)
-        lists.append(list)
+    private func getLists() -> [List]? {
+        let listsData = KeychainWrapper.standard.data(forKey: Constants.KeychainIdentifier.lists)
+        if let listsData = listsData {
+            if let lists = try? PropertyListDecoder().decode(Array<List>.self, from: listsData) {
+                return lists
+            }
+        }
+        return nil
     }
 }

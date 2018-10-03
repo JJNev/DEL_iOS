@@ -17,10 +17,10 @@ class EndGameViewController: ModalViewController {
     @IBOutlet weak var timeTopPlayerContentLabel: UILabel!
     @IBOutlet weak var timeBottomPlayerContentLabel: UILabel!
     @IBOutlet weak var timeTotalContentLabel: UILabel!
-    @IBOutlet weak var pointsPlayerTopNameLabel: UILabel!
-    @IBOutlet weak var pointsPlayerBottomNameLabel: UILabel!
-    @IBOutlet weak var pointsPlayerTopContentLabel: UILabel!
-    @IBOutlet weak var pointsPlayerBottomContentLabel: UILabel!
+    @IBOutlet weak var namePlayerTopLabel: UILabel!
+    @IBOutlet weak var namePlayerBottomLabel: UILabel!
+    @IBOutlet weak var pointsPlayerTopLabel: UILabel!
+    @IBOutlet weak var pointsPlayerBottomLabel: UILabel!
     
     private var game: Game!
     private var list: List?
@@ -35,7 +35,7 @@ class EndGameViewController: ModalViewController {
         finalizeGame()
     }
     
-    // MARK: Helper
+    // MARK: Public
     
     func setGame(_ game: Game, fromList list: List) {
         self.game = game
@@ -52,34 +52,39 @@ class EndGameViewController: ModalViewController {
         timeTopPlayerContentLabel.text = game.playerTop.timeInSeconds.secondsToTimeString()
         timeBottomPlayerContentLabel.text = game.playerBottom.timeInSeconds.secondsToTimeString()
         timeTotalContentLabel.text = game.totalTimeInSeconds.secondsToTimeString()
-        pointsPlayerTopNameLabel.text = game.playerTop.name
-        pointsPlayerBottomNameLabel.text = game.playerBottom.name
+        namePlayerTopLabel.text = game.playerTop.name
+        namePlayerBottomLabel.text = game.playerBottom.name
         updatePoints()
     }
     
+    // MARK: Helper
+    
     private func updatePoints() {
-        // TODO: Consider active ruleset
-        let pointsForGameWin = 3
-        let pointsForTimeWin = 1
+        guard let list = list else {
+            return
+        }
+        
         var pointsPlayerTop = 0
         var pointsPlayerBottom = 0
+        let gameWinPoints = Int(list.getSettingValue(for: Constants.Settings.Keys.gameWinPoints))
+        let timeWinPoints = Int(list.getSettingValue(for: Constants.Settings.Keys.timeWinPoints))
         
         if winnerSelectionSegmentedControl.selectedSegmentIndex == 0 {
-            pointsPlayerTop += pointsForGameWin
+            pointsPlayerTop += gameWinPoints
         } else {
-            pointsPlayerBottom += pointsForGameWin
+            pointsPlayerBottom += gameWinPoints
         }
         
         if let timeWinner = game.timeWinner {
             if timeWinner == game.playerTop {
-                pointsPlayerTop += pointsForTimeWin
+                pointsPlayerTop += timeWinPoints
             } else {
-                pointsPlayerBottom += pointsForTimeWin
+                pointsPlayerBottom += timeWinPoints
             }
         }
         
-        pointsPlayerTopContentLabel.text = String(pointsPlayerTop)
-        pointsPlayerBottomContentLabel.text = String(pointsPlayerBottom)
+        pointsPlayerTopLabel.text = String(pointsPlayerTop)
+        pointsPlayerBottomLabel.text = String(pointsPlayerBottom)
     }
     
     private func finalizeGame() {

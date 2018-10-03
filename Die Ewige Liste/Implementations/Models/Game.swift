@@ -8,13 +8,13 @@
 
 import UIKit
 
-struct Game {
-    enum State {
-        case new, running, paused, ended
-    }
-    
-    // MARK: -
-    
+enum State: String, Codable {
+    case new, running, paused, challenged, ended
+}
+
+// MARK: -
+
+struct Game: Codable {
     var state: State = .new
     var dateStarted: Date?
     var dateEnded: Date?
@@ -24,5 +24,5 @@ struct Game {
     var winner: Player?
     var loser: Player?
     var timeWinner: Player?
-    var settings: Dictionary<String, Any>?
+//    var settingsVersion: Double!
 }
