@@ -112,13 +112,13 @@
                             </constraints>
                         </view>
                         <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="blg-1x-7zZ" userLabel="Bottom Static Container">
-                            <rect key="frame" x="29" y="75.5" width="167" height="30"/>
+                            <rect key="frame" x="18" y="75.5" width="189" height="30"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NRy-0Z-e4d" userLabel="Bottom Slide Container">
-                                    <rect key="frame" x="0.0" y="0.0" width="167" height="30"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="189" height="30"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Did you do a mistake?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Soh-rK-roB" userLabel="Bottom Label">
-                                            <rect key="frame" x="0.0" y="8" width="167" height="22"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Did you make a mistake?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Soh-rK-roB" userLabel="Bottom Label">
+                                            <rect key="frame" x="0.0" y="8" width="189" height="22"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="22" id="DQ2-XV-pCp"/>
                                             </constraints>
