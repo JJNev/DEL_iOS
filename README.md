@@ -12,3 +12,6 @@ which allows ongoing comparison between two players - hence the working title 'D
 Besides the basic game information, like who won and how long it took, the app collects additional information like who 
 played which color or who began the game. In future, this data can be used to create statistics like "The beginning player 
 wins 59% of the games".
+Some other features, like a penalty system in case one player makes a mistake, are already implemented/in progress/planned.
+
+The project is to be considered work in progress.
